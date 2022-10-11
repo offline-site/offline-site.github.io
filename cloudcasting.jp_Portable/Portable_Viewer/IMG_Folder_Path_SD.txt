@@ -1,0 +1,2 @@
+	IMG_Folder_Path="../Official_Portable/";
+	//IMG_Folder_Path="file:///P:/LD/30/10/PIC_LIB/cloudcasting.jp/Official_Portable/";

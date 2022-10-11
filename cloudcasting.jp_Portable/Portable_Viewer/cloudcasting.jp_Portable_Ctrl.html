@@ -1,0 +1,1930 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=10">
+<link rel="stylesheet" type="text/css" href="BASE_CSS_STYLE.css">
+<script type="text/javascript" src="BASE_JAVASCRIPT_FUNCTION.js"></script>
+<script type="text/javascript" src="BASE_JS_i_j_k_m_n_FUN.js"></script>
+<script type="text/javascript" src="BASE_XML_FUNCTION.js"></script>
+<script type="text/javascript" src="base64_encode_decode.js"></script>
+<script type="text/javascript" src="readAs_Type_Convert.js"></script>
+<title>cloudcasting.jp_Portable_Ctrl</title>
+<style type="text/css">
+*
+{
+	margin:					0px;
+	padding:				0px;
+	/*zoom:					0.98;*/
+}
+</style>
+<style type="text/css">
+.Bijint_Table td
+{
+	vertical-align:			top;
+}
+
+.Bijint_Category_Top input,.Bijint_Category_Left input
+{
+	height:					24px;
+}
+.Bijint_Category_Set_CLS input
+{
+	height:					20px;
+}
+.Bijint_Data_Location_CLS
+{
+	width:					45px;
+}
+</style>
+</head>
+
+<body bgcolor=#CCE8CF>
+<script type="text/javascript">
+//==================================================Pre_Definition==================================================
+function CCJP_ALL_TAG_INI()
+{
+	ele00=document.getElementsByClassName("CCJP_Table")[0].getElementsByClassName("CCJP_Data_Folder_Name_END_Name_CLS")[0];
+	str00="";
+	str00+='"" --->>> "CCJP_PData"' + '\n';
+	str00+='"_Sample" --->>> "CCJP_PData_Sample"' + '\n';
+	str00+='"_Self_Define" --->>> "CCJP_PData_Self_Define"' + '\n';
+	ele00.title=str00;
+}
+
+var IMG_Folder_Path="";
+
+function IMG_Folder_Path_INI(INI_Type)
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(5));
+	var ID,LEN,ID_LEN;
+	LEN=CCJP_Data_CLS.Personal_HTML_ARR.length;
+	ID_LEN=(LEN - 1).toString().length;
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("CCJP_CAT_Table_Mode")[0].getElementsByTagName("tbody")[0];
+	ele02=ele00.getElementsByClassName("CCJP_CAT_Table")[0].getElementsByTagName("tbody")[0];
+	ele03=parent.document.getElementsByClassName("cloudcasting.jp_Portable_Content")[0].contentWindow;
+	ele03.Node.prototype.getElementsByAttributeName=Node.prototype.getElementsByAttributeName;
+	ele04=ele03.document.getElementsByTagName("body")[0];
+	//==========DIVISION==========
+	if ( INI_Type==0 )			{eval(ReadTextFile("IMG_Folder_Path_SD.txt"));}
+	else if ( INI_Type==1 )		{IMG_Folder_Path=ele05.value;}
+	else						{}
+	ele05=ele00.getElementsByClassName("IMG_Folder_Path_CLS")[0];
+	ele05.value=IMG_Folder_Path;
+	//==========DIVISION==========
+}
+//==================================================Pre_Definition==================================================
+//==================================================CCJP==================================================
+//========================================CCJP_Data_CLS========================================
+var CCJP_Data_Folder_Name;
+var CCJP_Data_CLS;
+CCJP_Data_CLS				=
+{
+	//==========DIVISION==========
+	Personal_HTML_LEN		:	6,
+	Personal_HTML_ARR_STR	:	[],
+	Personal_HTML_ARR_ARR	:	[],
+	Personal_HTML_ARR		:	[],
+	Personal_HTML_ID_ARR	:	[],
+	//==========DIVISION==========
+	Person_Category_STR		:	"",
+	Person_Category_ARR		:	[],
+	Person_ID_ARR			:	[],
+	ID_List					:	"",
+	//==========DIVISION==========
+	Person_ID_Point_At_2_Personal_HTML_ID_ARR	:	[],
+	Person_ID_Point_At_2_Personal_HTML_ID_FUN	:	null,
+	//==========DIVISION==========
+	Print_Data				:	function ()
+	{
+		var cls						=
+		{
+			CCJP_Data_CLS			:	CCJP_Data_CLS,
+			CCJP_CAT_Table_CLS		:	JSON.stringify(CCJP_CAT_Table_CLS),
+			CCJP_CAT_Table_TAG_ARR	:	CCJP_CAT_Table_TAG_ARR,
+			CCJP_CT_Table_TAG_ARR	:	CCJP_CT_Table_TAG_ARR
+		}
+		console.log(cls);
+	},
+	_NULL					:	null
+	//==========DIVISION==========
+};
+
+function CCJP_Data_CLS_INI()
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+	//==============================ReadTextFile==============================
+	ele00=document.getElementsByClassName("CCJP_Table")[0].getElementsByClassName("CCJP_Data_Folder_Name_END_Name_CLS")[0];
+	CCJP_Data_Folder_Name="CCJP_PData" + ele00.value;//"CCJP_PData";"CCJP_PData_Sample";"CCJP_PData_Self_Define";
+	//"";"_Sample";"_Self_Define";
+	CCJP_Data_CLS.Personal_HTML_ARR_STR=createArray(CCJP_Data_CLS.Personal_HTML_LEN);
+	var ID,LEN,ID_LEN;
+	var Personal_HTML_ID;
+	for (ID=0;ID<CCJP_Data_CLS.Personal_HTML_LEN;ID++)
+	{
+		CCJP_Data_CLS.Personal_HTML_ARR_STR[ID]=ReadTextFile(CCJP_Data_Folder_Name + "\\CCJP_PData_" + ("00" + ID.toString()).slice(-2) + ".txt");
+	}
+
+	CCJP_Data_CLS.Person_Category_STR	=ReadTextFile(CCJP_Data_Folder_Name + "\\CCJP_PData_CAT_03_01_Sup_Inuse.txt");
+	CCJP_Data_CLS.ID_List				=ReadTextFile(CCJP_Data_Folder_Name + "\\CCJP_PData_ID_List.txt");
+	//==============================ReadTextFile==============================
+	//==============================Data_Transform==============================
+	//==========DIVISION==========
+	//	CCJP_Data_CLS.Personal_HTML_ARR_ARR=createArray(CCJP_Data_CLS.Personal_HTML_LEN);
+	//	for (ID=0;ID<CCJP_Data_CLS.Personal_HTML_LEN;ID++)
+	//	{
+	//		CCJP_Data_CLS.Personal_HTML_ARR_ARR[ID]=CCJP_Data_CLS.Personal_HTML_ARR_STR[ID]
+	//		.replace(/(<div id="__next" data-reactroot="" class="CloudCasting_JP_Person_CLS")/gm,"●●●●●$1").split("●●●●●");
+	//		CCJP_Data_CLS.Personal_HTML_ARR_ARR[ID].splice(0,1);
+	//	}
+
+	CCJP_Data_CLS.Personal_HTML_ARR=[];
+	for (ID=0;ID<CCJP_Data_CLS.Personal_HTML_LEN;ID++)
+	{
+		arr00=CCJP_Data_CLS.Personal_HTML_ARR_STR[ID].replace(/(<div id="__next" data-reactroot="" class="CloudCasting_JP_Person_CLS")/gm,"●●●●●$1").split("●●●●●");
+		arr00.splice(0,1);
+		CCJP_Data_CLS.Personal_HTML_ARR=CCJP_Data_CLS.Personal_HTML_ARR.concat(arr00);
+	}
+	CCJP_Data_CLS.Personal_HTML_ARR.sort(function(a,b)
+	{
+		var result;
+		if ( a<b )					{result=-1;}
+		if ( a>b )					{result=1;}
+		if ( a.localeCompare(b) )	{result=-1;}
+		if ( b.localeCompare(a) )	{result=1;}
+
+		if ( a==b )					{result=0;}
+
+		return result;
+	});
+	//console.log(CCJP_Data_CLS.Personal_HTML_ARR);
+	//==========DIVISION==========
+	LEN=CCJP_Data_CLS.Personal_HTML_ARR.length;
+	ID_LEN=(LEN - 1).toString().length;
+	CCJP_Data_CLS.Personal_HTML_ID_ARR=createArray(LEN);
+	for (ID=0;ID<LEN;ID++)
+	{
+		//<div id="__next" data-reactroot="" class="CloudCasting_JP_Person_CLS" rid="MDA0MA9ad3" pdid="00" pid_00_data_order_ori="0000" pid_01_data_order_ansi="0000"><div>
+		CCJP_Data_CLS.Personal_HTML_ID_ARR[ID]=CCJP_Data_CLS.Personal_HTML_ARR[ID]
+		.replace(/^(<div[^<>]+rid=)("[^"]+")([^<>]+pdid=)("[0-9]+")([^<>]+pid_00_data_order_ori=)("[0-9]+")([^<>]+pid_01_data_order_ansi=)("[0-9]+")(>[\s\S]+)$/gm,
+		//					1			2			3		4					5					6					7					8			9
+		"[\"" + ("0".repeat(ID_LEN) + ID.toString()).slice(-ID_LEN) + "\"," + "$2,$4,$6,$8" + "];");
+		//console.log(ID + "___" + CCJP_Data_CLS.Personal_HTML_ID_ARR[ID]);
+		eval("CCJP_Data_CLS.Personal_HTML_ID_ARR[ID]=" + CCJP_Data_CLS.Personal_HTML_ID_ARR[ID]);
+	}
+	//==========DIVISION==========
+	eval("CCJP_Data_CLS.ID_List=" + "[\n" + (CCJP_Data_CLS.ID_List.replace(/\r\n/gm,"\n") + "●●●●●").replace(/,\n●●●●●$/gm,"") + "\n]");
+	//==========DIVISION==========
+	CCJP_Data_CLS.Person_Category_ARR=CCJP_Data_CLS.Person_Category_STR.replace(/^(\t"#####Person_ID_)/gm,"●●●●●$1").split("●●●●●");
+	CCJP_Data_CLS.Person_Category_ARR.splice(0,1);
+
+	//	"#####Person_ID_00105"	"#####Person_CLS_{"Page_ID": 5,"Page_IPID": 5,"Person_ID": "00105","PIC": {"icon": "https://cloudcasting.jp/uploaded/model/81487/smallImage/bmsImageHash1.jpg","logo": "https://cloudcasting.jp/uploaded/castlist/423/castgenreImage.png"},"Main": {"name": "神戸蘭子","href": "https://cloudcasting.jp/profile/NTc2MTM24f5","catchCopy": "","genre": "東京都 / モデル"},"Profile": {"currentPrefecturesId": "東京都","country": "","birthdate": "40歳","height": "154cm","gender": "女性"},"Birthplace": {"prefectureId": "出身：長崎県"},"Sidesns": {"twitter": {"text": "未設定","url": null,"like_num": null},"instagram": {"text": "既に設定","url": "https://www.instagram.com/ranran0414","like_num": 12000},"youtube": {"text": "未設定","url": null,"like_num": null},"tiktok": {"text": "未設定","url": null,"like_num": null},"other": [{"text": "未設定","url": null,"like_num": null},{"text": "未設定","url": null,"like_num": null},{"text": "未設定","url": null,"like_num": null},{"text": "未設定","url": null,"like_num": null},{"text": "未設定","url": null,"like_num": null}]}}"	"#####CCJP_PData_Point_At_CLS_{"Person_ID_Point_At":["NTc2MTM24f5","05","0697","0006"]}"
+	LEN=CCJP_Data_CLS.Person_Category_ARR.length;
+	for (ID=0;ID<LEN;ID++)
+	{
+		str00=CCJP_Data_CLS.Person_Category_ARR[ID];
+		arr00=str00.replace(/"	"#####/gm,'"@@@@@"#####').split("@@@@@");
+		arr00[0]=arr00[0].replace(/^.+Person_ID_([0-9]+)"$/gm,"$1");
+		arr00[1]=arr00[1].replace(/^.+Person_CLS_(.+)"$/gm,"$1");
+		arr00[2]=arr00[2].replace(/^.+Personal_Detail_CLS_(.+)"$/gm,"$1");
+		arr00[3]=arr00[3].replace(/^.+CCJP_PData_Point_At_CLS_(.+)"$/gm,"$1");
+		CCJP_Data_CLS.Person_Category_ARR[ID]=
+		{
+			Person_ID					:	arr00[0],
+			Person_CLS					:	JSON.parse(arr00[1]),
+			Personal_Detail_CLS			:	JSON.parse(arr00[2]),
+			CCJP_PData_Point_At_CLS		:	JSON.parse(arr00[3])
+		};
+	}
+
+	CCJP_Data_CLS.Person_ID_ARR=createArray(LEN);
+	for (ID=0;ID<LEN;ID++)
+	{
+		CCJP_Data_CLS.Person_ID_ARR[ID]=CCJP_Data_CLS.Person_Category_ARR[ID].Person_ID;
+	}
+	//==========DIVISION==========
+	//alert("LONG_TIME_0001_0000");
+	console.log("TIME_0001_00_CCJP_Data_CLS_INI_BEGIN_Person_ID_Point_At_2_Personal_HTML_ID_FUN : " + TIME_NOW("-"));
+	CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_FUN();
+	console.log("TIME_0001_01_CCJP_Data_CLS_INI_END_Person_ID_Point_At_2_Personal_HTML_ID_FUN : " + TIME_NOW("-"));
+	//alert("LONG_TIME_0001_0001");
+	//==========DIVISION==========
+	//==============================Data_Transform==============================
+	//CCJP_Data_CLS.Print_Data();
+}
+
+//CCJP_Data_CLS_INI();
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_00.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_01.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_02.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_03.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_04.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_05.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_CAT_03_01_Sup_Inuse.txt"
+//	"HTML_Viewer\\CCJP_PData\\CCJP_PData_ID_List.txt"
+
+function Person_ID_Point_At_2_Personal_HTML_ID_FUN()
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+	var ID,LEN,ID_LEN;
+	var ID_Public,ID_2_CT;
+	var Method="Method_01";			//"Method_00";"Method_01";
+	if ( Method=="Method_00" )		//Slow : about 10 minutes ;
+	{
+		arr00=CCJP_Data_CLS.Personal_HTML_ID_ARR;
+		//['00000', 'MDA0MA9ad3', '00', '0000', '0000']
+		"Method_00_00";str00=arr00.join("\n");//console.log(str00);
+		//"Method_00_01";str01=JSON.stringify(arr00);//console.log(str01);
+		arr01=CCJP_Data_CLS.Person_Category_ARR;
+		//--->>> arr03 : ["NTc2MTM24f5","05","0697","0006"];
+		arr02=CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR;
+		LEN=arr00.length;
+		//alert("LONG_TIME_" + arr00.length + "\t" + arr01.length);
+		for (ID=0;ID<LEN;ID++)
+		{
+			arr03=arr01[ID].CCJP_PData_Point_At_CLS.Person_ID_Point_At;
+			//["NTc2MTM24f5","05","0697","0006"];
+			//arr03[0];
+			//arr00[ID];
+			"Method_00_00";eval("arr04=[\"" + str00.match(new RegExp("^.+" + arr03[0] + ".+$","gm"))[0].replace(/,/gm,"\",\"") + "\"];");
+			//console.log(arr04);
+			//"Method_00_01";str04="arr04=" + str01.match(new RegExp('[\[]"[0-9]+","' + arr03[0] + '","[0-9]+","[0-9]+","[0-9]+"\]',"gm"))[0] + ";";
+			//console.log(str04);
+			eval(str04);
+
+			arr02[ID]=parseInt(arr04[0],10);
+			//['00000', 'MDA0MA9ad3', '00', '0000', '0000']
+		}
+		//console.log(JSON.stringify(arr02));
+		CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR=arr02;
+		//console.log("====================DIVISION====================");
+		//console.log(JSON.stringify(arr00));
+		//console.log(JSON.stringify(arr02));
+		//console.log("====================DIVISION====================");
+	}
+	else if ( Method=="Method_01" )	//Fast : 0.4s~0.6s~3.7s ;		Method come from excel order method .
+	{
+
+		arr00=CCJP_Data_CLS.Personal_HTML_ID_ARR;
+		arr01=CCJP_Data_CLS.Person_Category_ARR;
+		//console.log(JSON.stringify(arr00));
+		//arr00 : ['00000', 'MDA0MA9ad3', '00', '0000', '0000'];
+		//......
+		LEN=arr00.length;
+		arr03=[];
+		for (ID=0;ID<LEN;ID++)
+		{
+			arr03.push(arr01[ID].CCJP_PData_Point_At_CLS.Person_ID_Point_At);
+			arr03[ID]=[ID].concat(arr03[ID]);
+		}
+		//arr03 : ["NTc2MTM24f5","05","0697","0006"];
+		//--->>>
+		//arr03 : [ID,"NTc2MTM24f5","05","0697","0006"];
+		//			|
+		//			|
+		//			|
+		//			ID_2_CT
+		//arr00 : ['00000', 'MDA0MA9ad3', '00', '0000', '0000'];
+		arr00=JSON.parse(JSON.stringify(arr00));
+		arr03=JSON.parse(JSON.stringify(arr03));
+
+		arr00.sort(function(a,b)
+		{
+			var result;
+			if ( a[1]<b[1] )				{result=-1;}
+			if ( a[1]>b[1] )				{result=1;}
+			//if ( a[1].localeCompare(b[1]) )	{result=-1;}
+			//if ( b[1].localeCompare(a[1]) )	{result=1;}
+
+			if ( a[1]==b[1] )				{result=0;}
+
+			return result;
+		});
+
+		arr03.sort(function(a,b)
+		{
+			var result;
+			if ( a[1]<b[1] )				{result=-1;}
+			if ( a[1]>b[1] )				{result=1;}
+			//if ( a[1].localeCompare(b[1]) )	{result=-1;}
+			//if ( b[1].localeCompare(a[1]) )	{result=1;}
+
+			if ( a[1]==b[1] )				{result=0;}
+
+			return result;
+		});
+
+		//console.log(JSON.stringify(arr00));
+		//console.log(JSON.stringify(arr03));
+		arr02=createArray(LEN);
+		for (ID_Public=0;ID_Public<LEN;ID_Public++)
+		{
+			ID=arr03[ID_Public][0];
+			ID_2_CT=arr00[ID_Public][0];
+			arr02[ID]=parseInt(ID_2_CT,10);
+		}
+		//console.log(arr02);
+
+		CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR=arr02;
+	}
+	else		{}
+}
+CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_FUN=Person_ID_Point_At_2_Personal_HTML_ID_FUN;
+//========================================CCJP_Data_CLS========================================
+//========================================CCJP_CAT_Table========================================
+var CCJP_CAT_Table_CLS;
+CCJP_CAT_Table_CLS		=
+{
+	Total				:
+	{
+		Person_Num		:	0,
+		Page_Num		:	0
+	},
+	One_Page			:
+	{
+		Person_Num		:	100,//1;20;60;100;
+		Page_ID_Now		:	0
+	},
+};
+
+var CCJP_CAT_Table_TAG_ARR;
+var CCJP_CT_Table_TAG_ARR;
+
+function CCJP_CAT_Table_TAG_STR_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(5));
+	var ID,LEN,ID_LEN;
+	LEN=CCJP_Data_CLS.Personal_HTML_ARR.length;
+	ID_LEN=(LEN - 1).toString().length;
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("CCJP_CAT_Table_Mode")[0].getElementsByTagName("tbody")[0];
+	ele02=ele00.getElementsByClassName("CCJP_CAT_Table")[0].getElementsByTagName("tbody")[0];
+	ele03=parent.document.getElementsByClassName("cloudcasting.jp_Portable_Content")[0].contentWindow;
+	ele03.Node.prototype.getElementsByAttributeName=Node.prototype.getElementsByAttributeName;
+	ele04=ele03.document.getElementsByTagName("body")[0];
+	//==========DIVISION==========
+	CCJP_CAT_Table_TAG_ARR=createArray(CCJP_Data_CLS.Person_Category_ARR.length);
+	CCJP_CT_Table_TAG_ARR=createArray(CCJP_Data_CLS.Person_Category_ARR.length);
+	for (ID=0;ID<CCJP_CAT_Table_TAG_ARR.length;ID++)
+	{
+		//==========DIVISION==========
+		if ( CCJP_CT_View_NetWork_Type=="Online" )
+		{
+			str00=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.PIC.icon;
+			str01=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.PIC.logo;
+		}
+		else if ( CCJP_CT_View_NetWork_Type=="Offline" )
+		{
+			str00=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.PIC.icon.replace(/^https:\/\//gm,"../Official_Portable/");
+			str01=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.PIC.logo.replace(/^https:\/\//gm,"../Official_Portable/");
+		}
+		else		{}
+		console.log(CCJP_CT_View_NetWork_Type + ";\t" + str00 + ";\t" + str01 + ";\t");
+		ele01.getElementsByClassName("PIC.icon")[0].src				=str00;
+		ele01.getElementsByClassName("PIC.logo")[0].src				=str01;
+
+		ele01.getElementsByClassName("Page_ID")[0].innerHTML		=
+		"[" + ("0".repeat(5) + CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Page_ID	.toString()).slice(-5)+ "]";
+		ele01.getElementsByClassName("Page_IPID")[0].innerHTML		=
+		"[" + ("0".repeat(5) + CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Page_IPID	.toString()).slice(-5)+ "]";
+		ele01.getElementsByClassName("Person_ID")[0].innerHTML		=
+		"[" + ("0".repeat(5) + CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Person_ID	.toString()).slice(-5)+ "]";
+
+		ele01.getElementsByClassName("Main.name")[0].value			=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Main.name;
+		ele01.getElementsByClassName("Main.name")[0].setAttribute("value",CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Main.name);
+		ele01.getElementsByClassName("Main.href")[0].href			=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Main.href;
+		ele01.getElementsByClassName("Main.catchCopy")[0].innerHTML	=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Main.catchCopy;
+		ele01.getElementsByClassName("Main.genre")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Main.genre;
+
+		ele01.getElementsByClassName("Profile.currentPrefecturesId")[0].innerHTML	=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Profile.currentPrefecturesId;
+		ele01.getElementsByClassName("Profile.country")[0].innerHTML				=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Profile.country;
+		ele01.getElementsByClassName("Profile.birthdate")[0].innerHTML				=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Profile.birthdate;
+		ele01.getElementsByClassName("Profile.height")[0].innerHTML					=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Profile.height;
+		ele01.getElementsByClassName("Profile.gender")[0].innerHTML					=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Profile.gender;
+		ele01.getElementsByClassName("Birthplace.prefectureId")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Birthplace.prefectureId;
+		//==========DIVISION==========
+		if ( CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.twitter.url==null )
+		{
+			ele01.getElementsByClassName("Sidesns.twitter")[0].getElementsByTagName("a")[0].href		="https://twitter.com/";
+			ele01.getElementsByClassName("Sidesns.twitter")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src			=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_twitter_off.png";
+			ele01.getElementsByClassName("Sidesns.twitter")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	="null";
+		}
+		else
+		{
+			ele01.getElementsByClassName("Sidesns.twitter")[0].getElementsByTagName("a")[0].href		=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.twitter.url;
+			ele01.getElementsByClassName("Sidesns.twitter")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src			=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_twitter_on.png";
+			ele01.getElementsByClassName("Sidesns.twitter")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.twitter.like_num;
+		}
+		//==========DIVISION==========
+		if ( CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.instagram.url==null )
+		{
+			ele01.getElementsByClassName("Sidesns.instagram")[0].getElementsByTagName("a")[0].href		="https://www.instagram.com/";
+			ele01.getElementsByClassName("Sidesns.instagram")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src		=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_instagram_off.png";
+			ele01.getElementsByClassName("Sidesns.instagram")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	="null";
+		}
+		else
+		{
+			ele01.getElementsByClassName("Sidesns.instagram")[0].getElementsByTagName("a")[0].href		=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.instagram.url;
+			ele01.getElementsByClassName("Sidesns.instagram")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src		=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_instagram_on.png";
+			ele01.getElementsByClassName("Sidesns.instagram")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.instagram.like_num;
+		}
+		//==========DIVISION==========
+		if ( CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.youtube.url==null )
+		{
+			ele01.getElementsByClassName("Sidesns.youtube")[0].getElementsByTagName("a")[0].href		="https://youtube.com/";
+			ele01.getElementsByClassName("Sidesns.youtube")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src			=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_youtube_off.png";
+			ele01.getElementsByClassName("Sidesns.youtube")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	="null";
+		}
+		else
+		{
+			ele01.getElementsByClassName("Sidesns.youtube")[0].getElementsByTagName("a")[0].href		=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.youtube.url;
+			ele01.getElementsByClassName("Sidesns.youtube")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src			=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_youtube_on.png";
+			ele01.getElementsByClassName("Sidesns.youtube")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.youtube.like_num;
+		}
+		//==========DIVISION==========
+		if ( CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.tiktok.url==null )
+		{
+			ele01.getElementsByClassName("Sidesns.tiktok")[0].getElementsByTagName("a")[0].href			="https://www.tiktok.com/";
+			ele01.getElementsByClassName("Sidesns.tiktok")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src			=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_tiktok_off.png";
+			ele01.getElementsByClassName("Sidesns.tiktok")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	="null";
+		}
+		else
+		{
+			ele01.getElementsByClassName("Sidesns.tiktok")[0].getElementsByTagName("a")[0].href			=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.tiktok.url;
+			ele01.getElementsByClassName("Sidesns.tiktok")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src			=
+			"../Official_Portable/cloudcasting.jp/images/client/icon_tiktok_on.png";
+			ele01.getElementsByClassName("Sidesns.tiktok")[0].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	=
+			CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.tiktok.like_num;
+		}
+		//==========DIVISION==========
+		for (i=0;i<CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.other.length;i++)
+		{
+			if ( CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.other[i].url==null )
+			{
+				ele01.getElementsByClassName("Sidesns.other")[i].getElementsByTagName("a")[0].href		="";
+				ele01.getElementsByClassName("Sidesns.other")[i].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	="null";
+			}
+			else
+			{
+				ele01.getElementsByClassName("Sidesns.other")[i].getElementsByTagName("a")[0].href		=
+				CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.other[i].url;
+				ele01.getElementsByClassName("Sidesns.other")[i].getElementsByTagName("a")[0].getElementsByTagName("span")[0].innerHTML	=
+				CCJP_Data_CLS.Person_Category_ARR[ID].Person_CLS.Sidesns.other[i].like_num;
+			}
+		}
+		//==========DIVISION==========
+		//"#####Personal_Detail_CLS_{"cast_name":{"title":"キャスト名","text":"ひな"},"birthdate":{"title":"生年月日","text":"1992-12-30 (29歳)"},"sex":{"title":"性別","text":"女性"},"_location":{"title":"在住","text":"日本 神奈川県"},"birthplace":{"title":"出身都道府県","text":"---"},"job":{"title":"職業","text":"student"},"body_height":{"title":"身長","text":"164cm"}}"
+		ele01.getElementsByClassName("cast_name.title")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.cast_name.title;
+		ele01.getElementsByClassName("cast_name.text")[0].innerHTML			=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.cast_name.text;
+		ele01.getElementsByClassName("birthdate.title")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.birthdate.title;
+		ele01.getElementsByClassName("birthdate.text")[0].innerHTML			=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.birthdate.text;
+		ele01.getElementsByClassName("sex.title")[0].innerHTML				=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.sex.title;
+		ele01.getElementsByClassName("sex.text")[0].innerHTML				=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.sex.text;
+		ele01.getElementsByClassName("_location.title")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS._location.title;
+		ele01.getElementsByClassName("_location.text")[0].innerHTML			=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS._location.text;
+		ele01.getElementsByClassName("birthplace.title")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.birthplace.title;
+		ele01.getElementsByClassName("birthplace.text")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.birthplace.text;
+		ele01.getElementsByClassName("job.title")[0].innerHTML				=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.job.title;
+		ele01.getElementsByClassName("job.text")[0].innerHTML				=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.job.text;
+		ele01.getElementsByClassName("body_height.title")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.body_height.title;
+		ele01.getElementsByClassName("body_height.text")[0].innerHTML		=CCJP_Data_CLS.Person_Category_ARR[ID].Personal_Detail_CLS.body_height.text;
+		//==========DIVISION==========
+		CCJP_CAT_Table_TAG_ARR[ID]=ele01.innerHTML;
+		//==========DIVISION==========
+	}
+	//==========DIVISION==========
+	CCJP_CAT_Table_CLS.Total.Person_Num			=CCJP_CAT_Table_TAG_ARR.length;
+	CCJP_CAT_Table_CLS.Total.Page_Num			=Math.ceil(CCJP_CAT_Table_TAG_ARR.length / CCJP_CAT_Table_CLS.One_Page.Person_Num);
+	//	CCJP_CAT_Table_CLS.One_Page.Person_Num		=20;
+	CCJP_CAT_Table_CLS.One_Page.Page_ID_Now		=0;
+
+	str02="";
+	for (ID=CCJP_CAT_Table_CLS.One_Page.Person_Num * CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;
+			ID<CCJP_CAT_Table_CLS.One_Page.Person_Num * (CCJP_CAT_Table_CLS.One_Page.Page_ID_Now + 1) && ID<CCJP_CAT_Table_TAG_ARR.length;
+			ID++)
+	{
+		str02+=CCJP_CAT_Table_TAG_ARR[ID];
+	}
+	ele02.innerHTML=str02;
+	//==========DIVISION==========
+	str04="";
+	for (ID=CCJP_CAT_Table_CLS.One_Page.Person_Num * CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;
+			ID<CCJP_CAT_Table_CLS.One_Page.Person_Num * (CCJP_CAT_Table_CLS.One_Page.Page_ID_Now + 1) && ID<CCJP_CAT_Table_TAG_ARR.length;
+			ID++)
+	{
+		str04+=CCJP_Data_CLS.Personal_HTML_ARR_ARR[ID];
+	}
+	//ele04.innerHTML=str04;
+	//==========DIVISION==========
+	ele00.getElementsByClassName("One_Page.Person_Num")[0].value	=CCJP_CAT_Table_CLS.One_Page.Person_Num;
+	ele00.getElementsByClassName("One_Page.Page_ID_Now")[0].value	=CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;
+	ele00.getElementsByClassName("Total.Person_Num")[0].value		=CCJP_CAT_Table_CLS.Total.Person_Num;
+	ele00.getElementsByClassName("Total.Page_Num")[0].value			=CCJP_CAT_Table_CLS.Total.Page_Num;
+	//==========DIVISION==========
+}
+
+var CCJP_CT_View_CT_Type;
+var CCJP_CT_View_NetWork_Type;
+function CCJP_CT_View_INI()
+{
+	//==========DIVISION==========
+	var ele00;
+	//==========DIVISION==========
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele00.getElementsByClassName("CCJP_CT_View_Table.View")[0].style.backgroundColor="#1EB0E9";
+	ele00.getElementsByClassName("CCJP_CT_View_Table.ORI")[0].style.backgroundColor="#1EB0E9";
+	ele00.getElementsByClassName("CCJP_CT_View_Table.IMG")[0].style.backgroundColor="red";
+	CCJP_CT_View_CT_Type="ORI";
+	//==========DIVISION==========
+	ele00.getElementsByClassName("CCJP_CT_View_Table.Online")[0].style.backgroundColor="red";
+	ele00.getElementsByClassName("CCJP_CT_View_Table.Offline")[0].style.backgroundColor="#1EB0E9";
+	CCJP_CT_View_NetWork_Type="Offline";
+	//==========DIVISION==========
+}
+
+function CCJP_CT_Table_View(ele)
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(5));
+	var ID,LEN,ID_LEN;
+	LEN=CCJP_Data_CLS.Personal_HTML_ARR.length;
+	ID_LEN=(LEN - 1).toString().length;
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("CCJP_CAT_Table_Mode")[0].getElementsByTagName("tbody")[0];
+	ele02=ele00.getElementsByClassName("CCJP_CAT_Table")[0].getElementsByTagName("tbody")[0];
+	ele03=parent.document.getElementsByClassName("cloudcasting.jp_Portable_Content")[0].contentWindow;
+	ele03.Node.prototype.getElementsByAttributeName=Node.prototype.getElementsByAttributeName;
+	ele04=ele03.document.getElementsByTagName("body")[0];
+	//==========DIVISION==========
+	ele00=document.getElementsByClassName("CCJP_Table")[0].getElementsByClassName("CCJP_Data_Folder_Name_END_Name_CLS")[0];
+	//"CCJP_PData";"CCJP_PData_Sample";"CCJP_PData_Self_Define";
+
+	if ( CCJP_Data_Folder_Name!=("CCJP_PData" + ele00.value) || ele.className=="CCJP_CT_View_Table.Online" || ele.className=="CCJP_CT_View_Table.Offline" )
+	{
+		//CCJP_CT_View_INI();
+		if ( ele.className=="CCJP_CT_View_Table.Online" || ele.className=="CCJP_CT_View_Table.Offline" )
+		{
+			CCJP_CT_View_NetWork_Type=ele.className.replace(/^CCJP_CT_View_Table./gm,"");
+		}
+		else		{}
+		//alert("CCJP_Data_CLS_INI()");
+		CCJP_Data_CLS_INI();
+		CCJP_CAT_Table_TAG_STR_INI();
+		//Regular_Expression_Table_INI();
+
+		ele00=document.getElementsByClassName("CCJP_Table")[0];
+		if ( CCJP_Data_Folder_Name!=("CCJP_PData" + ele00.value) )
+		{
+			ele01=ele00.getElementsByClassName("CCJP_CT_View_Table." + CCJP_CT_View_NetWork_Type)[0];
+		}
+		else if ( ele.className=="CCJP_CT_View_Table.Online" || ele.className=="CCJP_CT_View_Table.Offline" )
+		{
+			ele01=ele;
+		}
+		else
+		{
+			ele01=ele00.getElementsByClassName("CCJP_CT_View_Table." + CCJP_CT_View_NetWork_Type)[0];
+		}
+		ele01.click();
+
+		//var Initiation_Flag=0;
+		//Initiation();
+	}
+	else		{}
+	//==========DIVISION==========
+	//	CCJP_CAT_Table_CLS.Total.Person_Num			=CCJP_CAT_Table_TAG_ARR.length;
+	//	CCJP_CAT_Table_CLS.Total.Page_Num			=Math.ceil(CCJP_CAT_Table_TAG_ARR.length / CCJP_CAT_Table_CLS.One_Page.Person_Num);
+	//	CCJP_CAT_Table_CLS.One_Page.Person_Num		=20;
+	//	CCJP_CAT_Table_CLS.One_Page.Page_ID_Now		=0;
+
+	str02="";
+	for (ID=CCJP_CAT_Table_CLS.One_Page.Person_Num * CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;
+			ID<CCJP_CAT_Table_CLS.One_Page.Person_Num * (CCJP_CAT_Table_CLS.One_Page.Page_ID_Now + 1) && ID<CCJP_CAT_Table_TAG_ARR.length;
+			ID++)
+	{
+		str02+=CCJP_CAT_Table_TAG_ARR[ID];
+	}
+	ele02.innerHTML=str02;
+	//==========DIVISION==========
+	if ( ele.value=="V" )								{}
+	else if ( ele.value=="ORI" || ele.value=="IMG" )
+	{
+		ele.style.backgroundColor="#1EB0E9";
+		ele00=ele;
+		while ( !( ele00.tagName.toUpperCase()=="TABLE" && ele00.className=="CCJP_CT_View_Table" ) )	{ele00=ele00.parentNode;}
+		if ( ele.value=="ORI" )			{str00="CCJP_CT_View_Table.IMG";}
+		else if ( ele.value=="IMG" )	{str00="CCJP_CT_View_Table.ORI";}
+		else							{str00="CCJP_CT_View_Table.ORI";}
+		ele00.getElementsByClassName(str00)[0].style.backgroundColor="red";
+		CCJP_CT_View_CT_Type=ele.value;
+	}
+	else												{}
+	//==========DIVISION==========
+	str02="";
+	for (ID=CCJP_CAT_Table_CLS.One_Page.Person_Num * CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;
+			ID<CCJP_CAT_Table_CLS.One_Page.Person_Num * (CCJP_CAT_Table_CLS.One_Page.Page_ID_Now + 1) && ID<CCJP_Data_CLS.Personal_HTML_ARR.length;
+			ID++)
+	{
+		str02+=CCJP_Data_CLS.Personal_HTML_ARR[CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR[ID]]
+		//	.replace(/^(<div[^<>]+rid=)("[^"]+")([^<>]+pdid=)("[^"]+")([^<>]+pid_00_data_order_ori=)("[^"]+")([^<>]+pid_01_data_order_ansi=)("[^"]+")(><div>[\s\S]+)$/gm,
+		//	//					1			2			3		4					5					6					7					8			9
+		//	"[\"" + ("0".repeat(ID_LEN) + ID.toString()).slice(-ID_LEN) + "\"," + "$2,$4,$6,$8" + "];") + "<br>"
+		;
+	}
+	//==========DIVISION==========
+	if ( ele.className=="CCJP_CT_View_Table.Online" || ele.className=="CCJP_CT_View_Table.Offline" )
+	{
+		ele.style.backgroundColor="#1EB0E9";
+		ele00=ele;
+		while ( !( ele00.tagName.toUpperCase()=="TABLE" && ele00.className=="CCJP_CT_View_Table" ) )	{ele00=ele00.parentNode;}
+
+		CCJP_CT_View_NetWork_Type=ele.className.replace(/^CCJP_CT_View_Table./gm,"");
+		if ( CCJP_CT_View_NetWork_Type=="Online" )			{ele00.getElementsByClassName("CCJP_CT_View_Table.Offline")[0].style.backgroundColor="red";}
+		else if ( CCJP_CT_View_NetWork_Type=="Offline" )	{ele00.getElementsByClassName("CCJP_CT_View_Table.Online")[0].style.backgroundColor="red";}
+		else		{}
+	}
+	else		{}
+
+	if ( CCJP_CT_View_NetWork_Type=="Online" )			{}
+	else if ( CCJP_CT_View_NetWork_Type=="Offline" )
+	{
+		//	background-image:url(https://cloudcasting.jp/
+		//	data-img="https://cloudcasting.jp/
+		//	src="https://cloudcasting.jp/
+		str02=str02.replace(/(background-image[ ]*:[ ]*url\(["]*)(https:\/\/)(cloudcasting\.jp\/)/gm,"$1" + IMG_Folder_Path + "$3")
+					.replace(/(data-img=")(https:\/\/)(cloudcasting\.jp\/)/gm,"$1" + IMG_Folder_Path + "$3")
+					.replace(/(src=")(https:\/\/)(cloudcasting\.jp\/)/gm,"$1" + IMG_Folder_Path + "$3");
+	}
+	else		{}
+	//==========DIVISION==========
+	ele04.style.display="none";
+	ele04.innerHTML=str02;
+	if ( CCJP_CT_View_CT_Type=="ORI" )			{}
+	else if ( CCJP_CT_View_CT_Type=="IMG" )
+	{
+		elel04=ele04.getElementsByClassName("CloudCasting_JP_Person_CLS");
+		LEN=elel04.length;
+		for (ID=0;ID<LEN;ID++)
+		{
+			elel04[ID].innerHTML=elel04[ID].getElementsByClassName("content_pubprof-upimg__q__cv")[0].outerHTML;
+		}
+	}
+	else		{}
+	ele04.style.display="";
+	//	console.log(JSON.stringify(CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR));
+	//==========DIVISION==========
+}
+
+function Show_CCJP_Person_Info(ele)
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	var ID,LEN,ID_LEN;
+	LEN=CCJP_Data_CLS.Personal_HTML_ARR.length;
+	ID_LEN=(LEN - 1).toString().length;
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("CCJP_CAT_Table_Mode")[0].getElementsByTagName("tbody")[0];
+	ele02=ele00.getElementsByClassName("CCJP_CAT_Table")[0].getElementsByTagName("tbody")[0];
+	ele03=parent.document.getElementsByClassName("cloudcasting.jp_Portable_Content")[0].contentWindow;
+	ele03.Node.prototype.getElementsByAttributeName=Node.prototype.getElementsByAttributeName;
+	ele04=ele03.document.getElementsByTagName("body")[0];
+	//==========DIVISION==========
+	ele05=ele.parentNode;
+	while ( !( ele05.tagName.toUpperCase()=="TABLE" && ele05.className=="One_Person" ) )	{ele05=ele05.parentNode;}
+	var CCJP_RID;
+	CCJP_RID=ele05.getElementsByClassName("Main.href")[0].href.replace(/^(https:\/\/cloudcasting.jp\/profile\/)(.+)([\/]*)$/gm,"$2");
+	ele06=ele04.getElementsByAttributeName("rid",CCJP_RID)[0];
+	//	console.log(CCJP_RID);
+	//	console.log(ele06);
+	ele06.id=CCJP_RID;
+	ele07=ele03.document.createElement("a");
+	ele07.href="#" + CCJP_RID;
+	ele07.click();
+	ele07=null;
+	ele06.id="";
+
+	//CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR;
+	//==========DIVISION==========
+}
+//========================================CCJP_CAT_Table========================================
+//========================================CCJP_Order_Table========================================
+function CCJP_Order_Table_Select(ele,evt,post_method)
+{
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+
+	//if ( post_method==0 && evt && evt.type=="keydown" && evt.which==13 )//enter:13;
+	if ( post_method==0 && evt && evt.type=="click" )//onclick;
+	{
+		if ( ele.className=="CCJP_Order_Table" && evt_target.className.replace(/^(Order_)([0-1])$/gm,"")=="" && ( evt_target.value=="↑" || evt_target.value=="↓" ) )
+		{
+			//====================DIVISION====================
+			var Person_Info=["Person_CLS","Personal_Detail_CLS"];
+			var Person_Info_Type_ID=parseInt(evt_target.className.replace(/^(Order_)([0-1])$/gm,"$2"),10);//"Order_0";"Order_1";
+			//Person_Info[Person_Info_Type_ID];
+			//====================DIVISION====================
+			//alert(evt.type + "\n" + evt.which + "\n" + evt_target.value);
+			elel00=ele.getElementsByClassName("Order_0");
+			for (i=0;i<elel00.length;i++)		{elel00[i].setAttribute("Order_Inuse",0);elel00[i].style.backgroundColor="red";}
+			elel00=ele.getElementsByClassName("Order_1");
+			for (i=0;i<elel00.length;i++)		{elel00[i].setAttribute("Order_Inuse",0);elel00[i].style.backgroundColor="red";}
+			evt_target.setAttribute("Order_Inuse",1);
+			evt_target.style.backgroundColor="#1EB0E9";
+
+			ele00=evt_target;
+			while ( ele00.tagName.toUpperCase()!="TR" )			{ele00=ele00.parentNode;}
+			str00=ele00.getElementsByTagName("td")[0].innerHTML;
+
+			arr00=createArray(CCJP_Data_CLS.Person_ID_ARR.length);
+			for (i=0;i<arr00.length;i++)
+			{
+				arr00[i]=[
+							JSON.parse(JSON.stringify(CCJP_Data_CLS.Person_Category_ARR[i])),
+							CCJP_Data_CLS.Person_ID_ARR[i],
+							i
+						];
+			}
+			//console.log(CCJP_Data_CLS.Person_ID_ARR);
+			arr01=Array.from(new Array(CCJP_Data_CLS.Person_ID_ARR.length).keys());
+			arr00.sort(function(a,b)
+			{
+				var ele00,ele01,ele02,ele03,ele04,ele05;
+				ele00=document.getElementsByClassName("CCJP_Table")[0];
+				ele01=ele00.getElementsByClassName("Regular_Expression_Table")[0];
+				//ele02=ele01.getElementsByClassName("Regular_Expression_Function_CLS")[0];
+				ele03=ele01.getElementsByClassName("Regular_Expression_Text_Select_Type")[0];
+				ele04=ele01.getElementsByClassName("Regular_Expression_Normal_Text_CLS")[0];
+				ele05=ele01.getElementsByClassName("Regular_Expression_Input_Text_CLS")[0];
+				ele06=ele01.getElementsByClassName("Regular_Expression_Output_Text_CLS")[0];
+
+				var Rex_Normal_Text,Rex_Input_Text,Rex_Output_Text;
+				Rex_Normal_Text=ele04.value;
+				Rex_Input_Text=ele05.value;
+				Rex_Output_Text=ele06.value;
+
+				var p,Method;
+				//a[0].Person_CLS.Person_ID;a[0].Personal_Detail_CLS.birthdate.text;
+				//b[0].Person_CLS.Person_ID;b[0].Personal_Detail_CLS.birthdate.text;
+				var a_val,b_val,a_val_ori,b_val_ori,result;
+				var a_val_search,b_val_search;
+				var a_val_match,b_val_match;
+				var a_val_match_num,b_val_match_num;
+				//	console.log(a[0].Person_CLS.Person_ID + "___" + b[0].Person_CLS.Person_ID);
+				//	console.log(a[0].Personal_Detail_CLS.birthdate.text + "___" + b[0].Personal_Detail_CLS.birthdate.text);
+				//	console.log(str00);
+				eval("a_val=a[0]." + Person_Info[Person_Info_Type_ID] + "." + str00 + ";");
+				eval("b_val=b[0]." + Person_Info[Person_Info_Type_ID] + "." + str00 + ";");
+				//console.log(a_val + "___" + b_val);
+				a_val_ori=a_val;
+				b_val_ori=b_val;
+				//========================================String_Supplement_Before_Replace========================================
+				Method=0;
+				if ( Method==0 )
+				{
+					if ( a_val!=null && a_val!=undefined && a_val!="" )
+					{
+						if ( a_val.toString().replace(/[0-9]+/gm,"")=="" )					{a_val=parseInt(a_val,10);}
+						else if ( str00=="Profile.birthdate" || str00=="Profile.height" )	{a_val=parseInt(a_val.replace(/^[^0-9]*([\-|0-9]+)[^0-9]*$/gm,"$1"),10);}
+						else		{}
+					}
+					if ( b_val!=null && b_val!=undefined && b_val!="" )
+					{
+						if ( b_val.toString().replace(/[0-9]+/gm,"")=="" )					{b_val=parseInt(b_val,10);}
+						else if ( str00=="Profile.birthdate" || str00=="Profile.height" )	{b_val=parseInt(b_val.replace(/^[^0-9]*([\-|0-9]+)[^0-9]*$/gm,"$1"),10);}
+						else		{}
+					}
+				}
+				else if ( Method==1 )
+				{
+					if ( a_val!=null && a_val!=undefined )
+					{
+						if ( a_val.toString().replace(/[0-9]+/gm,"")=="" || str00=="Profile.birthdate" || str00=="Profile.height" )
+						{
+							a_val=("0".repeat(100) + a_val.toString()).slice(-100);
+						}
+					}
+					if ( b_val!=null && b_val!=undefined )
+					{
+						if ( b_val.toString().replace(/[0-9]+/gm,"")=="" || str00=="Profile.birthdate" || str00=="Profile.height" )
+						{
+							b_val=("0".repeat(100) + b_val.toString()).slice(-100);
+						}
+					}
+				}
+				else		{}
+				//========================================String_Supplement_Before_Replace========================================
+
+				//0:"search";1:"match";2:"replace";
+				if ( Regular_Expression_Function_ID==0 && Regular_Expression_Function_Type=="search" )
+				{
+					//==========DIVISION==========
+					if ( Rex_Normal_Text!="" )
+					{
+						if ( !isNaN(a_val)==true )		{a_val=a_val.toString();}
+						if ( !isNaN(b_val)==true )		{b_val=b_val.toString();}
+						try
+						{
+							if ( a_val!=null && a_val!=undefined && a_val!="" )		{eval('a_val_search=a_val.search(/' + Rex_Normal_Text + '/gm' + ');');}
+							if ( b_val!=null && b_val!=undefined && b_val!="" )		{eval('b_val_search=b_val.search(/' + Rex_Normal_Text + '/gm' + ');');}
+						}
+						catch (err)
+						{
+							//	console.log("ID : " + Regular_Expression_Function_ID + ";\t" + "Type : " + Regular_Expression_Function_Type + ";\t" + 
+							//				"[" + a_val_ori + "," + b_val_ori + "]," + 
+							//				"[" + a_val + "," + b_val + "]," + 
+							//				"[" + a_val_search + "," + b_val_search + "]," + 
+							//				"[" + a_val_search_num + "," + b_val_search_num + "]," + 
+							//				"");
+							//alert(err.message);
+						}
+					}
+					else		{}
+					//==========DIVISION==========
+					if ( isNaN(a_val_search)==true )							{a_val_search_num=-6;}
+					else if ( !isNaN(a_val_search)==true && a_val_search>=0 )	{a_val_search_num=a_val_search;}
+					else														{a_val_search_num=-7;}
+					if ( isNaN(b_val_search)==true )							{b_val_search_num=-8;}
+					else if ( !isNaN(b_val_search)==true && b_val_search>=0 )	{b_val_search_num=b_val_search;}
+					else														{b_val_search_num=-9;}
+					//==========DIVISION==========
+					//	console.log("ID : " + Regular_Expression_Function_ID + ";\t" + "Type : " + Regular_Expression_Function_Type + ";\t" + 
+					//				"[" + a_val_ori + "," + b_val_ori + "]," + 
+					//				"[" + a_val + "," + b_val + "]," + 
+					//				"[" + a_val_search + "," + b_val_search + "]," + 
+					//				"[" + a_val_search_num + "," + b_val_search_num + "]," + 
+					//				"");
+					//==========DIVISION==========
+					if ( a_val_search_num>=0 && b_val_search_num>=0 || a_val_search_num<0 && b_val_search_num<0 )
+					{
+						if ( a_val<b_val )					{result=-1;}
+						if ( a_val>b_val )					{result=1;}
+						//	if ( a_val.localeCompare(b_val) )	{result=-1;}
+						//	if ( b_val.localeCompare(a_val) )	{result=1;}
+						if ( b_val=="" )					{result=-1;}
+						if ( a_val=="" )					{result=1;}
+						if ( a_val==b_val )					{result=0;}
+					}
+					else if ( a_val_search_num>=0 && b_val_search_num<0 )	{result=-1;}
+					else if ( a_val_search_num<0 && b_val_search_num>=0 )	{result=1;}
+					else													{}
+
+					if ( evt_target.value=="↑" )			{result=result;}
+					else if ( evt_target.value=="↓" )		{result=-result;}
+					else									{}
+					//==========DIVISION==========
+				}
+				else if ( Regular_Expression_Function_ID==1 && Regular_Expression_Function_Type=="match" )
+				{
+					//==========DIVISION==========
+					if ( Rex_Normal_Text!="" )
+					{
+						if ( !isNaN(a_val)==true )		{a_val=a_val.toString();}
+						if ( !isNaN(b_val)==true )		{b_val=b_val.toString();}
+						try
+						{
+							if ( a_val!=null && a_val!=undefined && a_val!="" )		{eval('a_val_match=a_val.match(/' + Rex_Normal_Text + '/gm' + ');');}
+							if ( b_val!=null && b_val!=undefined && b_val!="" )		{eval('b_val_match=b_val.match(/' + Rex_Normal_Text + '/gm' + ');');}
+						}
+						catch (err)
+						{
+							//	console.log("ID : " + Regular_Expression_Function_ID + ";\t" + "Type : " + Regular_Expression_Function_Type + ";\t" + 
+							//				"[" + a_val_ori + "," + b_val_ori + "]," + 
+							//				"[" + a_val + "," + b_val + "]," + 
+							//				"[" + a_val_match + "," + b_val_match + "]," + 
+							//				"[" + a_val_match_num + "," + b_val_match_num + "]," + 
+							//				"");
+							//alert(err.message);
+						}
+					}
+					else		{}
+					//==========DIVISION==========
+					if ( a_val_match==null || a_val_match==undefined || a_val_match==[] || a_val_match=="" )	{a_val_match_num=0;}
+					else if ( a_val_match.length>0 )															{a_val_match_num=a_val_match.length;}
+					else																						{a_val_match_num=0;}
+					if ( b_val_match==null || b_val_match==undefined || b_val_match==[] || b_val_match=="" )	{b_val_match_num=0;}
+					else if ( b_val_match.length>0 )															{b_val_match_num=b_val_match.length;}
+					else																						{b_val_match_num=0;}
+					//==========DIVISION==========
+					//	console.log("ID : " + Regular_Expression_Function_ID + ";\t" + "Type : " + Regular_Expression_Function_Type + ";\t" + 
+					//				"[" + a_val_ori + "," + b_val_ori + "]," + 
+					//				"[" + a_val + "," + b_val + "]," + 
+					//				"[" + a_val_match + "," + b_val_match + "]," + 
+					//				"[" + a_val_match_num + "," + b_val_match_num + "]," + 
+					//				"");
+					//==========DIVISION==========
+					if ( a_val_match_num>0 && b_val_match_num>0 || a_val_match_num==0 && b_val_match_num==0 )
+					{
+						if ( a_val<b_val )					{result=-1;}
+						if ( a_val>b_val )					{result=1;}
+						//	if ( a_val.localeCompare(b_val) )	{result=-1;}
+						//	if ( b_val.localeCompare(a_val) )	{result=1;}
+						if ( b_val=="" )					{result=-1;}
+						if ( a_val=="" )					{result=1;}
+						if ( a_val==b_val )					{result=0;}
+					}
+					else if ( a_val_match_num>0 && b_val_match_num==0 )	{result=-1;}
+					else if ( a_val_match_num==0 && b_val_match_num>0 )	{result=1;}
+					else												{}
+
+					if ( evt_target.value=="↑" )			{result=result;}
+					else if ( evt_target.value=="↓" )		{result=-result;}
+					else									{}
+					//==========DIVISION==========
+				}
+				else if ( Regular_Expression_Function_ID==2 && Regular_Expression_Function_Type=="replace" )
+				{
+					//==========DIVISION==========
+					if ( Rex_Input_Text!="" && Rex_Output_Text!="" )
+					{
+						if ( !isNaN(a_val)==true )		{a_val=a_val.toString();}
+						if ( !isNaN(b_val)==true )		{b_val=b_val.toString();}
+						try
+						{
+							if ( a_val!=null && a_val!=undefined && a_val!="" )		{eval('a_val=a_val.replace(/' + Rex_Input_Text + '/gm,' + Rex_Output_Text + ');');}
+							if ( b_val!=null && b_val!=undefined && b_val!="" )		{eval('b_val=b_val.replace(/' + Rex_Input_Text + '/gm,' + Rex_Output_Text + ');');}
+						}
+						catch (err)
+						{
+							//	console.log("ID : " + Regular_Expression_Function_ID + ";\t" + "Type : " + Regular_Expression_Function_Type + ";\t" + 
+							//				"[" + a_val_ori + "," + b_val_ori + "]," + 
+							//				"[" + a_val + "," + b_val + "]," + 
+							//				//"[" + a_val_replace + "," + b_val_replace + "]," + 
+							//				//"[" + a_val_replace_num + "," + b_val_replace_num + "]," + 
+							//				"");
+							//alert(err.message);
+						}
+					}
+					else		{}
+					//==========DIVISION==========
+					//	console.log("ID : " + Regular_Expression_Function_ID + ";\t" + "Type : " + Regular_Expression_Function_Type + ";\t" + 
+					//				"[" + a_val_ori + "," + b_val_ori + "]," + 
+					//				"[" + a_val + "," + b_val + "]," + 
+					//				//"[" + a_val_replace + "," + b_val_replace + "]," + 
+					//				//"[" + a_val_replace_num + "," + b_val_replace_num + "]," + 
+					//				"");
+					//==========DIVISION==========
+					if ( a_val<b_val )					{result=-1;}
+					if ( a_val>b_val )					{result=1;}
+					//	if ( a_val.localeCompare(b_val) )	{result=-1;}
+					//	if ( b_val.localeCompare(a_val) )	{result=1;}
+					if ( b_val=="" )					{result=-1;}
+					if ( a_val=="" )					{result=1;}
+					if ( a_val==b_val )					{result=0;}
+
+					if ( evt_target.value=="↑" )		{result=result;}
+					else if ( evt_target.value=="↓" )	{result=-result;}
+					else								{}
+					//==========DIVISION==========
+				}
+				else			{}
+
+				//console.log(a_val + "___" + b_val);
+
+				return result;
+			});
+			//console.log(arr00);
+
+			//console.log(str00);
+			//console.log(JSON.stringify(CCJP_Data_CLS.Person_ID_ARR));
+			for (i=0;i<arr00.length;i++)
+			{
+				CCJP_Data_CLS.Person_Category_ARR[i]=arr00[i][0];
+				CCJP_Data_CLS.Person_ID_ARR[i]=arr00[i][1];
+			}
+			//console.log(JSON.stringify(CCJP_Data_CLS.Person_ID_ARR));
+
+			arr02=createArray(arr00.length);
+			for (i=0,j=0;i<arr00.length;i++,j++)		{arr02[i]=[arr00[i][2],arr01[j]];}
+			//console.log("arr02 : " + JSON.stringify(arr02));
+			arr02.sort(function(a,b)
+			{
+				var result;
+				if ( a[0]<b[0] )	{result=-1;}
+				if ( a[0]>b[0] )	{result=1;}
+				if ( a[0]==b[0] )	{result=0;}
+				return result;
+			});
+			//console.log("arr02 : " + JSON.stringify(arr02));
+
+			//	i(arr00[i][2])		=>		j(arr00[i][2])(arr02[m][0])		=>		k(arr01[j])(arr02[m][1])
+			//	0:"11503"			=>		3:"08016"						=>		0
+			//	1:"20821"			=>		0:"11503"						=>		1
+			//	2:"19096"			=>		4:"19598"						=>		2
+			//	3:"08016"			=>		2:"19096"						=>		3
+			//	4:"19598"			=>		1:"20821"						=>		4
+
+			//3->0	;	0->1	;	1->4	;
+
+			arr03=createArray(arr00.length);
+			arr04=[
+					//CCJP_Data_CLS.Person_Category_ARR,
+					//CCJP_Data_CLS.Person_ID_ARR,
+					//CCJP_Data_CLS.Personal_HTML_ARR,
+					CCJP_CAT_Table_TAG_ARR,
+					CCJP_CT_Table_TAG_ARR
+					];
+			//console.log("========================================CCJP_CAT_Table_TAG_ARR========================================");
+			//console.log(CCJP_CAT_Table_TAG_ARR[0].match(/^.+Main.name.+$/gm)[0].replace(/^.+Main.name" value="([^"]+)".+$/gm,"$1"));
+			//========================================
+			//	str05="";
+			//	for (i=0;i<CCJP_CAT_Table_TAG_ARR.length;i++)
+			//	{
+			//		str05+="_" + ("00" + i.toString()).slice(-2) + "_" + 
+			//				CCJP_CAT_Table_TAG_ARR[i].match(/^.+Main.name.+$/gm)[0].replace(/^.+Main.name" value="([^"]+)".+$/gm,"$1");
+			//	}
+			//	console.log(str05);
+			//========================================
+			for (p=0;p<arr04.length;p++)
+			{
+				str03="";
+				arr03=createArray(arr00.length);
+				for (m=0,n=0;n<arr02.length;n++)
+				{
+					j=arr02[m][0];//m;
+					k=arr02[m][1];//m:j->k;
+					str03+="[" + j + "," + k + "]";
+					arr03[k]=arr04[p][j];
+					//m=k;//NOT_ALL_OK;
+					m++;
+				}
+				arr04[p]=arr03;
+				//console.log("___" + str03);
+			}
+
+			//console.log("___" + JSON.stringify(arr02));
+			//========================================
+			CCJP_CAT_Table_TAG_ARR			=arr04[0];
+			CCJP_CT_Table_TAG_ARR			=arr04[1];
+			//console.log(CCJP_CAT_Table_TAG_ARR[55].match(/^.+Main.name.+$/gm)[0]);
+			//========================================
+			//	str05="";
+			//	for (i=0;i<CCJP_CAT_Table_TAG_ARR.length;i++)
+			//	{
+			//		str05+="_" + ("00" + i.toString()).slice(-2) + "_" + 
+			//				CCJP_CAT_Table_TAG_ARR[i].match(/^.+Profile.height.+$/gm)[0].replace(/^.+Profile.height" value="([^"]+)".+$/gm,"$1");
+			//	}
+			//	console.log(str05);
+			//console.log("========================================CCJP_CAT_Table_TAG_ARR========================================");
+			//====================DIVISION====================
+			//CCJP_Data_CLS.Print_Data();
+
+			console.log("TIME_0001_02_CCJP_Order_Table_BEGIN_Person_ID_Point_At_2_Personal_HTML_ID_FUN : " + TIME_NOW("-"));
+			CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_FUN();
+			//CCJP_Data_CLS.Person_ID_Point_At_2_Personal_HTML_ID_ARR;
+			console.log("TIME_0001_03_CCJP_Order_Table_END_Person_ID_Point_At_2_Personal_HTML_ID_FUN : " + TIME_NOW("-"));
+
+			ele05=ele.getElementsByClassName("CCJP_CT_View_Table")[0].getElementsByClassName("CCJP_CT_View_Table.View")[0];
+			ele05.click();
+			//====================DIVISION====================
+		}
+		else		{}
+	}
+	else		{}
+}
+//========================================CCJP_Order_Table========================================
+//========================================Regular_Expression_Table========================================
+//	<tr><td colspan="3"><table class="Regular_Expression_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+//
+//	<td colspan="2"><select class="Regular_Expression_Text_Select_Type" style="width:100px;"></select></td>
+//	<td><input type="text" class="Regular_Expression_Normal_Text_CLS" value="東京都" title="Regular_Expression_Normal_Text" style="width:80px;"></td>
+//
+//	<td><span title="Regular_Expression_Text">REX</span></td>
+//	<td><input type="text" class="Regular_Expression_Input_Text_CLS" value="^.+(東京都).+$" title="Regular_Expression_Input_Text" style="width:80px;"></td>
+//	<td><input type="text" class="Regular_Expression_Output_Text_CLS" value='"\\0" + "$1"' title="Regular_Expression_Output_Text" style="width:80px;"></td>
+
+var REX_CT_CLS			=
+{
+	ARR					:	[],
+	ARR_Sample			:
+	{
+		Name			:	"",
+		Rex_Text		:
+		{
+			Normal		:	"",
+			Input		:	"",
+			Output		:	""
+		}
+	},
+	CT_LEN				:	0,
+	Name				:	["_Normal","_Number","_String"],
+	Rex_Text_Mode		:
+	{
+		_Normal			:
+		{
+			Normal		:	'',
+			Input		:	'',
+			Output		:	''
+		},
+		_Number			:
+		{
+			Normal		:	'24',
+			Input		:	'^.*(24)[^0-9]*$',	//'^.*(24).*$',		'^.*(24)[^0-9]*$',
+			Output		:	'"\\0"'				//'"\\0"',	'"-1"',	'"0"',	'"999$1"'
+		},
+		_String			:
+		{
+			Normal		:	'東京都',
+			Input		:	'^.*(東京都).*$',
+			Output		:	'"\\0" + "$1"'
+		}
+	},
+	TAG_HTML_STR		:	"",
+	INI					:	function ()
+	{
+		//==========DIVISION==========
+		eval(Parameter_Base_STR_ijk_XX(5));
+		var ID,LEN,ID_LEN;
+		this.CT_LEN=this.Name.length;
+		this.ARR=createArray(this.CT_LEN);
+		this.TAG_HTML_STR="";
+		for (ID=0;ID<this.CT_LEN;ID++)
+		{
+			this.ARR[ID]=JSON.parse(JSON.stringify(this.ARR_Sample));
+			this.ARR[ID].Name=this.Name[ID];
+			if ( this.Name[ID]=="_Normal" )			{this.ARR[ID].Rex_Text=JSON.parse(JSON.stringify(this.Rex_Text_Mode._Normal));}
+			else if ( this.Name[ID]=="_Number" )	{this.ARR[ID].Rex_Text=JSON.parse(JSON.stringify(this.Rex_Text_Mode._Number));}
+			else if ( this.Name[ID]=="_String" )	{this.ARR[ID].Rex_Text=JSON.parse(JSON.stringify(this.Rex_Text_Mode._String));}
+			else									{}
+			this.TAG_HTML_STR+="<option>" + this.Name[ID].replace(/^_(.+)$/gm,"$1") + "</option>";
+		}
+		//==========DIVISION==========
+		ele00=document.getElementsByClassName("CCJP_Table")[0];
+		ele01=ele00.getElementsByClassName("Regular_Expression_Table")[0];
+		ele02=ele01.getElementsByClassName("Regular_Expression_Text_Select_Type")[0];
+		ele02.innerHTML=this.TAG_HTML_STR;
+		//ele02.size=100;
+		ele02.selectedIndex=0;
+		//==========DIVISION==========
+		//==========DIVISION==========
+		//==========DIVISION==========
+	},
+	_NULL				:	null
+};
+
+function Regular_Expression_Table_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	var ID,LEN,ID_LEN;
+	LEN=CCJP_Data_CLS.Personal_HTML_ARR.length;
+	ID_LEN=(LEN - 1).toString().length;
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("Regular_Expression_Table")[0];
+	ele02=ele01.getElementsByClassName("Regular_Expression_Function_CLS")[0];
+	ele03=ele01.getElementsByClassName("Regular_Expression_Text_Select_Type")[0];
+	ele04=ele01.getElementsByClassName("Regular_Expression_Normal_Text_CLS")[0];
+	ele05=ele01.getElementsByClassName("Regular_Expression_Input_Text_CLS")[0];
+	ele06=ele01.getElementsByClassName("Regular_Expression_Output_Text_CLS")[0];
+	//==========DIVISION==========
+	REX_CT_CLS.INI();
+	//console.log(REX_CT_CLS.ARR);
+	//==========DIVISION==========
+	ele02.value="S";
+	ele02.style.backgroundColor="yellow";
+	Regular_Expression_Function_ID=0;
+	Regular_Expression_Function_Type="search";
+	//==========DIVISION==========
+	ele07=ele01.getElementsByClassName("Regular_Expression_Text_Title_CLS")[0];
+	str00="";
+	str00+="Regular_Expression_Text_Title_Sample : " + "\n";
+	str00+=Regular_Expression_Text_Title_Sample.toString().replace(/function Regular_Expression_Text_Title_Sample\(\)\n/gm,"") + "\n";
+	ele07.title=str00;
+	//==========DIVISION==========
+}
+
+function Regular_Expression_Text_Title_Sample()
+{
+	//【'^.*(24).*$',		'^.*(24)[^0-9]*$',】
+	//【'"\\0"',	'"-1"',	'"0"',	'"999$1"'】
+}
+
+var Regular_Expression_Function_ID,Regular_Expression_Function_Type;//0:"search";1:"match";2:"replace";
+function Regular_Expression_Function_Switch(ele)
+{
+	Regular_Expression_Function_ID=(Regular_Expression_Function_ID + 1)%3;
+	if ( Regular_Expression_Function_ID==0 )
+	{
+		ele.value="S";
+		ele.style.backgroundColor="yellow";
+		Regular_Expression_Function_Type="search";
+	}
+	else if ( Regular_Expression_Function_ID==1 )
+	{
+		ele.value="M";
+		ele.style.backgroundColor="orange";
+		Regular_Expression_Function_Type="match";
+	}
+	else if ( Regular_Expression_Function_ID==2 )
+	{
+		ele.value="R";
+		ele.style.backgroundColor="violet";
+		Regular_Expression_Function_Type="replace";
+	}
+	else		{}
+}
+//========================================Regular_Expression_Table========================================
+//========================================Personal_Detail_Show_Hide========================================
+function Personal_Detail_Show_Hide_INI()
+{
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("Personal_Detail_Show_Hide_CLS")[0];
+	ele01.setAttribute("state",0);
+	ele01.style.backgroundColor="yellow";
+}
+
+function Personal_Detail_Show_Hide(ele)
+{
+	var ele00;
+	var state;
+	state=parseInt(ele.getAttribute("state"),10);
+	state=(state + 1)%2;
+	ele.setAttribute("state",state);
+	ele00=document.getElementsByClassName("Personal_Detail_CSS_Detail")[0];
+
+	if ( state==0 )			//"Slim";
+	{
+		ele.style.backgroundColor="yellow";
+		ele00.innerHTML=ele00.innerHTML.replace(/Personal_Detail_Text_SPAN_Detail/gm,"Personal_Detail_Text_SPAN_Slim");
+		ele00.innerHTML=ele00.innerHTML.replace(/table.CCJP_Table table.CCJP_Order_Table tr.O1P_Slim/gm,"table.CCJP_Table table.CCJP_Order_Table tr.O1P");
+	}
+	else if ( state==1 )	//"Detail";
+	{
+		ele.style.backgroundColor="orange";
+		ele00.innerHTML=ele00.innerHTML.replace(/Personal_Detail_Text_SPAN_Slim/gm,"Personal_Detail_Text_SPAN_Detail");
+		ele00.innerHTML=ele00.innerHTML.replace(/table.CCJP_Table table.CCJP_Order_Table tr.O1P/gm,"table.CCJP_Table table.CCJP_Order_Table tr.O1P_Slim");
+	}
+	else		{}
+}
+//========================================Personal_Detail_Show_Hide========================================
+//==================================================CCJP==================================================
+//==================================================控件動作變化==================================================
+function TEXT_ATTRIBUTION(ele,evt,n)
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+	//eval(ELE_ELEL_STR_INI());
+
+	//console___log("function now is : TEXT_ATTRIBUTION(ele,evt,n)");
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+		/*
+		if ( evt_target.tagName=="TEXTAREA" || 
+				( evt_target.tagName=="INPUT" && 
+				( evt_target.type=="text" || 
+				evt_target.className=="IE_Proxy_ID" || evt_target.className=="IE_Proxy_Name" || evt_target.className=="IE_Proxy_Addr" || 
+				evt_target.className=="IE_Proxy_Name_Selected" ) ) )
+		*/
+		if ( evt_target.tagName=="INPUT" || evt_target.tagName=="SELECT" )
+		{
+			try
+			{
+				if ( evt_target.className=="Main.name" )
+				{
+					num00=evt_target.offsetWidth;
+					num01=evt_target.offsetHeight;
+					evt_target.type="text";
+					evt_target.style.width=num00;
+					evt_target.style.height=num01;
+
+					ele00=evt_target;
+					while ( ele00 && ele00.tagName!=undefined && !( ele00.tagName.toUpperCase()=="TABLE" && ele00.className=="One_Person" ) )
+					{
+						ele00=ele00.parentNode;
+						//console.log(ele00.tagName);
+					}
+					ele00.getElementsByClassName("PIC.icon")[0].click();
+					//Show_CCJP_Person_Info(this);
+				}
+
+				if ( evt_target.disabled==true )			{ele_disabled=true;evt_target.disabled=false;}
+				evt_target.focus();//設置焦點。
+				evt_target.select();//選中全文。
+				if ( ele_disabled==true )					{evt_target.disabled=true;}
+			}
+			catch (err)
+			{
+				console.log(err.message);
+			}
+		}
+		else		{}
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		if ( evt_target.className=="Main.name" )
+		{
+			num00=evt_target.offsetWidth;
+			num01=evt_target.offsetHeight;
+			evt_target.type="button";
+			evt_target.style.width=num00;
+			evt_target.style.height=num01;
+		}
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+		ele00=evt_target;
+		while ( !( ele00.tagName=="TABLE" && ( ele00.className=="CCJP_Order_Table" || ele00.className=="Regular_Expression_Table" ) ) )
+		{ele00=ele00.parentNode;}
+		if ( ele00.className=="CCJP_Order_Table" && evt_target.tagName=="INPUT" )
+		{
+			if ( evt_target.className=="One_Page.Person_Num" )
+			{
+				num00=parseInt(evt_target.value,10);
+				num01=CCJP_CAT_Table_CLS.Total.Person_Num;
+				if ( Number.isNaN(num00)==true )	{alert("ERROR , Input again .");num00=CCJP_CAT_Table_CLS.One_Page.Person_Num;}
+				else if ( num00>=num01 )			{num00=num01;}
+				else if ( num00<0 )					{num00=0;}
+				else								{}
+				CCJP_CAT_Table_CLS.One_Page.Person_Num=num00;
+				evt_target.value=num00;
+			}
+			else if ( evt_target.className=="One_Page.Page_ID_Now" )
+			{
+				num00=parseInt(evt_target.value,10);
+				num01=CCJP_CAT_Table_CLS.Total.Page_Num;
+				if ( Number.isNaN(num00)==true )	{alert("ERROR , Input again .");num00=CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;}
+				else if ( num00>=num01 )			{num00=num01 - 1;}
+				else if ( num00<0 )					{num00=0;}
+				else								{}
+				CCJP_CAT_Table_CLS.One_Page.Page_ID_Now=num00;
+				evt_target.value=num00;
+			}
+			else		{}
+		}
+		else if ( ele00.className=="Regular_Expression_Table" && ( evt_target.tagName=="SELECT" || evt_target.tagName=="INPUT" ) )
+		{
+			//	<tr><td colspan="3"><table class="Regular_Expression_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+			//		<tr>
+			//		<td colspan="2"><select class="Regular_Expression_Text_Select_Type" style="width:100px;"></select></td>
+			//		<td><input type="text" class="Regular_Expression_Normal_Text_CLS" value="東京都" title="Regular_Expression_Normal_Text" style="width:80px;"></td>
+			//		</tr>
+			//		<tr>
+			//		<td><span title="Regular_Expression_Text">REX</span></td>
+			//		<td><input type="text" class="Regular_Expression_Input_Text_CLS" value="^.*(東京都).*$" title="Regular_Expression_Input_Text" style="width:80px;"></td>
+			//		<td><input type="text" class="Regular_Expression_Output_Text_CLS" value='"\\0" + "$1"' title="Regular_Expression_Output_Text" style="width:80px;"></td>
+			//		</tr>
+			//	</tbody></table></td></tr>
+			//==========DIVISION==========
+			var ID;
+			ele00=document.getElementsByClassName("CCJP_Table")[0];
+			ele01=ele00.getElementsByClassName("Regular_Expression_Table")[0];
+			//ele02=ele01.getElementsByClassName("Regular_Expression_Function_CLS")[0];
+			ele03=ele01.getElementsByClassName("Regular_Expression_Text_Select_Type")[0];
+			ele04=ele01.getElementsByClassName("Regular_Expression_Normal_Text_CLS")[0];
+			ele05=ele01.getElementsByClassName("Regular_Expression_Input_Text_CLS")[0];
+			ele06=ele01.getElementsByClassName("Regular_Expression_Output_Text_CLS")[0];
+			//==========DIVISION==========
+			//console.log(evt_target);
+			if ( evt_target.className=="Regular_Expression_Text_Select_Type" )
+			{
+				ID=evt_target.selectedIndex;
+				if ( ele03.options[evt_target.selectedIndex].innerHTML==REX_CT_CLS.ARR[ID].Name.replace(/^_(.+)$/gm,"$1") )
+				{
+					ele04.value=REX_CT_CLS.ARR[ID].Rex_Text.Normal	;
+					ele05.value=REX_CT_CLS.ARR[ID].Rex_Text.Input	;
+					ele06.value=REX_CT_CLS.ARR[ID].Rex_Text.Output	;
+				}
+				else		{}
+			}
+			else if ( evt_target.className=="Regular_Expression_Normal_Text_CLS" )
+			{
+				if ( ele03.options[ele03.selectedIndex].innerHTML=="_Normal".replace(/^_(.+)$/gm,"$1") )
+				{
+					ele04.value;'東京都';'^.*(東京都).*$';'"" + "$1"';
+					ele05.value='^.*(' + ele04.value + ').*$';
+					ele06.value='"" + "$1"';
+				}
+				else if ( ele03.options[ele03.selectedIndex].innerHTML=="_Number".replace(/^_(.+)$/gm,"$1") )
+				{
+					ele04.value;'24';
+					ele05.value='^.*(' + ele04.value + ')[^0-9]*$';		//'^.*(24).*$',		'^.*(24)[^0-9]*$',
+					ele06.value='"\\0"';								//'"\\0"',	'"-1"',	'"0"',	'"999$1"'
+				}
+				else if ( ele03.options[ele03.selectedIndex].innerHTML=="_String".replace(/^_(.+)$/gm,"$1") )
+				{
+					ele04.value;'東京都';'^.*(東京都).*$';'"" + "$1"';
+					ele05.value='^.*(' + ele04.value + ').*$';
+					ele06.value='"\\0" + "$1"';
+				}
+				else		{}
+			}
+			else		{}
+		}
+		else		{}
+	}
+	else if ( n==3 )//點擊了按鈕。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.className=="Open_Type_CLS" )
+		{
+		}
+		else
+		{}
+	}
+	else
+	{
+	}
+}
+//==================================================控件動作變化==================================================
+//==================================================CCJP_Hotkey_Mouse==================================================
+function CCJP_Hotkey_Mouse(ele,evt,post_method)
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+
+	//console.log("function now is : TEXT_ATTRIBUTION(ele,evt,n)");
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.outerHTML + "\n" + 
+	//	evt_target.tagName + "\n" + evt_target.className + "\n" + 
+	//	evt_target.tpye + "\n" + evt_target.getAttribute("type") + "\n" + 
+	//	evt_target.getAttribute("type_x_y"));
+
+	//evt.ctrlKey失效可能是其他函数的原因。
+	//console.log("evt _ evt.ctrlKey _ evt.altKey _ evt.shiftKey _ evt.which : " + evt + evt.ctrlKey + "_" + evt.altKey + "_" + evt.shiftKey + "_" + evt.which);
+	//						17				18			16
+
+	var referenceNode;
+	if ( post_method==0 && evt && evt.type=="keydown" && evt.which==13 )//enter:13;
+	{
+		
+		if ( ele.className=="CCJP_Table" && 
+			( evt_target.className=="IMG_Folder_Path_CLS" ) )
+		{
+			IMG_Folder_Path_INI(1);
+		}
+		else if ( ele.className=="CCJP_Table" && 
+			( evt_target.className=="One_Page.Person_Num" || evt_target.className=="One_Page.Page_ID_Now" || 
+				evt_target.className=="CCJP_Data_Folder_Name_END_Name_CLS" ) )
+		{
+			if ( evt_target.className=="CCJP_Data_Folder_Name_END_Name_CLS" )
+			{
+				ele00=document.getElementsByClassName("CCJP_Table")[0].getElementsByClassName("CCJP_Data_Folder_Name_END_Name_CLS")[0];
+				//"CCJP_PData";"CCJP_PData_Sample";"CCJP_PData_Self_Define";
+				if ( CCJP_Data_Folder_Name!=("CCJP_PData" + ele00.value) )
+				{
+					//CCJP_CT_View_INI();
+					//alert("CCJP_Data_CLS_INI()");
+					CCJP_Data_CLS_INI();
+					CCJP_CAT_Table_TAG_STR_INI();
+					//Regular_Expression_Table_INI();
+
+					ele00=document.getElementsByClassName("CCJP_Table")[0];
+					ele01=ele00.getElementsByClassName("CCJP_CT_View_Table." + CCJP_CT_View_NetWork_Type)[0];
+					ele01.click();
+
+					//var Initiation_Flag=0;
+					//Initiation();
+				}
+				else		{}
+			}
+			else		{}
+
+			ele01=evt_target.parentNode;
+			while ( ele01.className!="CCJP_CT_View_Table" )		{ele01=ele01.parentNode;}
+			ele01.getElementsByClassName("CCJP_CT_View_Table.View")[0].click();
+		}
+		else if ( ele.className=="CCJP_Table" && 
+			( evt_target.className=="Regular_Expression_Normal_Text_CLS" || 
+				evt_target.className=="Regular_Expression_Input_Text_CLS" || evt_target.className=="Regular_Expression_Output_Text_CLS" ) )
+		{
+			evt_target.blur();
+			evt_target.focus();
+			ele00=document.getElementsByClassName("CCJP_Table")[0];
+			ele01=ele00.getElementsByClassName("CCJP_Order_Table")[0];
+			//elel02=ele01.getElementsByClassName("Order_0");
+			//elel02=ele01.getElementsByClassName("Order_1");
+			ele03=ele01.getElementsByAttributeName("Order_Inuse",1)[0];
+			ele03.focus();
+			ele03.click();
+		}
+		else
+		{
+		}
+	}
+	else if ( post_method==0 && evt && evt.type=="keydown" && 
+				( ( evt.which == 33 || evt.which == 34 || evt.which == 38 || evt.which == 40 || evt.which == 36 || evt.which == 35 ) || 
+				( evt.which == 38 || evt.which == 40 ) || 
+				//( evt.which == 17 && evt.ctrlKey || evt.which == 18 && evt.altKey || evt.which == 16 && evt.shiftKey ) || 
+				0 ) )
+	{
+		/*
+		up arrow	38
+		down arrow	40
+		page up		33
+		page down	34
+		home	36
+		end		35
+		*/
+		var i,j,str;
+		var NUM_10,NUM_X,NUM_MIN,NUM_MAX;
+		var number_system,NS,NUM_SYS_MAX;
+		var NS_01;
+		var evt_sd;
+		if ( ele.className=="CCJP_Table" && 
+				( evt_target.className=="One_Page.Person_Num" || evt_target.className=="One_Page.Page_ID_Now" ) )
+		{
+			NUM_MIN=0;NUM_MAX=10000*10000;
+
+			//evt_target.value=("00" + evt_target.value).slice(-2);
+			NUM_10=parseInt(evt_target.value,10);
+			num00=0;
+			if		( evt.which == 38 )		{num00++;}//up arrow		38
+			else if ( evt.which == 40 )		{num00--;}//down arrow		40
+			else if ( evt.which == 33 )		{num00+=10;}//page up		33
+			else if ( evt.which == 34 )		{num00-=10;}//page down	34
+			else if ( evt.which == 36 )		{num00+=100;}//home		36
+			else if ( evt.which == 35 )		{num00-=100;}//end			35
+			else							{}
+
+			if ( evt.ctrlKey || evt.altKey || evt.shiftKey )
+			{
+				if ( evt.ctrlKey )			{num00*=Math.pow(10,1);}
+				else if ( evt.altKey )		{num00*=Math.pow(10,2);}
+				else if ( evt.shiftKey )	{num00*=Math.pow(10,3);}
+				else						{num00*=Math.pow(10,0);}
+			}
+			else							{num00*=Math.pow(10,0);}
+
+			NUM_10+=num00;
+			if		( NUM_10<NUM_MIN )		{NUM_10=NUM_MIN;}
+			else if ( NUM_10>NUM_MAX )		{NUM_10=NUM_MAX;}
+			else							{}
+
+			if ( evt_target.className=="One_Page.Person_Num" )
+			{
+				if ( NUM_10>CCJP_CAT_Table_CLS.Total.Person_Num )	{NUM_10=CCJP_CAT_Table_CLS.Total.Person_Num;}
+				else if ( NUM_10==0 )								{NUM_10=1;}
+				else												{}
+				CCJP_CAT_Table_CLS.One_Page.Person_Num=NUM_10;
+			}
+			else if ( evt_target.className=="One_Page.Page_ID_Now" )
+			{
+				if ( NUM_10>CCJP_CAT_Table_CLS.Total.Page_Num )		{NUM_10=CCJP_CAT_Table_CLS.Total.Page_Num;}
+				else												{}
+				CCJP_CAT_Table_CLS.One_Page.Page_ID_Now=NUM_10;
+			}
+			else		{}
+
+			evt_target.value=NUM_10;
+
+			CCJP_CAT_Table_CLS.Total.Page_Num=Math.ceil(CCJP_CAT_Table_CLS.Total.Person_Num / CCJP_CAT_Table_CLS.One_Page.Person_Num);
+
+			if ( CCJP_CAT_Table_CLS.One_Page.Page_ID_Now>=CCJP_CAT_Table_CLS.Total.Page_Num )
+			{
+				CCJP_CAT_Table_CLS.One_Page.Page_ID_Now=CCJP_CAT_Table_CLS.Total.Page_Num - 1;
+			}
+			//==========DIVISION==========
+			ele00=document.getElementsByClassName("CCJP_Table")[0];
+			ele00.getElementsByClassName("One_Page.Person_Num")[0].value	=CCJP_CAT_Table_CLS.One_Page.Person_Num;
+			ele00.getElementsByClassName("One_Page.Page_ID_Now")[0].value	=CCJP_CAT_Table_CLS.One_Page.Page_ID_Now;
+			ele00.getElementsByClassName("Total.Person_Num")[0].value		=CCJP_CAT_Table_CLS.Total.Person_Num;
+			ele00.getElementsByClassName("Total.Page_Num")[0].value			=CCJP_CAT_Table_CLS.Total.Page_Num;
+			//==========DIVISION==========
+
+			console.log("CCJP_CAT_Table_CLS.One_Page.Person_Num : " + CCJP_CAT_Table_CLS.One_Page.Person_Num + ";\t" + 
+						"CCJP_CAT_Table_CLS.One_Page.Page_ID_Now : " + CCJP_CAT_Table_CLS.One_Page.Page_ID_Now + ";\t" + 
+						"");
+		}
+		else
+		{
+		}
+
+		//console.log(evt_target.className + "\n" + ele.className);
+	}
+	else
+	{
+	}
+}
+//==================================================CCJP_Hotkey_Mouse==================================================
+</script>
+
+<table class="CCJP_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onmouseover=TEXT_ATTRIBUTION(this,event,0) onmouseout=TEXT_ATTRIBUTION(this,event,1) onchange=TEXT_ATTRIBUTION(this,event,2) onkeydown=CCJP_Hotkey_Mouse(this,event,0)><tbody>
+<tr><td style="vertical-align:top;overflow-x:scroll;overflow-y:scroll;">
+	<div style="height:880px;"><table class="CCJP_Order_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:0px;border-color:black;" onclick=CCJP_Order_Table_Select(this,event,0)><tbody>
+	<!--================================================================================-->
+	<!--========================================-->
+	<tr><td colspan="3">
+		<table class="CCJP_CT_View_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+		<tr>
+		<td colspan="6"><table borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+			<tr>
+			<td><input type="text" class="IMG_Folder_Path_CLS" title="IMG_Folder_Path" value="" style="width:120px;"></td>
+			<td><input type="text" class="CCJP_Data_Folder_Name_END_Name_CLS" title="CCJP_Data_Folder_Name_END_Name" value="_Sample" style="width:66px;"></td>
+			<!--
+			CCJP_Data_Folder_Name="CCJP_PData";//"CCJP_PData";"CCJP_PData_Sample";"CCJP_PData_Self_Define";
+			-->
+			</tr>
+		</tbody></table></td>
+		</tr>
+		<tr>
+		<td><span title="One_Page.Person_Num">PNum</span></td>
+		<td><input type="text" class="One_Page.Person_Num" title="One_Page.Person_Num" value="0" style="width:40px;"></td>
+		<td><input type="text" class="Total.Person_Num" title="Total.Person_Num" value="0" style="width:40px;" disabled></td>
+		<td><input type="button" class="CCJP_CT_View_Table.View" value="V" title="View" onclick=CCJP_CT_Table_View(this)></td>
+		<td><input type="button" class="CCJP_CT_View_Table.ORI" value="ORI" title="Orginal Website" onclick=CCJP_CT_Table_View(this)></td>
+		<td><input type="button" class="CCJP_CT_View_Table.IMG" value="IMG" title="IMG Only" onclick=CCJP_CT_Table_View(this)></td>
+		</tr>
+		<tr>
+		<td><span title="One_Page.Page_ID_Now">PIDN</span></td>
+		<td><input type="text" class="One_Page.Page_ID_Now" title="One_Page.Page_ID_Now" value="0" style="width:40px;"></td>
+		<td><input type="text" class="Total.Page_Num" title="Total.Page_Num" value="0" style="width:40px;" disabled></td>
+		<td></td>
+		<td><input type="button" class="CCJP_CT_View_Table.Online" value="ON" title="Online" onclick=CCJP_CT_Table_View(this)></td>
+		<td><input type="button" class="CCJP_CT_View_Table.Offline" value="OFF" title="Offline" onclick=CCJP_CT_Table_View(this)></td>
+		</tr>
+		</tbody></table>
+	</td></tr>
+	<!--========================================-->
+	<tr><td colspan="3"><table class="Regular_Expression_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+		<tr>
+		<td colspan="2"><input type="button" class="Regular_Expression_Function_CLS" value="S" title="Regular_Expression_Function : search/match/replace ." onclick=Regular_Expression_Function_Switch(this) style="width:15px;"><select class="Regular_Expression_Text_Select_Type" style="width:72px;"></select></td>
+		<td><input type="text" class="Regular_Expression_Input_Text_CLS" value="" title="Regular_Expression_Input_Text" style="width:100px;"></td>
+		</tr>
+		<tr>
+		<td><span class="Regular_Expression_Text_Title_CLS" title="Regular_Expression_Text">REX</span></td>
+		<td><input type="text" class="Regular_Expression_Normal_Text_CLS" value="" title="Regular_Expression_Normal_Text" style="width:65px;"></td>
+		<td><input type="text" class="Regular_Expression_Output_Text_CLS" value='""' title="Regular_Expression_Output_Text" style="width:100px;"></td>
+		</tr>
+	</tbody></table></td></tr>
+	<!--========================================-->
+	<tr><td>Page_ID</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Page_IPID</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Person_ID</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>PIC.icon</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>PIC.logo</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Main.name</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Main.href</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Main.catchCopy</td>					<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Main.genre</td>						<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Profile.currentPrefecturesId</td>	<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Profile.country</td>				<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Profile.birthdate</td>				<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Profile.height</td>					<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Profile.gender</td>					<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Birthplace.prefectureId</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td colspan=3><hr></td></tr>
+	<!--========================================-->
+	<tr><td colspan=3><input type="button" class="Personal_Detail_Show_Hide_CLS" value="Personal_Detail_Show_Hide" state=0 onclick=Personal_Detail_Show_Hide(this)></td></tr>
+	<tr class="O1P"><td>cast_name.title</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>cast_name.text</td>		<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>birthdate.title</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1_"><td>birthdate.text</td>		<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>sex.title</td>			<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>sex.text</td>			<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>_location.title</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>_location.text</td>		<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>birthplace.title</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>birthplace.text</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>job.title</td>			<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1_"><td>job.text</td>			<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>body_height.title</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<tr class="O1P"><td>body_height.text</td>	<td><input type="button" class="Order_1" value="↑"></td><td><input type="button" class="Order_1" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td colspan=3><hr></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.twitter.text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.twitter.url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.twitter.like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.instagram.text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.instagram.url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.instagram.like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.youtube.text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.youtube.url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.youtube.like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.tiktok.text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.tiktok.url</td>				<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.tiktok.like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td colspan=3><hr></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.other[0].text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[0].url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[0].like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.other[1].text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[1].url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[1].like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.other[2].text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[2].url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[2].like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.other[3].text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[3].url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[3].like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td>Sidesns.other[4].text</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[4].url</td>			<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<tr><td>Sidesns.other[4].like_num</td>		<td><input type="button" class="Order_0" value="↑"></td><td><input type="button" class="Order_0" value="↓"></td></tr>
+	<!--========================================-->
+	<tr><td colspan=3><hr></td></tr>
+	<!--========================================-->
+	<!--================================================================================-->
+	</tbody></table></div>
+</td>
+<td style="display:none;">
+	<table class="CCJP_CAT_Table_Mode" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+	<tr><td>
+		<table class="One_Person" borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+		<tr><td>
+			<table borderColor=#000000 cellSpacing=0 cellPadding=0 border=0><tbody>
+			<tr><td><img class="PIC.icon" src="../Official_Portable/cloudcasting.jp/uploaded/model/4224/smallImage/bmsImageHash1.jpeg" style="width:84px;" onclick=Show_CCJP_Person_Info(this)></td></tr>
+			<tr style="display:none;"><td><img class="PIC.logo" src="../Official_Portable/cloudcasting.jp/uploaded/castlist/406/castgenreImage.png" style="width:21px;height:21px;"></td></tr>
+			</tbody></table>
+		</td>
+		<td>
+			<table borderColor=#000000 cellSpacing=0 cellPadding=0 border=1><tbody>
+			<tr><td>
+				<span class="Page_ID" title="Page_ID">[01053]</span>
+				<span class="Page_IPID" title="Page_IPID">[00013]</span>
+				<span class="Person_ID" title="Person_ID">[21073]</span>
+			</td></tr>
+			<tr><td>
+				<input type="button" class="Main.name" value="中野菜保子(Nao)" onclick=Show_CCJP_Person_Info(this)>
+				<a class="Main.href" href="https://cloudcasting.jp/profile/MTcyODE19b4" target=_blank>URL</a>
+				<span class="Main.catchCopy" title="Main.catchCopy">変幻自在のカメレオン役者</span><br>
+				<span class="Main.genre" title="Main.genre">愛知県 / モデル / インフルエンサー / タレント・著名人 / 専門家・スペシャリスト / キャンペーンモデル / アーティスト / ライター / 声優 / クリエイター / 俳優・女優</span>
+			</td></tr>
+			<tr><td>
+				<span class="Profile.currentPrefecturesId" title="Profile.currentPrefecturesId">愛知県</span>
+				<span class="Profile.country" title="Profile.country">日本</span>
+				<span class="Profile.birthdate" title="Profile.birthdate">46歳</span>
+				<span class="Profile.height" title="Profile.height">155cm</span>
+				<span class="Profile.gender" title="Profile.gender">女性</span>
+				<span class="Birthplace.prefectureId" title="Birthplace.prefectureId">出身：大阪府</span>
+			</td></tr>
+			<tr><td class="Personal_Detail_Text_SPAN_Slim">
+				<span class="cast_name.title" title="cast_name.title">キャスト名</span>
+				<span class="cast_name.text" title="cast_name.text">ひな</span>
+				<span class="birthdate.title" title="birthdate.title">生年月日</span>
+				<span class="birthdate.text" title="birthdate.text">1992-12-30 (29歳)</span>
+				<span class="sex.title" title="sex.title">性別</span>
+				<span class="sex.text" title="sex.text">女性</span>
+				<span class="_location.title" title="_location.title">在住</span>
+				<span class="_location.text" title="_location.text">日本 神奈川県</span>
+				<span class="birthplace.title" title="birthplace.title">出身都道府県</span>
+				<span class="birthplace.text" title="birthplace.text">---</span>
+				<span class="job.title" title="job.title">職業</span>
+				<span class="job.text" title="job.text">student</span>
+				<span class="body_height.title" title="body_height.title">身長</span>
+				<span class="body_height.text" title="body_height.text">164cm</span>
+			</td></tr>
+			<tr><td>
+			<table borderColor=#000000 cellSpacing=0 cellPadding=0 border=1><tbody>
+				<tr>
+				<td><div class="Sidesns.twitter"><a href="https://twitter.com/nakanonaoko" target=_blank><img src="../Official_Portable/cloudcasting.jp/images/client/icon_twitter_on.png"><span>393</span></a></div></td>
+				<td><div class="Sidesns.instagram"><a href="https://www.instagram.com/naokonakano8319" target=_blank><img src="../Official_Portable/cloudcasting.jp/images/client/icon_instagram_on.png"><span>30128</span></a></div></td>
+				<td><div class="Sidesns.youtube"><a href="https://www.youtube.com/user/" target=_blank><img src="../Official_Portable/cloudcasting.jp/images/client/icon_youtube_on.png"><span>4590</span></a></div></td>
+				<td><div class="Sidesns.tiktok"><a href="https://www.tiktok.com/" target=_blank><img src="../Official_Portable/cloudcasting.jp/images/client/icon_tiktok_on.png"><span>null</span></a></div></td>
+				</tr>
+			</tbody></table>
+			</td></tr>
+			<tr><td>
+			<table borderColor=#000000 cellSpacing=0 cellPadding=0 border=1><tbody>
+				<tr>
+				<td><div class="Sidesns.other"><a href="https://followme.app/@NaokoNakano" target=_blank><img src=""><span>10</span></a></div></td>
+				<td><div class="Sidesns.other"><a href="https://www.facebook.com/naoko.nakano" target=_blank><img src=""><span>4720</span></a></div></td>
+				<td><div class="Sidesns.other"><a href="" target=_blank><img src=""><span>null</span></a></div></td>
+				<td><div class="Sidesns.other"><a href="" target=_blank><img src=""><span>null</span></a></div></td>
+				<td><div class="Sidesns.other"><a href="" target=_blank><img src=""><span>null</span></a></div></td>
+				</tr>
+			</tbody></table>
+			</td></tr>
+			</tbody></table>
+		</td></tr>
+		</tbody></table>
+	</td></tr>
+	</tbody></table>
+</td>
+<td style="vertical-align:top;overflow-x:scroll;overflow-y:scroll;">
+	<div style="width:310px;height:880px;"><table class="CCJP_CAT_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody></tbody></table></div>
+</td></tr>
+</tbody></table>
+
+<style type="text/css" class="Personal_Detail_CSS_Detail" style="display:none;">
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.cast_name\.title	{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.cast_name\.text		{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.birthdate\.title	{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.birthdate\.text		{}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.sex\.title			{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.sex\.text			{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span._location\.title	{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span._location\.text		{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.birthplace\.title	{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.birthplace\.text	{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.job\.title			{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.job\.text			{}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.body_height\.title	{display:none;}
+	table.One_Person td.Personal_Detail_Text_SPAN_Slim span.body_height\.text	{display:none;}
+
+	table.CCJP_Table table.CCJP_Order_Table tr.O1P								{display:none;}
+	/*
+	How to write ?
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(2)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(3)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(4)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(5)			{}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(6)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(7)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(8)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(9)			{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(10)		{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(11)		{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(12)		{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(13)		{}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(14)		{display:none;}
+	table.CCJP_Order_Table tr>td>input.Order_1:nth-child(15)		{display:none;}
+	*/
+</style>
+
+<script type="text/javascript">
+var Initiation_Flag=0;
+
+console.log("TIME_0000_ALL_BEGIN : " + TIME_NOW("-"));
+
+function Initiation()
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	//console.log(arguments.callee.name);
+	//console___log("function now is : Initiation()");
+
+	if ( Initiation_Flag==1 )
+	{
+		document.getElementsByTagName("body")[0].setAttribute("onmouseover","");
+		return;
+	}
+	var i,j,ele00,INI_Flag;
+
+	INI_Flag=0;
+	//==========DIVISION==========
+	CCJP_ALL_TAG_INI();
+	IMG_Folder_Path_INI(0);
+	//alert("LONG_TIME_0000");
+	console.log("TIME_0001_Read_Data_File_&_Order_Data : " + TIME_NOW("-"));
+	CCJP_CT_View_INI();
+	CCJP_Data_CLS_INI();
+	//alert("LONG_TIME_0001");
+	CCJP_CAT_Table_TAG_STR_INI();
+	Regular_Expression_Table_INI();
+	Personal_Detail_Show_Hide_INI();
+	//alert("LONG_TIME_0002");
+	//==========DIVISION==========
+	console.log("TIME_0002_Click_BTN_Order_Data : " + TIME_NOW("-"));
+	ele00=document.getElementsByClassName("CCJP_Table")[0];
+	ele01=ele00.getElementsByClassName("CCJP_CT_View_Table.Offline")[0];
+	ele01.click();
+
+	ele01=ele00.getElementsByClassName("CCJP_Order_Table")[0];
+	ele01.getElementsByClassName("Order_0")[4].click();//"Person_ID";"↑";
+	//==========DIVISION==========
+	TTI_IN_USE=1000;
+
+	Initiation_Flag=1;
+	//==========DIVISION==========
+}
+Initiation();
+
+console.log("TIME_0010_ALL_END : " + TIME_NOW("-"));
+</script>
+</body>
+</html>
