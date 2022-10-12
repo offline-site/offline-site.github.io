@@ -1,3 +1,6 @@
 View Portable Website Here :
 portablesites.github.io
 https://portablesites.github.io/index.html
+
+Suggest to use Google Chrome , and use command line :
+chrome.exe --disable-site-isolation-trials
