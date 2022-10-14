@@ -1,0 +1,3003 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=10">
+<link rel="stylesheet" type="text/css" href="BASE_CSS_STYLE.css">
+<script type="text/javascript" src="BASE_JAVASCRIPT_FUNCTION.js"></script>
+<script type="text/javascript" src="BASE_JS_i_j_k_m_n_FUN.js"></script>
+<script type="text/javascript" src="BASE_XML_FUNCTION.js"></script>
+<script type="text/javascript" src="base64_encode_decode.js"></script>
+<script type="text/javascript" src="readAs_Type_Convert.js"></script>
+<title>美人時計_Portable(https://www.bijint.com/)</title>
+<style type="text/css">
+*
+{
+	margin:					0px;
+	padding:				0px;
+	/*zoom:					0.98;*/
+}
+</style>
+<style type="text/css">
+.Bijint_Table td
+{
+	vertical-align:			top;
+}
+
+.Bijint_Category_Top input,.Bijint_Category_Left input
+{
+	height:					24px;
+}
+.Bijint_Category_Set_CLS input
+{
+	height:					20px;
+}
+.Bijint_Data_Location_CLS
+{
+	width:					45px;
+}
+</style>
+</head>
+
+<body bgcolor=#CCE8CF>
+<script type="text/javascript">
+//==================================================IE7==================================================
+if ( Browser_Type=="MSIE" && parseInt(Browser_Ver,10)>=7 && parseInt(Browser_Ver,10)<10 )
+{
+	//var console={log:null};
+	//BUG ! IE11 下进入不了此IF，但上一句不注释的话也会有效。
+	eval("var console={log:null};");
+	console.log=function(str){};
+}
+else		{}
+
+function JS_IE7_Clone_Node_Via_Node(Node_Dest,Node_Src)
+{
+	if ( Browser_Type=="MSIE" && parseInt(Browser_Ver,10)>=7 && parseInt(Browser_Ver,10)<10 )
+	{
+		var i;
+		for (i=0;i<Node_Dest.childNodes.length;)
+		{
+			//Node_Dest.childNodes[i].remove();
+			Node_Dest.removeChild(Node_Dest.childNodes[i]);
+		}
+		for (i=0;i<Node_Src.childNodes.length;i++)
+		{
+			Node_Dest.appendChild(Node_Src.childNodes[i].cloneNode(true));
+		}
+	}
+	else
+	{
+		Node_Dest.innerHTML=Node_Src.innerHTML;
+	}
+}
+
+function JS_IE7_Clone_Node_Via_STR(Node_Dest,STR_Src)
+{
+	//IN IE7 , innerHTML 里面有 table 就达不到效果，以后会出错。
+	if ( Browser_Type=="MSIE" && parseInt(Browser_Ver,10)>=7 && parseInt(Browser_Ver,10)<10 )
+	{
+		var ele00;
+		if ( Node_Dest.tagName.toUpperCase()=="TABLE" || Node_Dest.tagName.toUpperCase()=="TBODY" )		{ele00=document.createElement("DIV");}
+		else																							{ele00=document.createElement(Node_Dest.tagName);}
+		//ele00.appendChild(document.createTextNode(STR_Src));
+		ele00.innerHTML=STR_Src;
+		//ele00.innerHTML="";
+
+		for (i=0;i<Node_Dest.childNodes.length;)
+		{
+			//Node_Dest.childNodes[i].remove();
+			Node_Dest.removeChild(Node_Dest.childNodes[i]);
+		}
+		for (i=0;i<ele00.childNodes.length;i++)
+		{
+			Node_Dest.appendChild(ele00.childNodes[i].cloneNode(true));
+		}
+		//alert(ele00.innerHTML.length);
+		//alert(Node_Dest.innerHTML.length);
+	}
+	else
+	{
+		Node_Dest.innerHTML=STR_Src;
+	}
+}
+//==================================================IE7==================================================
+//==================================================ActiveX==================================================
+//========================================Pre_Definition========================================
+//==========DIVISION==========
+var Local_Path=decodeURIComponent(location.href.replace(/\/[^\/]*$/gm,"\/")
+				.replace(/^http[s]*:\/\/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\//gm,"M:\\Program Files\\INITIATION HTML\\")
+				.replace(/file\:\/\/\//gm,"").replace(/\//gm,"\\"));
+var IMG_Folder_Path="P:\\LD\\30\\10\\PIC_LIB\\美人時計\\";
+//==========DIVISION==========
+var Bijint_Actual_Data_Inuse;
+if ( Browser_Type=="MSIE" )
+{
+	Bijint_Actual_Data_Inuse=0;
+}
+else if ( Browser_Type=="Chrome" || Browser_Type=="OPR" || 
+			Browser_Type=="Firefox" || Browser_Type=="SeaMonkey" || Browser_Type=="Waterfox" || 
+			Browser_Type=="Safari" )
+{
+	Bijint_Actual_Data_Inuse=1;
+}
+else
+{
+	Bijint_Actual_Data_Inuse=0;
+}
+//==========DIVISION==========
+//========================================Pre_Definition========================================
+//========================================For_IE7-8========================================
+function getElementsByClassName(node,classname)
+{
+	var a = [];
+	var re = new RegExp('(^| )'+classname+'( |$)');
+	var els = node.getElementsByTagName("*");
+	for(var i=0,j=els.length; i<j; i++)
+	{
+		if(re.test(els[i].className))
+		{
+			a.push(els[i]);
+		}
+	}
+	return a;
+}
+//========================================For_IE7-8========================================
+//========================================Scripting.FileSystemObject_INI========================================
+function IE_Read_Text_File(path_ori,charset_ori)
+{
+	var File_Obj,File_CT;
+	//var WshShell=new ActiveXObject("WScript.Shell");
+	//var S_FSO=new ActiveXObject("Scripting.FileSystemObject");
+	//var ADODB_stream=new ActiveXObject("ADODB.stream");
+	if ( charset_ori=="ANSI" || charset_ori=="Unicode" )
+	{
+		//==========DIVISION==========
+		var S_FSO=new ActiveXObject("Scripting.FileSystemObject");
+		//==========DIVISION==========
+		//object.OpenTextFile(filename[, iomode[, create[, format]]])
+		//==========DIVISION==========
+		var filename;
+		//==========DIVISION==========
+		var iomode;
+		var ForReading			=1;		//Open a file for reading only. You can't write to this file.
+		var ForWriting			=2;		//Open a file for writing.
+		var ForAppending		=8;		//Open a file and write to the end of the file.
+		//==========DIVISION==========
+		var create;						//false	true
+		//==========DIVISION==========
+		var format;
+		var TristateTrue		=-1;	//Open the file as Unicode.
+		var TristateFalse		=0;		//Open the file as ASCII.
+		var TristateUseDefault	=-2;	//Open the file using the system default.
+		//==========DIVISION==========
+		filename=path_ori;//filename="_DEL_BAK.bat";
+		iomode=ForReading;
+		create=false;
+		if ( charset_ori=="ANSI" )			{format=TristateFalse;}
+		else if ( charset_ori=="UTF-8" )	{format=TristateFalse;}
+		else if ( charset_ori=="Unicode" )	{format=TristateTrue;}
+		else								{}
+		//==========DIVISION==========
+		File_CT;
+		File_Obj=S_FSO.OpenTextFile(Local_Path + filename,iomode,create,format);
+		while ( !File_Obj.AtEndOfStream )
+		{
+			//以下2行都可以。
+			//File_CT=File_CT + File_Obj.Read(123);//Read(?),?>=1;
+			//File_CT=File_CT + File_Obj.ReadLine() + "\r\n";
+			File_CT=File_Obj.ReadAll();
+		}
+		File_Obj.close();
+		//==========DIVISION==========
+		//	if ( charset_ori=="UTF-8" )			{File_CT=Base64._utf8_encode_mod_01(File_CT);}
+		//	else								{}
+		//	if ( charset_ori=="UTF-8" )			{File_CT=Base64._utf8_decode(File_CT);}//IE11 can not be a right effect .
+		//	else								{}
+		//==========DIVISION==========
+	}
+	else if ( charset_ori=="UTF-8" )
+	{
+		//==========DIVISION==========
+		//	"ADODB.stream"
+		//	Property		Description
+		//	CharSet			Sets or returns a value that specifies into which character set the contents are to be translated.
+		//					This property is only used with text Stream objects (type is adTypeText)
+		//	EOS				Returns whether the current position is at the end of the stream or not
+		//	LineSeparator	Sets or returns the line separator character used in a text Stream object
+		//	Mode			Sets or returns the available permissions for modifying data
+		//	Position		Sets or returns the current position (in bytes) from the beginning of a Stream object
+		//	Size			Returns the size of an open Stream object
+		//	State			Returns a value describing if the Stream object is open or closed
+		//	Type			Sets or returns the type of data in a Stream object
+		//==========DIVISION==========
+		var ADODB_stream=new ActiveXObject("ADODB.stream");
+		//==========DIVISION==========
+		var Charset;							//"UTF-8";
+		var EOS;
+		//==========DIVISION==========
+		var LineSeparator;
+		var adCRLF					=-1;		//Default. Carriage return line feed
+		var adLF					=10;		//Line feed only
+		var adCR					=13;		//Carriage return only
+		//==========DIVISION==========
+		var Mode;
+		var adModeUnknown			=0;			//Permissions have not been set or cannot be determined.
+		var adModeRead				=1;			//Read-only.
+		var adModeWrite				=2;			//Write-only.
+		var adModeReadWrite			=3;			//Read/write.
+		var adModeShareDenyRead		=4;			//Prevents others from opening a connection with read permissions.
+		var adModeShareDenyWrite	=8;			//Prevents others from opening a connection with write permissions.
+		var adModeShareExclusive	=12;		//Prevents others from opening a connection.
+		var adModeShareDenyNone		=16;		//Allows others to open a connection with any permissions.
+		var adModeRecursive			=0x400000;	//Used with adModeShareDenyNone, adModeShareDenyWrite, or adModeShareDenyRead to set permissions on all sub-records of the current Record.
+		//==========DIVISION==========
+		var Position;
+		var Size;
+		//==========DIVISION==========
+		var State;
+		var adStateClosed			=0;			//The object is closed
+		var adStateOpen				=1;			//The object is open
+		var adStateConnecting		=2;			//The object is connecting
+		var adStateExecuting		=4;			//The object is executing a command
+		var adStateFetching			=8;			//The rows of the object are being retrieved
+		//==========DIVISION==========
+		var Type;
+		var adTypeBinary 			=1;			//Binary data
+		var adTypeText				=2;			//Default. Text data
+		//==========DIVISION==========
+		ADODB_stream.Charset		=charset_ori;
+		//	ADODB_stream.EOS			;
+		//	ADODB_stream.LineSeparator	;
+		ADODB_stream.Mode			=adModeReadWrite;
+		//	ADODB_stream.Position		;
+		//	ADODB_stream.Size			;
+		//	ADODB_stream.State			;
+		ADODB_stream.Type			=adTypeText;
+		ADODB_stream.Open();
+		ADODB_stream.LoadFromFile(Local_Path + path_ori);
+		File_CT=ADODB_stream.readtext;
+		ADODB_stream.Close();
+		ADODB_stream=null;
+		//==========DIVISION==========
+	}
+	else							{}
+
+	return File_CT;
+}
+//========================================Scripting.FileSystemObject_INI========================================
+//==================================================ActiveX==================================================
+//==================================================Bijint==================================================
+//========================================Bijint_CLS========================================
+//==============================Bijint_INI==============================
+function Bijint_Portable_INI()
+{
+	var Bijint_Portable_INI_STR;
+	if ( Browser_Type=="MSIE" )
+	{
+		Bijint_Portable_INI_STR=IE_Read_Text_File("Bijint_Portable_INI.js","UTF-8");
+	}
+	else if ( Browser_Type=="Chrome" || Browser_Type=="OPR" || 
+				Browser_Type=="Firefox" || Browser_Type=="SeaMonkey" || Browser_Type=="Waterfox" || 
+				Browser_Type=="Safari" )
+	{
+		Bijint_Portable_INI_STR=ReadTextFile("Bijint_Portable_INI.js");
+	}
+	else
+	{
+		Bijint_Portable_INI_STR="";
+	}
+	//eval(Bijint_Portable_INI_STR);										//局部函数。
+	var ele00=document.createElement("script");								//全局函数。
+	//ele00.innerHTML=Bijint_Portable_INI_STR;								//IE7-IE8 Failure .
+	//ele00.appendChild(document.createTextNode(Bijint_Portable_INI_STR));	//IE7-IE8 Failure .
+	ele00.text=Bijint_Portable_INI_STR;										//ALL_OK .
+	document.getElementsByTagName("body")[0].appendChild(ele00);
+
+	//alert(Bijint_Table_ID_Inuse);
+}
+Bijint_Portable_INI();
+
+var Bijint						=
+{
+	Archive_2014				:	{},
+	Official_2022				:	{},
+	//==========Model_Only==========
+	Bijint_Data_Inner			:
+	{
+		DIR						:
+		{
+			JPG					:
+			{
+				ORI_Size		:	{},
+				Small_Size		:	{}
+			},
+			_JSON				:	{}
+		},
+		//Category_Name			:
+		CAT						:
+		{
+			JPG					:
+			{
+				ORI_Size		:	{},
+				Small_Size		:	{}
+			},
+			_JSON				:	{},
+			ALL					:	{}
+		},
+		//Data					:
+		DAT						:
+		{
+			_JSON				:	{}
+		},
+	},
+	Bijint_Data_Type			:
+	{
+		File_Path				:	"",
+		STR						:	"",
+		ARR						:	""
+	}
+	//==========Model_Only==========
+};
+
+function Bijint_Data_Refinery(str,type)
+{
+	if ( type==0 )
+	{
+		str=str.replace(/\r\n/gm,"\n");
+		str=(str + "●●●●●").replace(/[\n]+●●●●●$/gm,"");
+		str=str.replace(/\t$/gm,"").replace(/[\t]+/gm,"\t").replace(/"/gm,"");
+	}
+	else if ( type==1 )
+	{
+		str=str.replace(/\r\n/gm,"\n");
+		str=(str + "●●●●●").replace(/[\n]+●●●●●$/gm,"");
+	}
+	else				{}
+
+	return str;
+}
+
+function Bijint_INI()
+{
+	//==========DIVISION==========
+	Bijint.Archive_2014											=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Inner));
+	Bijint.Archive_2014.DIR.JPG.ORI_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.DIR.JPG.Small_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.DIR._JSON								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.CAT.JPG.ORI_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.CAT.JPG.Small_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.CAT._JSON								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.CAT.ALL									=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Archive_2014.DAT._JSON								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022										=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Inner));
+	Bijint.Official_2022.DIR.JPG.ORI_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.DIR.JPG.Small_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.DIR._JSON								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.CAT.JPG.ORI_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.CAT.JPG.Small_Size						=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.CAT._JSON								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.CAT.ALL								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	Bijint.Official_2022.DAT._JSON								=JSON.parse(JSON.stringify(Bijint.Bijint_Data_Type));
+	//==========DIVISION==========
+	Bijint.Archive_2014.DIR.JPG.ORI_Size.File_Path				="美人時計_Data\\美人時計_JPG_ALL_00_Archive_2014+_ORI_Size.txt"				;
+	Bijint.Archive_2014.DIR.JPG.Small_Size.File_Path			="美人時計_Data\\美人時計_JPG_ALL_00_Archive_2014+_Small_Size.txt"				;
+	Bijint.Archive_2014.DIR._JSON.File_Path						="美人時計_Data\\美人時計_JSON_ALL_06_Archive_2014+_DIR_01.txt"					;
+	Bijint.Archive_2014.CAT.JPG.ORI_Size.File_Path				="美人時計_Data\\美人時計_JPG_Category_Name_Archive_2014+_ORI_Size.txt"			;
+	Bijint.Archive_2014.CAT.JPG.Small_Size.File_Path			="美人時計_Data\\美人時計_JPG_Category_Name_Archive_2014+_Small_Size.txt"		;
+	Bijint.Archive_2014.CAT._JSON.File_Path						="美人時計_Data\\美人時計_JSON_Category_Name_Archive_2014+.txt"					;
+	Bijint.Archive_2014.CAT.ALL.File_Path						="美人時計_Data\\美人時計_ALL_Category_Name_Archive_2014+.txt"					;
+	Bijint.Archive_2014.DAT._JSON.File_Path						="美人時計_Data\\美人時計_JSON_ALL_02_Archive_2014+_CAT.txt"					;
+	Bijint.Official_2022.DIR.JPG.ORI_Size.File_Path				="美人時計_Data\\美人時計_JPG_ALL_00_Official_2022-01-25_ORI_Size.txt"			;
+	Bijint.Official_2022.DIR.JPG.Small_Size.File_Path			="美人時計_Data\\美人時計_JPG_ALL_00_Official_2022-01-25_Small_Size.txt"		;
+	Bijint.Official_2022.DIR._JSON.File_Path					="美人時計_Data\\美人時計_JSON_ALL_06_Official_2022-01-25_DIR_01.txt"			;
+	Bijint.Official_2022.CAT.JPG.ORI_Size.File_Path				="美人時計_Data\\美人時計_JPG_Category_Name_Official_2022-01-25_ORI_Size.txt"	;
+	Bijint.Official_2022.CAT.JPG.Small_Size.File_Path			="美人時計_Data\\美人時計_JPG_Category_Name_Official_2022-01-25_Small_Size.txt"	;
+	Bijint.Official_2022.CAT._JSON.File_Path					="美人時計_Data\\美人時計_JSON_Category_Name_Official_2022-01-25.txt"			;
+	Bijint.Official_2022.CAT.ALL.File_Path						="美人時計_Data\\美人時計_ALL_Category_Name_Official_2022-01-25.txt"			;
+	Bijint.Official_2022.DAT._JSON.File_Path					="美人時計_Data\\美人時計_JSON_ALL_02_Official_2022-01-25_CAT.txt"				;
+	//==========DIVISION==========
+	if ( Browser_Type=="MSIE" )
+	{
+	//	Bijint.Archive_2014.DIR.JPG.ORI_Size.STR				=IE_Read_Text_File(Bijint.Archive_2014.DIR.JPG.ORI_Size.File_Path		,"UTF-8");
+	//	Bijint.Archive_2014.DIR.JPG.Small_Size.STR				=IE_Read_Text_File(Bijint.Archive_2014.DIR.JPG.Small_Size.File_Path		,"UTF-8");
+	//	Bijint.Archive_2014.DIR._JSON.STR						=IE_Read_Text_File(Bijint.Archive_2014.DIR._JSON.File_Path				,"UTF-8");
+		Bijint.Archive_2014.CAT.JPG.ORI_Size.STR				=IE_Read_Text_File(Bijint.Archive_2014.CAT.JPG.ORI_Size.File_Path		,"UTF-8");
+		Bijint.Archive_2014.CAT.JPG.Small_Size.STR				=IE_Read_Text_File(Bijint.Archive_2014.CAT.JPG.Small_Size.File_Path		,"UTF-8");
+		Bijint.Archive_2014.CAT._JSON.STR						=IE_Read_Text_File(Bijint.Archive_2014.CAT._JSON.File_Path				,"UTF-8");
+		Bijint.Archive_2014.CAT.ALL.STR							=IE_Read_Text_File(Bijint.Archive_2014.CAT.ALL.File_Path				,"UTF-8");
+	//	Bijint.Archive_2014.DAT._JSON.STR						=IE_Read_Text_File(Bijint.Archive_2014.DAT._JSON.File_Path				,"UTF-8");
+	//	Bijint.Official_2022.DIR.JPG.ORI_Size.STR				=IE_Read_Text_File(Bijint.Official_2022.DIR.JPG.ORI_Size.File_Path		,"UTF-8");
+	//	Bijint.Official_2022.DIR.JPG.Small_Size.STR				=IE_Read_Text_File(Bijint.Official_2022.DIR.JPG.Small_Size.File_Path	,"UTF-8");
+	//	Bijint.Official_2022.DIR._JSON.STR						=IE_Read_Text_File(Bijint.Official_2022.DIR._JSON.File_Path				,"UTF-8");
+		Bijint.Official_2022.CAT.JPG.ORI_Size.STR				=IE_Read_Text_File(Bijint.Official_2022.CAT.JPG.ORI_Size.File_Path		,"UTF-8");
+		Bijint.Official_2022.CAT.JPG.Small_Size.STR				=IE_Read_Text_File(Bijint.Official_2022.CAT.JPG.Small_Size.File_Path	,"UTF-8");
+		Bijint.Official_2022.CAT._JSON.STR						=IE_Read_Text_File(Bijint.Official_2022.CAT._JSON.File_Path				,"UTF-8");
+		Bijint.Official_2022.CAT.ALL.STR						=IE_Read_Text_File(Bijint.Official_2022.CAT.ALL.File_Path				,"UTF-8");
+	//	Bijint.Official_2022.DAT._JSON.STR						=IE_Read_Text_File(Bijint.Official_2022.DAT._JSON.File_Path				,"UTF-8");
+	}
+	else if ( Browser_Type=="Chrome" || Browser_Type=="OPR" || 
+				Browser_Type=="Firefox" || Browser_Type=="SeaMonkey" || Browser_Type=="Waterfox" || 
+				Browser_Type=="Safari" )
+	{
+		Bijint.Archive_2014.DIR.JPG.ORI_Size.STR				=ReadTextFile(Bijint.Archive_2014.DIR.JPG.ORI_Size.File_Path					);
+		Bijint.Archive_2014.DIR.JPG.Small_Size.STR				=ReadTextFile(Bijint.Archive_2014.DIR.JPG.Small_Size.File_Path					);
+		Bijint.Archive_2014.DIR._JSON.STR						=ReadTextFile(Bijint.Archive_2014.DIR._JSON.File_Path							);
+		Bijint.Archive_2014.CAT.JPG.ORI_Size.STR				=ReadTextFile(Bijint.Archive_2014.CAT.JPG.ORI_Size.File_Path					);
+		Bijint.Archive_2014.CAT.JPG.Small_Size.STR				=ReadTextFile(Bijint.Archive_2014.CAT.JPG.Small_Size.File_Path					);
+		Bijint.Archive_2014.CAT._JSON.STR						=ReadTextFile(Bijint.Archive_2014.CAT._JSON.File_Path							);
+		Bijint.Archive_2014.CAT.ALL.STR							=ReadTextFile(Bijint.Archive_2014.CAT.ALL.File_Path								);
+		Bijint.Archive_2014.DAT._JSON.STR						=ReadTextFile(Bijint.Archive_2014.DAT._JSON.File_Path							);
+		Bijint.Official_2022.DIR.JPG.ORI_Size.STR				=ReadTextFile(Bijint.Official_2022.DIR.JPG.ORI_Size.File_Path					);
+		Bijint.Official_2022.DIR.JPG.Small_Size.STR				=ReadTextFile(Bijint.Official_2022.DIR.JPG.Small_Size.File_Path					);
+		Bijint.Official_2022.DIR._JSON.STR						=ReadTextFile(Bijint.Official_2022.DIR._JSON.File_Path							);
+		Bijint.Official_2022.CAT.JPG.ORI_Size.STR				=ReadTextFile(Bijint.Official_2022.CAT.JPG.ORI_Size.File_Path					);
+		Bijint.Official_2022.CAT.JPG.Small_Size.STR				=ReadTextFile(Bijint.Official_2022.CAT.JPG.Small_Size.File_Path					);
+		Bijint.Official_2022.CAT._JSON.STR						=ReadTextFile(Bijint.Official_2022.CAT._JSON.File_Path							);
+		Bijint.Official_2022.CAT.ALL.STR						=ReadTextFile(Bijint.Official_2022.CAT.ALL.File_Path							);
+		Bijint.Official_2022.DAT._JSON.STR						=ReadTextFile(Bijint.Official_2022.DAT._JSON.File_Path							);
+	}
+	else		{}
+	//==========DIVISION==========
+	Bijint.Archive_2014.CAT.JPG.ORI_Size.ARR					=Bijint_Data_Refinery(Bijint.Archive_2014.CAT.JPG.ORI_Size.STR		,0).split("\n");
+	Bijint.Archive_2014.CAT.JPG.Small_Size.ARR					=Bijint_Data_Refinery(Bijint.Archive_2014.CAT.JPG.Small_Size.STR	,0).split("\n");
+	Bijint.Archive_2014.CAT._JSON.ARR							=Bijint_Data_Refinery(Bijint.Archive_2014.CAT._JSON.STR				,0).split("\n");
+	Bijint.Archive_2014.CAT.ALL.ARR								=Bijint_Data_Refinery(Bijint.Archive_2014.CAT.ALL.STR				,0).split("\n");
+	Bijint.Official_2022.CAT.JPG.ORI_Size.ARR					=Bijint_Data_Refinery(Bijint.Official_2022.CAT.JPG.ORI_Size.STR		,0).split("\n");
+	Bijint.Official_2022.CAT.JPG.Small_Size.ARR					=Bijint_Data_Refinery(Bijint.Official_2022.CAT.JPG.Small_Size.STR	,0).split("\n");
+	Bijint.Official_2022.CAT._JSON.ARR							=Bijint_Data_Refinery(Bijint.Official_2022.CAT._JSON.STR			,0).split("\n");
+	Bijint.Official_2022.CAT.ALL.ARR							=Bijint_Data_Refinery(Bijint.Official_2022.CAT.ALL.STR				,0).split("\n");
+	if ( Browser_Type=="MSIE" )
+	{
+		Bijint.Archive_2014.DIR.JPG.ORI_Size.ARR				=[];
+		Bijint.Archive_2014.DIR.JPG.Small_Size.ARR				=[];
+		Bijint.Archive_2014.DIR._JSON.ARR						=[];
+		Bijint.Archive_2014.DAT._JSON.ARR						=[];
+		Bijint.Official_2022.DIR.JPG.ORI_Size.ARR				=[];
+		Bijint.Official_2022.DIR.JPG.Small_Size.ARR				=[];
+		Bijint.Official_2022.DIR._JSON.ARR						=[];
+		Bijint.Official_2022.DAT._JSON.ARR						=[];
+	}
+	else if ( Browser_Type=="Chrome" || Browser_Type=="OPR" || 
+				Browser_Type=="Firefox" || Browser_Type=="SeaMonkey" || Browser_Type=="Waterfox" || 
+				Browser_Type=="Safari" )
+	{
+		Bijint.Archive_2014.DIR.JPG.ORI_Size.ARR				=Bijint_Data_Refinery(Bijint.Archive_2014.DIR.JPG.ORI_Size.STR		,1).split("\n");
+		Bijint.Archive_2014.DIR.JPG.Small_Size.ARR				=Bijint_Data_Refinery(Bijint.Archive_2014.DIR.JPG.Small_Size.STR	,1).split("\n");
+		Bijint.Archive_2014.DIR._JSON.ARR						=Bijint_Data_Refinery(Bijint.Archive_2014.DIR._JSON.STR				,1).split("\n");
+		Bijint.Archive_2014.DAT._JSON.ARR						=Bijint_Data_Refinery(Bijint.Archive_2014.DAT._JSON.STR				,1).split("\n");
+		Bijint.Official_2022.DIR.JPG.ORI_Size.ARR				=Bijint_Data_Refinery(Bijint.Official_2022.DIR.JPG.ORI_Size.STR		,1).split("\n");
+		Bijint.Official_2022.DIR.JPG.Small_Size.ARR				=Bijint_Data_Refinery(Bijint.Official_2022.DIR.JPG.Small_Size.STR	,1).split("\n");
+		Bijint.Official_2022.DIR._JSON.ARR						=Bijint_Data_Refinery(Bijint.Official_2022.DIR._JSON.STR			,1).split("\n");
+		Bijint.Official_2022.DAT._JSON.ARR						=Bijint_Data_Refinery(Bijint.Official_2022.DAT._JSON.STR			,1).split("\n");
+	}
+	else		{}
+	//==========DIVISION==========
+	console.log("Browser_Type_STR : " + Browser_Type_STR + "\n" + "Browser_Type : " + Browser_Type + "\n" + "Browser_Ver : " + Browser_Ver + "\n");
+	//==========DIVISION==========
+	Bijint.Show_Info();
+	//==========DIVISION==========
+}
+
+function Bijint_Show_Info()
+{
+	var str00;
+	str00=	"Bijint.Archive_2014.DIR.JPG.ORI_Size.File_Path			 : " + Bijint.Archive_2014.DIR.JPG.ORI_Size.File_Path		 + "\n" + 
+			"Bijint.Archive_2014.DIR.JPG.Small_Size.File_Path		 : " + Bijint.Archive_2014.DIR.JPG.Small_Size.File_Path		 + "\n" + 
+			"Bijint.Archive_2014.DIR._JSON.File_Path				 : " + Bijint.Archive_2014.DIR._JSON.File_Path				 + "\n" + 
+			"Bijint.Archive_2014.CAT.JPG.ORI_Size.File_Path			 : " + Bijint.Archive_2014.CAT.JPG.ORI_Size.File_Path		 + "\n" + 
+			"Bijint.Archive_2014.CAT.JPG.Small_Size.File_Path		 : " + Bijint.Archive_2014.CAT.JPG.Small_Size.File_Path		 + "\n" + 
+			"Bijint.Archive_2014.CAT._JSON.File_Path				 : " + Bijint.Archive_2014.CAT._JSON.File_Path				 + "\n" + 
+			"Bijint.Archive_2014.CAT.ALL.File_Path					 : " + Bijint.Archive_2014.CAT.ALL.File_Path				 + "\n" + 
+			"Bijint.Archive_2014.DAT._JSON.File_Path				 : " + Bijint.Archive_2014.DAT._JSON.File_Path				 + "\n" + 
+			"Bijint.Official_2022.DIR.JPG.ORI_Size.File_Path		 : " + Bijint.Official_2022.DIR.JPG.ORI_Size.File_Path		 + "\n" + 
+			"Bijint.Official_2022.DIR.JPG.Small_Size.File_Path		 : " + Bijint.Official_2022.DIR.JPG.Small_Size.File_Path	 + "\n" + 
+			"Bijint.Official_2022.DIR._JSON.File_Path				 : " + Bijint.Official_2022.DIR._JSON.File_Path				 + "\n" + 
+			"Bijint.Official_2022.CAT.JPG.ORI_Size.File_Path		 : " + Bijint.Official_2022.CAT.JPG.ORI_Size.File_Path		 + "\n" + 
+			"Bijint.Official_2022.CAT.JPG.Small_Size.File_Path		 : " + Bijint.Official_2022.CAT.JPG.Small_Size.File_Path	 + "\n" + 
+			"Bijint.Official_2022.CAT._JSON.File_Path				 : " + Bijint.Official_2022.CAT._JSON.File_Path				 + "\n" + 
+			"Bijint.Official_2022.CAT.ALL.File_Path					 : " + Bijint.Official_2022.CAT.ALL.File_Path				 + "\n" + 
+			"Bijint.Official_2022.DAT._JSON.File_Path				 : " + Bijint.Official_2022.DAT._JSON.File_Path				 + "\n" + 
+			"";
+	console.log(str00);
+	str00=	"Bijint.Archive_2014.DIR.JPG.ORI_Size.STR.length		 : " + Bijint.Archive_2014.DIR.JPG.ORI_Size.STR.length		 + "\n" + 
+			"Bijint.Archive_2014.DIR.JPG.Small_Size.STR.length		 : " + Bijint.Archive_2014.DIR.JPG.Small_Size.STR.length	 + "\n" + 
+			"Bijint.Archive_2014.DIR._JSON.STR.length				 : " + Bijint.Archive_2014.DIR._JSON.STR.length				 + "\n" + 
+			"Bijint.Archive_2014.CAT.JPG.ORI_Size.STR.length		 : " + Bijint.Archive_2014.CAT.JPG.ORI_Size.STR.length		 + "\n" + 
+			"Bijint.Archive_2014.CAT.JPG.Small_Size.STR.length		 : " + Bijint.Archive_2014.CAT.JPG.Small_Size.STR.length	 + "\n" + 
+			"Bijint.Archive_2014.CAT._JSON.STR.length				 : " + Bijint.Archive_2014.CAT._JSON.STR.length				 + "\n" + 
+			"Bijint.Archive_2014.CAT.ALL.STR.length					 : " + Bijint.Archive_2014.CAT.ALL.STR.length				 + "\n" + 
+			"Bijint.Archive_2014.DAT._JSON.STR.length				 : " + Bijint.Archive_2014.DAT._JSON.STR.length				 + "\n" + 
+			"Bijint.Official_2022.DIR.JPG.ORI_Size.STR.length		 : " + Bijint.Official_2022.DIR.JPG.ORI_Size.STR.length		 + "\n" + 
+			"Bijint.Official_2022.DIR.JPG.Small_Size.STR.length		 : " + Bijint.Official_2022.DIR.JPG.Small_Size.STR.length	 + "\n" + 
+			"Bijint.Official_2022.DIR._JSON.STR.length				 : " + Bijint.Official_2022.DIR._JSON.STR.length			 + "\n" + 
+			"Bijint.Official_2022.CAT.JPG.ORI_Size.STR.length		 : " + Bijint.Official_2022.CAT.JPG.ORI_Size.STR.length		 + "\n" + 
+			"Bijint.Official_2022.CAT.JPG.Small_Size.STR.length		 : " + Bijint.Official_2022.CAT.JPG.Small_Size.STR.length	 + "\n" + 
+			"Bijint.Official_2022.CAT._JSON.STR.length				 : " + Bijint.Official_2022.CAT._JSON.STR.length			 + "\n" + 
+			"Bijint.Official_2022.CAT.ALL.STR.length				 : " + Bijint.Official_2022.CAT.ALL.STR.length				 + "\n" + 
+			"Bijint.Official_2022.DAT._JSON.STR.length				 : " + Bijint.Official_2022.DAT._JSON.STR.length			 + "\n" + 
+			"";
+	console.log(str00);
+}
+
+Bijint.INI				=Bijint_INI;
+Bijint.Show_Info		=Bijint_Show_Info;
+
+Bijint.INI();
+//==============================Bijint_INI==============================
+//========================================Bijint_CLS========================================
+//========================================ele_Bijint_Table_INI_STR========================================
+function ele_Bijint_Table_INI_STR()
+{
+	var ele_Bijint_Table								;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	var elel_Bijint_Table								;
+	var strl_Bijint_Table								;
+	var clsl_Bijint_Category_Set						;
+	var strl_Bijint_Category_Set						;
+	var Bijint_Table_ID									;
+
+	var ele_Bijint_Type_Title							;
+}
+//========================================ele_Bijint_Table_INI_STR========================================
+//========================================Bijint_Table_INI========================================
+//	"↑";
+//	var Bijint_Table_ID_Inuse;
+//	Bijint_Table_ID_Inuse=[0,0,0,0,0];
+//	Bijint_Table_ID_Inuse=[1,1,1,1,1];
+//	//IE7-IE11:
+//	//Bijint_Table_ID_Inuse=[1,0,0,0,0];
+//	//Bijint_Table_ID_Inuse=[1,1,0,0,0];
+//	//Bijint_Table_ID_Inuse=[1,1,1,0,0];
+
+function Bijint_Table_INI()
+{
+	//==============================Pre_Definition==============================
+	var fun_name=arguments.callee.name;
+	if ( fun_name==undefined )		{fun_name=arguments.callee.toString().replace(/\r\n/gm,"\n").split("\n")[0].replace(/^function ([^\(]+)\(.+$/gm,"$1");}
+	//console.log(fun_name + "___" + fun_name.length);//console.log(this.name);
+
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	var ele_Bijint_Table								;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	var elel_Bijint_Table								;
+	var strl_Bijint_Table								;
+	var clsl_Bijint_Category_Set						;
+	var strl_Bijint_Category_Set						;
+	var Bijint_Table_ID									;
+
+	var ele_Bijint_Type_Title							;
+
+	ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+	ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+	ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+	ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+	ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+	ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+	ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+	elel_Bijint_Table=
+	[
+		//	ele_Bijint_Table_Mode_One						,
+		//	ele_Bijint_Table_Mode_Multi						,
+		ele_Bijint_Table_Single							,
+		ele_Bijint_Table_ALL_In_Time					,
+		ele_Bijint_Table_Single_In_ALL_Time				,
+		ele_Bijint_Table_Actual_In_ALL_In_Time			,
+		ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+	];
+	strl_Bijint_Table=["Single","ALL_In_Time","Single_In_ALL_Time","Actual_In_ALL_In_Time","Actual_In_Single_In_ALL_Time"];
+	clsl_Bijint_Category_Set=
+	[
+		Bijint_Category_Set.Table_Type.Single						,
+		Bijint_Category_Set.Table_Type.ALL_In_Time					,
+		Bijint_Category_Set.Table_Type.Single_In_ALL_Time			,
+		Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		,
+		Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time
+	];
+	strl_Bijint_Category_Set=
+	[
+		"Bijint_Category_Set.Table_Type.Single"						,
+		"Bijint_Category_Set.Table_Type.ALL_In_Time"				,
+		"Bijint_Category_Set.Table_Type.Single_In_ALL_Time"			,
+		"Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time"		,
+		"Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time"
+	];
+	//==============================Pre_Definition==============================
+	//==============================elel_Bijint_Table_XXX==============================
+	for (Bijint_Table_ID=0;Bijint_Table_ID<elel_Bijint_Table.length;Bijint_Table_ID++)
+	{
+		if ( Bijint_Table_ID_Inuse[Bijint_Table_ID]==0 )		{continue;}
+		//====================elel_Bijint_Table====================
+		JS_IE7_Clone_Node_Via_Node(elel_Bijint_Table[Bijint_Table_ID],ele_Bijint_Table_Mode_One);
+		//JS_IE7_Clone_Node_Via_STR(elel_Bijint_Table[Bijint_Table_ID],ele_Bijint_Table_Mode_One.innerHTML);
+		//IN IE7 , innerHTML 里面有 table 就达不到效果，以后会出错。
+		//====================elel_Bijint_Table====================
+		//====================ele_Bijint_Type_Title====================
+		ele_Bijint_Type_Title					=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Bijint_Type_Title")[0];
+		ele_Bijint_Type_Title.innerHTML			+="_" + strl_Bijint_Table[Bijint_Table_ID] + "(IE7+/Google_Chrome_0.0+/Firefox_0.0+)";
+		//====================ele_Bijint_Type_Title====================
+		//====================elel_Bijint_Table====================
+		Bijint_Table_Category_Set_Data(fun_name,elel_Bijint_Table,strl_Bijint_Table,clsl_Bijint_Category_Set,strl_Bijint_Category_Set,Bijint_Table_ID,"Archive_2014");
+		Bijint_Table_Category_Set_Data(fun_name,elel_Bijint_Table,strl_Bijint_Table,clsl_Bijint_Category_Set,strl_Bijint_Category_Set,Bijint_Table_ID,"Official_2022");
+		//====================elel_Bijint_Table====================
+	}
+	//==============================elel_Bijint_Table_XXX==============================
+	//==========DIVISION==========
+	//ele01.innerHTML=IE_Read_Text_File("美人時計_Data\\美人時計_Category_Name_Archive_2014+.txt","UTF-8");//"ANSI";"UTF-8";"Unicode";
+	//==========DIVISION==========
+}
+
+function Bijint_Table_Category_Set_Data(fun_name,elel_Bijint_Table,strl_Bijint_Table,clsl_Bijint_Category_Set,strl_Bijint_Category_Set,Bijint_Table_ID,Bijint_Data_Type)
+{
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	var ele_Bijint_Table								;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	//	var elel_Bijint_Table								;
+	//	var strl_Bijint_Table								;
+	//	var clsl_Bijint_Category_Set						;
+	//	var strl_Bijint_Category_Set						;
+	//	var Bijint_Table_ID									;
+	//
+	//	var ele_Bijint_Type_Title							;
+
+	var ele_Archive_2014								;
+	var ele_Official_2022								;
+	var ele_Bijint_Category_Top							;
+	var ele_Bijint_Category_Left						;
+	var ele_Bijint_Image								;
+	var ele_ORI_Size									;
+	var ele_Small_Size									;
+	//	var ele_Dest_Table									;
+
+	var elel_ORI_Size									;
+	var elel_Small_Size									;
+
+	//1.Replace the code : 【Archive_2014】--->>>【Official_2022】。
+	//2.Replace back :【	if ( Bijint_Data_Type==	】
+	if ( Bijint_Data_Type=="Archive_2014" )
+	{
+		//====================ele_Archive_2014====================
+		//==========DIVISION==========
+		ele_Archive_2014						=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Archive_2014")[0];
+		ele_Bijint_Category_Top					=getElementsByClassName(ele_Archive_2014,"Bijint_Category_Top")[0];
+		ele_Bijint_Category_Left				=getElementsByClassName(ele_Archive_2014,"Bijint_Category_Left")[0];
+		ele_Bijint_Image						=getElementsByClassName(ele_Archive_2014,"Bijint_Image")[0];
+		ele_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size")[0];
+		ele_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size")[0];
+		//ele_Dest_Table							=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Archive_2014")[0];
+
+		if ( fun_name=="Bijint_Table_INI" )
+		{
+			Bijint_Category_Set.Bijint_Data_Type.Archive_2014				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Cat_Info));
+			str00=strl_Bijint_Category_Set[Bijint_Table_ID] + "				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));";
+			eval(str00);//console.log(str00);
+		}
+		else if ( fun_name=="Bijint_Data_Cat_Location_Type_Sel" )
+		{
+		}
+		else			{}
+		str00="cls_Bijint_Table_XXX											=" + strl_Bijint_Category_Set[Bijint_Table_ID] + ";";
+		eval(str00);//console.log(str00);
+
+		if ( cls_Bijint_Table_XXX.Archive_2014.Type.ALL==1 )			{arr00=Bijint.Archive_2014.CAT.ALL.ARR;}
+		if ( cls_Bijint_Table_XXX.Archive_2014.Type.Small_Size==1 )		{arr00=Bijint.Archive_2014.CAT.JPG.Small_Size.ARR;}
+		if ( cls_Bijint_Table_XXX.Archive_2014.Type.ORI_Size==1 )		{arr00=Bijint.Archive_2014.CAT.JPG.ORI_Size.ARR;}
+
+		var arr02_str,arr03_str;
+		arr02		=Bijint.Archive_2014.DIR.JPG.Small_Size.ARR;
+		arr03		=Bijint.Archive_2014.DIR.JPG.ORI_Size.ARR;
+		arr02_str	=Bijint.Archive_2014.DIR.JPG.Small_Size.STR;
+		arr03_str	=Bijint.Archive_2014.DIR.JPG.ORI_Size.STR;
+
+		if ( strl_Bijint_Table[Bijint_Table_ID]=="Single" )																								{}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="ALL_In_Time" || strl_Bijint_Table[Bijint_Table_ID]=="Single_In_ALL_Time" )						{}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_ALL_In_Time" || strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_Single_In_ALL_Time" && 
+					Bijint_Actual_Data_Inuse==1 )																										{}
+		else																																			{}
+
+		if ( cls_Bijint_Table_XXX.Archive_2014.Location.Top==0 )			{ele_Bijint_Category_Top.style.display="none";}
+		else if ( cls_Bijint_Table_XXX.Archive_2014.Location.Top==1 )		{ele_Bijint_Category_Top.style.display="";}
+		else		{}
+		if ( cls_Bijint_Table_XXX.Archive_2014.Location.Left==0 )			{ele_Bijint_Category_Left.style.display="none";}
+		else if ( cls_Bijint_Table_XXX.Archive_2014.Location.Left==1 )		{ele_Bijint_Category_Left.style.display="";}
+		else		{}
+		//console.log(arr00.length);
+		//==========DIVISION==========
+		num01=17;num02=2;
+		//==========DIVISION==========
+		str01="";str02="";
+		str01+="\n";str02+="\n";
+		for (i=0;i<arr00.length;i++)
+		{
+			arr01=arr00[i].split("\t");
+			//str01+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			//str02+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			if ( i%num01==0 )		{str01+="\t\t\t" + '<tr><td>';}
+			if ( i%num02==0 )		{str02+="\t\t\t" + '<tr><td>';}
+			str00='<input type="button" class="Bijint_Image_Sel_BTN" id="' + i.toString() + '" cat="' + arr01[1] + '" value="' + arr01[2] + '">';
+			str01+=str00;str02+=str00;
+			if ( i%num01==(num01-1) )		{str01+='</td></tr>';}
+			if ( i%num02==(num02-1) )		{str02+='</td></tr>';}
+		}
+		str01+="\n\t\t";str02+="\n\t\t";
+		//JS_IE7_Clone_Node_Via_STR(ele_Bijint_Category_Top,str01);
+		//JS_IE7_Clone_Node_Via_STR(ele_Bijint_Category_Left,str02);
+		//==========DIVISION==========
+		ele01=document.createElement("DIV");ele02=document.createElement("DIV");
+		for (i=0;i<arr00.length;i++)
+		{
+			arr01=arr00[i].split("\t");
+			//str01+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			//str02+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			if ( i%num01==0 )
+			{
+				ele01.appendChild(document.createElement("tr"));
+				ele01.getElementsByTagName("tr")[Math.floor(i / num01)].appendChild(document.createElement("td"));
+			}
+			if ( i%num02==0 )
+			{
+				ele02.appendChild(document.createElement("tr"));
+				ele02.getElementsByTagName("tr")[Math.floor(i / num02)].appendChild(document.createElement("td"));
+			}
+
+			ele03=document.createElement("input");
+			ele03.type="button";
+			ele03.className="Bijint_Image_Sel_BTN";
+			ele03.id=i.toString();
+			ele03.setAttribute("cat",arr01[1]);
+			ele03.value=arr01[2];
+			ele01.getElementsByTagName("tr")[Math.floor(i / num01)].getElementsByTagName("td")[0].appendChild(ele03.cloneNode(true));
+			ele02.getElementsByTagName("tr")[Math.floor(i / num02)].getElementsByTagName("td")[0].appendChild(ele03.cloneNode(true));
+		}
+
+		JS_IE7_Clone_Node_Via_Node(ele_Bijint_Category_Top,ele01);
+		JS_IE7_Clone_Node_Via_Node(ele_Bijint_Category_Left,ele02);
+		//==========DIVISION==========
+		//JS_IE7_Clone_Node_Via_Node(ele_Dest_Table,ele_Archive_2014);
+		//JS_IE7_Clone_Node_Via_STR(ele_Dest_Table,ele_Archive_2014.innerHTML);
+		//==========DIVISION==========
+		//strl_Bijint_Table=["Single","ALL_In_Time","Single_In_ALL_Time","Actual_In_ALL_In_Time","Actual_In_Single_In_ALL_Time"];
+		if ( strl_Bijint_Table[Bijint_Table_ID]=="Single" )
+		{
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="ALL_In_Time" )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			num00=arr00.length;					//68;
+			num01=Math.ceil(Math.sqrt(num00));	//9;
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+			//ele_Bijint_Image						=getElementsByClassName(ele_Archive_2014,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+			elel_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size");
+			elel_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size");
+
+			if ( Bijint_Data_Type=="Archive_2014" )			{str00="Archive_2014+";}
+			else if ( Bijint_Data_Type=="Official_2022" )	{str00="Official_2022-01-25";}
+			else											{}
+			//arr01[1];//"akita";
+			cls00=new Date();
+			str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+			str02=str01 + ".jpg";//"0132.jpg";
+
+			//0:"Offline";1:"Online";
+			//Bijint_Category_Set.Table_Type.Single.Archive_2014.Network.Status;
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			str04="num04=" + "Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + Bijint_Data_Type + ".Network.Status" + ";"
+			eval(str04);
+
+			if ( num04==0 )//0:"Offline";
+			{
+				for (i=0;i<arr00.length;i++)
+				{
+					arr01=arr00[i].split("\t");
+					elel_Small_Size[i].src	=IMG_Folder_Path + str00 + "\\Small_Size\\www.bijint.com\\assets\\toppict\\"	 + arr01[1] + "\\t1\\" + str02;
+					elel_ORI_Size[i].src	=IMG_Folder_Path + str00 + "\\ORI_Size\\www.bijint.com\\assets\\pict\\"			 + arr01[1] + "\\pc\\" + str02;
+				}
+			}
+			else if ( num04==1 )//1:"Online";
+			{
+				for (i=0;i<arr00.length;i++)
+				{
+					arr01=arr00[i].split("\t");
+					elel_Small_Size[i].src	="https://www.bijint.com/assets/toppict/"	 + arr01[1] + "/t1/" + str02;
+					elel_ORI_Size[i].src	="https://www.bijint.com/assets/pict/"		 + arr01[1] + "/pc/" + str02;
+				}
+			}
+			else		{}
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Single_In_ALL_Time" )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			num00=24*60;	//1440;
+			num01=60;		//60;
+			num02=24;		//24;
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			//ele_Bijint_Image						=getElementsByClassName(ele_Archive_2014,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+			if ( 0 )
+			{
+				elel_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size");
+				elel_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size");
+
+				if ( Bijint_Data_Type=="Archive_2014" )			{str00="Archive_2014+";}
+				else if ( Bijint_Data_Type=="Official_2022" )	{str00="Official_2022-01-25";}
+				else											{}
+				//arr01[1];//"akita";
+				cls00=new Date();
+				str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+				str02=str01 + ".jpg";//"0132.jpg";
+
+				//0:"Offline";1:"Online";
+				//Bijint_Category_Set.Table_Type.Single.Archive_2014.Network.Status;
+				//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+				str04="num04=" + "Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + Bijint_Data_Type + ".Network.Status" + ";"
+				eval(str04);
+
+				if ( num04==0 )//0:"Offline";
+				{
+					for (i=0;i<arr00.length;i++)
+					{
+						arr01=arr00[i].split("\t");
+						elel_Small_Size[i].src	=IMG_Folder_Path + str00 + "\\Small_Size\\www.bijint.com\\assets\\toppict\\"	 + arr01[1] + "\\t1\\" + str02;
+						elel_ORI_Size[i].src	=IMG_Folder_Path + str00 + "\\ORI_Size\\www.bijint.com\\assets\\pict\\"			 + arr01[1] + "\\pc\\" + str02;
+					}
+				}
+				else if ( num04==1 )//1:"Online";
+				{
+					for (i=0;i<arr00.length;i++)
+					{
+						arr01=arr00[i].split("\t");
+						elel_Small_Size[i].src	="https://www.bijint.com/assets/toppict/"	 + arr01[1] + "/t1/" + str02;
+						elel_ORI_Size[i].src	="https://www.bijint.com/assets/pict/"		 + arr01[1] + "/pc/" + str02;
+					}
+				}
+				else		{}
+			}
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_ALL_In_Time" && Bijint_Actual_Data_Inuse==1 )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			//arr01[1];//"akita";
+			cls00=new Date();
+			str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+			str02=str01 + ".jpg";//"0132.jpg";
+			arr04=arr02_str.match(new RegExp("^.+" + str02 + "$","gm"));
+			arr05=arr03_str.match(new RegExp("^.+" + str02 + "$","gm"));
+
+			num00=arr04.length;					//68;
+			num01=Math.ceil(Math.sqrt(num00));	//9;
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+
+			num00=arr05.length;					//68;
+			num01=Math.ceil(Math.sqrt(num00));	//9;
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+
+			//ele_Bijint_Image						=getElementsByClassName(ele_Archive_2014,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+			elel_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size");
+			elel_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size");
+
+			if ( Bijint_Data_Type=="Archive_2014" )			{str00="Archive_2014+";}
+			else if ( Bijint_Data_Type=="Official_2022" )	{str00="Official_2022-01-25";}
+			else											{}
+
+			//0:"Offline";1:"Online";
+			//Bijint_Category_Set.Table_Type.Single.Archive_2014.Network.Status;
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			str04="num04=" + "Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + Bijint_Data_Type + ".Network.Status" + ";"
+			eval(str04);
+
+			if ( num04==0 )//0:"Offline";
+			{
+				for (i=0;i<arr04.length;i++)		{elel_Small_Size[i].src	=arr04[i];}
+				for (i=0;i<arr05.length;i++)		{elel_ORI_Size[i].src	=arr05[i];}
+			}
+			else if ( num04==1 )//1:"Online";
+			{
+				for (i=0;i<arr04.length;i++)		{elel_Small_Size[i].src	=arr04[i].replace(/^.+(www\.bijint\.com)/gm,"https://$1").replace(/\\/gm,"\/");}
+				for (i=0;i<arr05.length;i++)		{elel_ORI_Size[i].src	=arr05[i].replace(/^.+(www\.bijint\.com)/gm,"https://$1").replace(/\\/gm,"\/");}
+			}
+			else		{}
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_Single_In_ALL_Time" && Bijint_Actual_Data_Inuse==1 )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			return;
+			num00=24*60;	//1440;
+			num01=60;		//60;
+			num02=24;		//24;
+			arr04=arr02_str.match(new RegExp("^.+" + str02 + "$","gm"));
+			arr05=arr03_str.match(new RegExp("^.+" + str02 + "$","gm"));
+
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			//ele_Bijint_Image						=getElementsByClassName(ele_Archive_2014,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+		}
+		else			{}
+		//==========DIVISION==========
+		//====================ele_Archive_2014====================
+	}
+	else if ( Bijint_Data_Type=="Official_2022" )
+	{
+		//====================ele_Official_2022====================
+		//==========DIVISION==========
+		ele_Official_2022						=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Official_2022")[0];
+		ele_Bijint_Category_Top					=getElementsByClassName(ele_Official_2022,"Bijint_Category_Top")[0];
+		ele_Bijint_Category_Left				=getElementsByClassName(ele_Official_2022,"Bijint_Category_Left")[0];
+		ele_Bijint_Image						=getElementsByClassName(ele_Official_2022,"Bijint_Image")[0];
+		ele_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size")[0];
+		ele_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size")[0];
+		//ele_Dest_Table							=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Official_2022")[0];
+
+		if ( fun_name=="Bijint_Table_INI" )
+		{
+			Bijint_Category_Set.Bijint_Data_Type.Official_2022				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Cat_Info));
+			str00=strl_Bijint_Category_Set[Bijint_Table_ID] + "				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));";
+			eval(str00);//console.log(str00);
+		}
+		else if ( fun_name=="Bijint_Data_Cat_Location_Type_Sel" )
+		{
+		}
+		else			{}
+		str00="cls_Bijint_Table_XXX											=" + strl_Bijint_Category_Set[Bijint_Table_ID] + ";";
+		eval(str00);//console.log(str00);
+
+		if ( cls_Bijint_Table_XXX.Official_2022.Type.ALL==1 )			{arr00=Bijint.Official_2022.CAT.ALL.ARR;}
+		if ( cls_Bijint_Table_XXX.Official_2022.Type.Small_Size==1 )		{arr00=Bijint.Official_2022.CAT.JPG.Small_Size.ARR;}
+		if ( cls_Bijint_Table_XXX.Official_2022.Type.ORI_Size==1 )		{arr00=Bijint.Official_2022.CAT.JPG.ORI_Size.ARR;}
+
+		var arr02_str,arr03_str;
+		arr02		=Bijint.Official_2022.DIR.JPG.Small_Size.ARR;
+		arr03		=Bijint.Official_2022.DIR.JPG.ORI_Size.ARR;
+		arr02_str	=Bijint.Official_2022.DIR.JPG.Small_Size.STR;
+		arr03_str	=Bijint.Official_2022.DIR.JPG.ORI_Size.STR;
+
+		if ( strl_Bijint_Table[Bijint_Table_ID]=="Single" )																								{}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="ALL_In_Time" || strl_Bijint_Table[Bijint_Table_ID]=="Single_In_ALL_Time" )						{}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_ALL_In_Time" || strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_Single_In_ALL_Time" && 
+					Bijint_Actual_Data_Inuse==1 )																										{}
+		else																																			{}
+
+		if ( cls_Bijint_Table_XXX.Official_2022.Location.Top==0 )			{ele_Bijint_Category_Top.style.display="none";}
+		else if ( cls_Bijint_Table_XXX.Official_2022.Location.Top==1 )		{ele_Bijint_Category_Top.style.display="";}
+		else		{}
+		if ( cls_Bijint_Table_XXX.Official_2022.Location.Left==0 )			{ele_Bijint_Category_Left.style.display="none";}
+		else if ( cls_Bijint_Table_XXX.Official_2022.Location.Left==1 )		{ele_Bijint_Category_Left.style.display="";}
+		else		{}
+		//console.log(arr00.length);
+		//==========DIVISION==========
+		num01=17;num02=2;
+		//==========DIVISION==========
+		str01="";str02="";
+		str01+="\n";str02+="\n";
+		for (i=0;i<arr00.length;i++)
+		{
+			arr01=arr00[i].split("\t");
+			//str01+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			//str02+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			if ( i%num01==0 )		{str01+="\t\t\t" + '<tr><td>';}
+			if ( i%num02==0 )		{str02+="\t\t\t" + '<tr><td>';}
+			str00='<input type="button" class="Bijint_Image_Sel_BTN" id="' + i.toString() + '" cat="' + arr01[1] + '" value="' + arr01[2] + '">';
+			str01+=str00;str02+=str00;
+			if ( i%num01==(num01-1) )		{str01+='</td></tr>';}
+			if ( i%num02==(num02-1) )		{str02+='</td></tr>';}
+		}
+		str01+="\n\t\t";str02+="\n\t\t";
+		//JS_IE7_Clone_Node_Via_STR(ele_Bijint_Category_Top,str01);
+		//JS_IE7_Clone_Node_Via_STR(ele_Bijint_Category_Left,str02);
+		//==========DIVISION==========
+		ele01=document.createElement("DIV");ele02=document.createElement("DIV");
+		for (i=0;i<arr00.length;i++)
+		{
+			arr01=arr00[i].split("\t");
+			//str01+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			//str02+="\t\t\t" + '<tr><td><input type="button" class="Bijint_Image_Sel_BTN" cat="' + arr01[1] + '" value="' + arr01[2] + '"></td></tr>';
+			if ( i%num01==0 )
+			{
+				ele01.appendChild(document.createElement("tr"));
+				ele01.getElementsByTagName("tr")[Math.floor(i / num01)].appendChild(document.createElement("td"));
+			}
+			if ( i%num02==0 )
+			{
+				ele02.appendChild(document.createElement("tr"));
+				ele02.getElementsByTagName("tr")[Math.floor(i / num02)].appendChild(document.createElement("td"));
+			}
+
+			ele03=document.createElement("input");
+			ele03.type="button";
+			ele03.className="Bijint_Image_Sel_BTN";
+			ele03.id=i.toString();
+			ele03.setAttribute("cat",arr01[1]);
+			ele03.value=arr01[2];
+			ele01.getElementsByTagName("tr")[Math.floor(i / num01)].getElementsByTagName("td")[0].appendChild(ele03.cloneNode(true));
+			ele02.getElementsByTagName("tr")[Math.floor(i / num02)].getElementsByTagName("td")[0].appendChild(ele03.cloneNode(true));
+		}
+
+		JS_IE7_Clone_Node_Via_Node(ele_Bijint_Category_Top,ele01);
+		JS_IE7_Clone_Node_Via_Node(ele_Bijint_Category_Left,ele02);
+		//==========DIVISION==========
+		//JS_IE7_Clone_Node_Via_Node(ele_Dest_Table,ele_Official_2022);
+		//JS_IE7_Clone_Node_Via_STR(ele_Dest_Table,ele_Official_2022.innerHTML);
+		//==========DIVISION==========
+		//strl_Bijint_Table=["Single","ALL_In_Time","Single_In_ALL_Time","Actual_In_ALL_In_Time","Actual_In_Single_In_ALL_Time"];
+		if ( strl_Bijint_Table[Bijint_Table_ID]=="Single" )
+		{
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="ALL_In_Time" )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			num00=arr00.length;					//68;
+			num01=Math.ceil(Math.sqrt(num00));	//9;
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+			//ele_Bijint_Image						=getElementsByClassName(ele_Official_2022,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+			elel_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size");
+			elel_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size");
+
+			if ( Bijint_Data_Type=="Archive_2014" )			{str00="Archive_2014+";}
+			else if ( Bijint_Data_Type=="Official_2022" )	{str00="Official_2022-01-25";}
+			else											{}
+			//arr01[1];//"akita";
+			cls00=new Date();
+			str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+			str02=str01 + ".jpg";//"0132.jpg";
+
+			//0:"Offline";1:"Online";
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			str04="num04=" + "Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + Bijint_Data_Type + ".Network.Status" + ";"
+			eval(str04);
+
+			if ( num04==0 )//0:"Offline";
+			{
+				for (i=0;i<arr00.length;i++)
+				{
+					arr01=arr00[i].split("\t");
+					elel_Small_Size[i].src	=IMG_Folder_Path + str00 + "\\Small_Size\\www.bijint.com\\assets\\toppict\\"	 + arr01[1] + "\\t1\\" + str02;
+					elel_ORI_Size[i].src	=IMG_Folder_Path + str00 + "\\ORI_Size\\www.bijint.com\\assets\\pict\\"			 + arr01[1] + "\\pc\\" + str02;
+				}
+			}
+			else if ( num04==1 )//1:"Online";
+			{
+				for (i=0;i<arr00.length;i++)
+				{
+					arr01=arr00[i].split("\t");
+					elel_Small_Size[i].src	="https://www.bijint.com/assets/toppict/"	 + arr01[1] + "/t1/" + str02;
+					elel_ORI_Size[i].src	="https://www.bijint.com/assets/pict/"		 + arr01[1] + "/pc/" + str02;
+				}
+			}
+			else		{}
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Single_In_ALL_Time" )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			num00=24*60;	//1440;
+			num01=60;		//60;
+			num02=24;		//24;
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			//ele_Bijint_Image						=getElementsByClassName(ele_Official_2022,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+			if ( 0 )
+			{
+				elel_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size");
+				elel_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size");
+
+				if ( Bijint_Data_Type=="Archive_2014" )			{str00="Archive_2014+";}
+				else if ( Bijint_Data_Type=="Official_2022" )	{str00="Official_2022-01-25";}
+				else											{}
+				//arr01[1];//"akita";
+				cls00=new Date();
+				str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+				str02=str01 + ".jpg";//"0132.jpg";
+
+				//0:"Offline";1:"Online";
+				//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+				//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+				str04="num04=" + "Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + Bijint_Data_Type + ".Network.Status" + ";"
+				eval(str04);
+
+				if ( num04==0 )//0:"Offline";
+				{
+					for (i=0;i<arr00.length;i++)
+					{
+						arr01=arr00[i].split("\t");
+						elel_Small_Size[i].src	=IMG_Folder_Path + str00 + "\\Small_Size\\www.bijint.com\\assets\\toppict\\"	 + arr01[1] + "\\t1\\" + str02;
+						elel_ORI_Size[i].src	=IMG_Folder_Path + str00 + "\\ORI_Size\\www.bijint.com\\assets\\pict\\"			 + arr01[1] + "\\pc\\" + str02;
+					}
+				}
+				else if ( num04==1 )//1:"Online";
+				{
+					for (i=0;i<arr00.length;i++)
+					{
+						arr01=arr00[i].split("\t");
+						elel_Small_Size[i].src	="https://www.bijint.com/assets/toppict/"	 + arr01[1] + "/t1/" + str02;
+						elel_ORI_Size[i].src	="https://www.bijint.com/assets/pict/"		 + arr01[1] + "/pc/" + str02;
+					}
+				}
+				else		{}
+			}
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_ALL_In_Time" && Bijint_Actual_Data_Inuse==1 )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			//arr01[1];//"akita";
+			cls00=new Date();
+			str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+			str02=str01 + ".jpg";//"0132.jpg";
+			arr04=arr02_str.match(new RegExp("^.+" + str02 + "$","gm"));
+			arr05=arr03_str.match(new RegExp("^.+" + str02 + "$","gm"));
+
+			num00=arr04.length;					//68;
+			num01=Math.ceil(Math.sqrt(num00));	//9;
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+
+			num00=arr05.length;					//68;
+			num01=Math.ceil(Math.sqrt(num00));	//9;
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num01).slice(0,-"<br>".length);
+
+			//ele_Bijint_Image						=getElementsByClassName(ele_Official_2022,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+			elel_ORI_Size							=getElementsByClassName(ele_Bijint_Image,"ORI_Size");
+			elel_Small_Size							=getElementsByClassName(ele_Bijint_Image,"Small_Size");
+
+			if ( Bijint_Data_Type=="Archive_2014" )			{str00="Archive_2014+";}
+			else if ( Bijint_Data_Type=="Official_2022" )	{str00="Official_2022-01-25";}
+			else											{}
+
+			//0:"Offline";1:"Online";
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			str04="num04=" + "Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + Bijint_Data_Type + ".Network.Status" + ";"
+			eval(str04);
+
+			if ( num04==0 )//0:"Offline";
+			{
+				for (i=0;i<arr04.length;i++)		{elel_Small_Size[i].src	=arr04[i];}
+				for (i=0;i<arr05.length;i++)		{elel_ORI_Size[i].src	=arr05[i];}
+			}
+			else if ( num04==1 )//1:"Online";
+			{
+				for (i=0;i<arr04.length;i++)		{elel_Small_Size[i].src	=arr04[i].replace(/^.+(www\.bijint\.com)/gm,"https://$1").replace(/\\/gm,"\/");}
+				for (i=0;i<arr05.length;i++)		{elel_ORI_Size[i].src	=arr05[i].replace(/^.+(www\.bijint\.com)/gm,"https://$1").replace(/\\/gm,"\/");}
+			}
+			else		{}
+		}
+		else if ( strl_Bijint_Table[Bijint_Table_ID]=="Actual_In_Single_In_ALL_Time" && Bijint_Actual_Data_Inuse==1 )
+		{
+			//	<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			//		<tr><td><img class="Small_Size" src=""></td></tr>
+			//		<tr><td><img class="ORI_Size" src=""></td></tr>
+			return;
+			num00=24*60;	//1440;
+			num01=60;		//60;
+			num02=24;		//24;
+			arr04=arr02_str.match(new RegExp("^.+" + str02 + "$","gm"));
+			arr05=arr03_str.match(new RegExp("^.+" + str02 + "$","gm"));
+
+			str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+			//ele_Bijint_Image						=getElementsByClassName(ele_Official_2022,"Bijint_Image")[0];
+			ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+			ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+		}
+		else			{}
+		//==========DIVISION==========
+		//====================ele_Official_2022====================
+	}
+	else		{}
+}
+//========================================Bijint_Table_INI========================================
+//========================================Bijint_Category_Set_CLS========================================
+/*
+<tr><td colspan="2"><table class="Bijint_Category_Set_CLS" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+	<tr>
+		<td><span class="Bijint_Title">美人時計_Archive_2014+</span></td>
+		<td><input type="button" class="Bijint_Data_Location_CLS" value="Offline" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Top" value="Top" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Left" value="Left" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ALL" value="ALL" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="Small_Size"value="Small_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ORI_Size" value="ORI_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+	</tr>
+</tbody></table></td></tr>
+*/
+
+var Bijint_Category_Set					=
+{
+	//==========DIVISION==========
+	Table_Type							:
+	{
+		Single							:	{},
+		ALL_In_Time						:	{},
+		Single_In_ALL_Time				:	{},
+		Actual_In_ALL_In_Time			:	{},
+		Actual_In_Single_In_ALL_Time	:	{}
+	},
+	//==========DIVISION==========
+	//==========Model_Only==========
+	Bijint_Data_Type					:
+	{
+		Archive_2014					:	{},
+		Official_2022					:	{}
+	},
+	Bijint_Data_Cat_Info				:
+	{
+		Network							:
+		{
+			Status						:	0,//0:"Offline";1:"Online";
+		},
+		Location						:
+		{
+			Top							:	1,
+			Left						:	0
+		},
+		Type							:
+		{
+			ALL							:	1,
+			Small_Size					:	0,
+			ORI_Size					:	0
+		}
+	},
+	//==========Model_Only==========
+	//==========DIVISION==========
+	Table_Type_INI						:	function ()
+	{
+		//==============================Pre_Definition==============================
+		eval(Parameter_Base_STR_ijk_XX(10));
+
+		var ele_Bijint_Table								;
+		var ele_Bijint_Table_Mode_One						;
+		var ele_Bijint_Table_Mode_Multi						;
+		var ele_Bijint_Table_Single							;
+		var ele_Bijint_Table_ALL_In_Time					;
+		var ele_Bijint_Table_Single_In_ALL_Time				;
+		var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+		var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+		var ele_Archive_2014								;
+		var ele_Official_2022								;
+
+		var ele_Bijint_Category_Set_CLS						;
+		var elel_Bijint_Data_Location_CLS					;
+		var elel_Bijint_Data_Cat_Location_CLS				;
+		var elel_Bijint_Data_Cat_Type_CLS					;
+
+		ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+		ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+		ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+		ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+		ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+		ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+		ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+		ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+		elel00=[
+			ele_Bijint_Table_Single						,
+			ele_Bijint_Table_ALL_In_Time				,
+			ele_Bijint_Table_Single_In_ALL_Time			,
+			ele_Bijint_Table_Actual_In_ALL_In_Time		,
+			ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+		];
+		//==============================Pre_Definition==============================
+		Bijint_Category_Set.Bijint_Data_Type.Archive_2014				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Cat_Info));
+		Bijint_Category_Set.Bijint_Data_Type.Official_2022				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Cat_Info));
+		Bijint_Category_Set.Table_Type.Single							=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));
+		Bijint_Category_Set.Table_Type.ALL_In_Time						=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));
+		Bijint_Category_Set.Table_Type.Single_In_ALL_Time				=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));
+		Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time			=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));
+		Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time		=JSON.parse(JSON.stringify(Bijint_Category_Set.Bijint_Data_Type));
+		for (i=0;i<elel00.length;i++)
+		{
+			ele_Archive_2014									=getElementsByClassName(elel00[i],"Archive_2014")[0];
+			ele_Official_2022									=getElementsByClassName(elel00[i],"Official_2022")[0];
+			elel01=[ele_Archive_2014,ele_Official_2022];
+			for (j=0;j<elel01.length && elel01[j]!=undefined;j++)
+			{
+				ele_Bijint_Category_Set_CLS						=getElementsByClassName(elel01[j],"Bijint_Category_Set_CLS")[0];
+				elel_Bijint_Data_Location_CLS					=getElementsByClassName(ele_Bijint_Category_Set_CLS,"Bijint_Data_Location_CLS");
+				elel_Bijint_Data_Cat_Location_CLS				=getElementsByClassName(ele_Bijint_Category_Set_CLS,"Bijint_Data_Cat_Location_CLS");
+				elel_Bijint_Data_Cat_Type_CLS					=getElementsByClassName(ele_Bijint_Category_Set_CLS,"Bijint_Data_Cat_Type_CLS");
+
+				arr02=
+				[
+					[Bijint_Category_Set.Bijint_Data_Cat_Info.Network.Status,	elel_Bijint_Data_Location_CLS[0]		],
+					[Bijint_Category_Set.Bijint_Data_Cat_Info.Location.Top,		elel_Bijint_Data_Cat_Location_CLS[0]	],
+					[Bijint_Category_Set.Bijint_Data_Cat_Info.Location.Left,	elel_Bijint_Data_Cat_Location_CLS[1]	],
+					[Bijint_Category_Set.Bijint_Data_Cat_Info.Type.ALL,			elel_Bijint_Data_Cat_Type_CLS[0]		],
+					[Bijint_Category_Set.Bijint_Data_Cat_Info.Type.Small_Size,	elel_Bijint_Data_Cat_Type_CLS[1]		],
+					[Bijint_Category_Set.Bijint_Data_Cat_Info.Type.ORI_Size,	elel_Bijint_Data_Cat_Type_CLS[2]		]
+				];
+				for (k=0;k<arr02.length;k++)
+				{
+					if ( arr02[k][0]==0 )
+					{
+						arr02[k][1].style.backgroundColor="red";
+					}
+					else if ( arr02[k][0]==1 )
+					{
+						arr02[k][1].style.backgroundColor="#1EB0E9";
+					}
+					else		{}
+				}
+				elel_Bijint_Data_Location_CLS.value="Offline";
+			}
+		}
+		Bijint_Category_Set.Print_Data();
+	},
+	//==========DIVISION==========
+	Print_Data						:	function ()
+	{
+		return;
+		console.log("==========DIVISION==========" + "\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Archive_2014	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Single				.Archive_2014	.Network.Status		 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Archive_2014	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Single				.Archive_2014	.Location.Top		 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Archive_2014	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Single				.Archive_2014	.Location.Left		 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Archive_2014	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Single				.Archive_2014	.Type.ALL			 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Archive_2014	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Single				.Archive_2014	.Type.Small_Size	 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Archive_2014	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Single				.Archive_2014	.Type.ORI_Size		 + ";\n" + 
+					"==========DIVISION==========" + "\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Official_2022	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Single				.Official_2022	.Network.Status		 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Official_2022	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Single				.Official_2022	.Location.Top		 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Official_2022	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Single				.Official_2022	.Location.Left		 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Official_2022	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Single				.Official_2022	.Type.ALL			 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Official_2022	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Single				.Official_2022	.Type.Small_Size	 + ";\n" + 
+					"	Bijint_Category_Set.Table_Type.Single						.Official_2022	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Single				.Official_2022	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Archive_2014	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Archive_2014	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Archive_2014	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Archive_2014	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Archive_2014	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Archive_2014	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Archive_2014	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Archive_2014	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Archive_2014	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Archive_2014	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Archive_2014	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Archive_2014	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Official_2022	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Official_2022	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Official_2022	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Official_2022	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Official_2022	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Official_2022	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Official_2022	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Official_2022	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Official_2022	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Official_2022	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.ALL_In_Time					.Official_2022	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.ALL_In_Time			.Official_2022	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Archive_2014	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Archive_2014	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Archive_2014	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Archive_2014	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Archive_2014	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Archive_2014	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Archive_2014	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Archive_2014	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Archive_2014	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Archive_2014	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Archive_2014	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Archive_2014	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Official_2022	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Official_2022	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Official_2022	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Official_2022	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Official_2022	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Official_2022	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Official_2022	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Official_2022	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Official_2022	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Official_2022	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Single_In_ALL_Time			.Official_2022	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Single_In_ALL_Time	.Official_2022	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Archive_2014	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Archive_2014	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Archive_2014	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Archive_2014	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Archive_2014	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Archive_2014	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Archive_2014	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Archive_2014	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Archive_2014	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Archive_2014	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Archive_2014	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Archive_2014	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Official_2022	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Official_2022	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Official_2022	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Official_2022	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Official_2022	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Official_2022	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Official_2022	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Official_2022	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Official_2022	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Official_2022	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		.Official_2022	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time	.Official_2022	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Archive_2014	.Type.ORI_Size		 + ";\n" + 
+					//	"==========DIVISION==========" + "\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Network.Status		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Network.Status		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Location.Top		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Location.Top		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Location.Left		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Location.Left		 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Type.ALL			 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Type.ALL			 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Type.Small_Size	 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Type.Small_Size	 + ";\n" + 
+					//	"	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Type.ORI_Size		 : " +	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time	.Official_2022	.Type.ORI_Size		 + ";\n" + 
+					"==========DIVISION==========" + "\n" + 
+					"");
+	}
+	//==========DIVISION==========
+};
+
+function Bijint_Data_Cat_Location_Type_Sel(ele)
+{
+	//==============================Pre_Definition==============================
+	var fun_name=arguments.callee.name;
+	if ( fun_name==undefined )		{fun_name=arguments.callee.toString().replace(/\r\n/gm,"\n").split("\n")[0].replace(/^function ([^\(]+)\(.+$/gm,"$1");}
+	//console.log(fun_name + "___" + fun_name.length);//console.log(this.name);
+
+	eval(Parameter_Base_STR_ijk_XX(10));
+	//==============================Pre_Definition==============================
+	//==============================Table_Type_CLS==============================
+	arr00=[];
+	if ( ele.className=="Bijint_Data_Location_CLS" )
+	{
+		"00";arr00.push("Network");
+		"01";arr00.push("Status");
+	}
+	else if ( ele.className=="Bijint_Data_Cat_Location_CLS" )
+	{
+		"00";arr00.push("Location");
+		"01";arr00.push(ele.getAttribute("cat_loc"));//"Top";"Left";
+	}
+	else if ( ele.className=="Bijint_Data_Cat_Type_CLS" )
+	{
+		"00";arr00.push("Type");
+		"01";arr00.push(ele.getAttribute("cat_type"));//"ALL";"Small_Size";"ORI_Size";
+	}
+	else		{}
+
+	ele00=ele;
+	while ( !( ele00.tagName.toUpperCase()=="TABLE" && ( ele00.className=="Archive_2014" || ele00.className=="Official_2022" ) ) )
+	{
+		ele00=ele00.parentNode;
+	}
+	"02";arr00.push(ele00.className);//"Archive_2014";"Official_2022";
+
+	ele01=ele00;
+	while ( !( ele01.tagName.toUpperCase()=="TABLE" && 
+			( ele01.className=="Single" || ele01.className=="ALL_In_Time" || ele01.className=="Single_In_ALL_Time" || 
+				ele01.className=="Actual_In_ALL_In_Time" || ele01.className=="Actual_In_Single_In_ALL_Time" ) ) )
+	{
+		ele01=ele01.parentNode;
+	}
+	"03";arr00.push(ele01.className);//"Single";"ALL_In_Time";"Single_In_ALL_Time";"Actual_In_ALL_In_Time";"Actual_In_Single_In_ALL_Time";
+	//==============================Table_Type_CLS==============================
+	//==============================Bijint_Data_Cat_Location_Set_Val==============================
+	//	Bijint_Category_Set.Table_Type.Single							.Archive_2014	.Network.Status;	//0:"Offline";1:"Online";
+	//	Bijint_Category_Set.Table_Type.Single							.Archive_2014	.Location.Top
+	//	Bijint_Category_Set.Table_Type.ALL_In_Time						.Archive_2014	.Location.Left
+	//	Bijint_Category_Set.Table_Type.Single_In_ALL_Time				.Archive_2014	.Type.ALL
+	//	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time			.Archive_2014	.Type.Small_Size
+	//	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time		.Archive_2014	.Type.ORI_Size
+	//
+	//	Bijint_Category_Set.Table_Type.Single							.Official_2022	.Network.Status;	//0:"Offline";1:"Online";
+	//	Bijint_Category_Set.Table_Type.Single							.Official_2022	.Location.Top
+	//	Bijint_Category_Set.Table_Type.ALL_In_Time						.Official_2022	.Location.Left
+	//	Bijint_Category_Set.Table_Type.Single_In_ALL_Time				.Official_2022	.Type.ALL
+	//	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time			.Official_2022	.Type.Small_Size
+	//	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time		.Official_2022	.Type.ORI_Size
+	str00="Bijint_Category_Set.Table_Type." + arr00[3] + "." + arr00[2] + "." + arr00[0] + "." + arr00[1];
+
+	if ( arr00[0]=="Network" )			{}
+	else if ( arr00[0]=="Location" )	{}
+	else if ( arr00[0]=="Type" )
+	{
+		str01="";
+		str01+="Bijint_Category_Set.Table_Type." + arr00[3] + "." + arr00[2] + "." + arr00[0] + "." + "ALL"			 + "=0;" + "\n";
+		str01+="Bijint_Category_Set.Table_Type." + arr00[3] + "." + arr00[2] + "." + arr00[0] + "." + "Small_Size"	 + "=0;" + "\n";
+		str01+="Bijint_Category_Set.Table_Type." + arr00[3] + "." + arr00[2] + "." + arr00[0] + "." + "ORI_Size"	 + "=0;" + "\n";
+		eval(str01);
+
+		ele02=ele;
+		while ( !( ele02.tagName.toUpperCase()=="TABLE" && ele02.className=="Bijint_Category_Set_CLS" ) )
+		{
+			ele02=ele02.parentNode;
+		}
+		elel02=getElementsByClassName(ele02,"Bijint_Data_Cat_Type_CLS");
+		for (i=0;i<elel02.length;i++)
+		{
+			elel02[i].style.backgroundColor="red";
+		}
+	}
+	else			{}
+
+	str02="num00=" + str00 + ";";
+	eval(str02);
+	num00=(num00 + 1)%2;
+	str03=str00 + "=" + num00.toString() + ";";
+	eval(str03);
+	//console.log(str03);
+	//"↑";
+	//"00";arr00.push("Location");
+	//"01";arr00.push(ele.getAttribute("cat_loc"));//"Top";"Left";
+	//"00";arr00.push("Type");
+	//"01";arr00.push(ele.getAttribute("cat_type"));//"ALL";"Small_Size";"ORI_Size";
+	//"02";arr00.push(ele00.className);//"Archive_2014";"Official_2022";
+	//"03";arr00.push(ele01.className);//"Single";"ALL_In_Time";"Single_In_ALL_Time";"Actual_In_ALL_In_Time";"Actual_In_Single_In_ALL_Time";
+	if ( num00==0 )
+	{
+		ele.style.backgroundColor="red";
+		if ( arr00[0]=="Network" )
+		{
+			ele.value="Offline";
+		}
+		else if ( arr00[0]=="Location" )
+		{
+			ele03=getElementsByClassName(ele00,"Bijint_Category_" + ele.getAttribute("cat_loc"))[0];
+			ele03.style.display="none";
+		}
+		else if ( arr00[0]=="Type" )
+		{
+		}
+		else			{}
+	}
+	else if ( num00==1 )
+	{
+		ele.style.backgroundColor="#1EB0E9";
+		if ( arr00[0]=="Network" )
+		{
+			ele.value="Online";
+		}
+		else if ( arr00[0]=="Location" )
+		{
+			ele03=getElementsByClassName(ele00,"Bijint_Category_" + ele.getAttribute("cat_loc"))[0];
+			ele03.style.display="";
+		}
+		else if ( arr00[0]=="Type" )
+		{
+		}
+		else			{}
+	}
+	else					{}
+	//==============================Bijint_Data_Cat_Location_Set_Val==============================
+	//==============================Pre_Definition==============================
+	//eval(Parameter_Base_STR_ijk_XX(10));
+
+	var ele_Bijint_Table								;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	var elel_Bijint_Table								;
+	var strl_Bijint_Table								;
+	var clsl_Bijint_Category_Set						;
+	var strl_Bijint_Category_Set						;
+	var Bijint_Table_ID									;
+
+	ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+	ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+	ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+	ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+	ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+	ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+	ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+	elel_Bijint_Table=
+	[
+		//	ele_Bijint_Table_Mode_One						,
+		//	ele_Bijint_Table_Mode_Multi						,
+		ele_Bijint_Table_Single							,
+		ele_Bijint_Table_ALL_In_Time					,
+		ele_Bijint_Table_Single_In_ALL_Time				,
+		ele_Bijint_Table_Actual_In_ALL_In_Time			,
+		ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+	];
+	strl_Bijint_Table=["Single","ALL_In_Time","Single_In_ALL_Time","Actual_In_ALL_In_Time","Actual_In_Single_In_ALL_Time"];
+	clsl_Bijint_Category_Set=
+	[
+		Bijint_Category_Set.Table_Type.Single						,
+		Bijint_Category_Set.Table_Type.ALL_In_Time					,
+		Bijint_Category_Set.Table_Type.Single_In_ALL_Time			,
+		Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		,
+		Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time
+	];
+	strl_Bijint_Category_Set=
+	[
+		"Bijint_Category_Set.Table_Type.Single"						,
+		"Bijint_Category_Set.Table_Type.ALL_In_Time"				,
+		"Bijint_Category_Set.Table_Type.Single_In_ALL_Time"			,
+		"Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time"		,
+		"Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time"
+	];
+	//==============================Pre_Definition==============================
+	//==============================Bijint_Table_Category_Set_Data==============================
+	for (Bijint_Table_ID=0;Bijint_Table_ID<strl_Bijint_Table.length;Bijint_Table_ID++)
+	{
+		if ( Bijint_Table_ID_Inuse[Bijint_Table_ID]==0 )		{continue;}
+		if ( strl_Bijint_Table[Bijint_Table_ID]==arr00[3] )		{break;}
+	}
+	Bijint_Table_Category_Set_Data(fun_name,elel_Bijint_Table,strl_Bijint_Table,clsl_Bijint_Category_Set,strl_Bijint_Category_Set,Bijint_Table_ID,arr00[2]);
+	//Bijint_Category_Set.Print_Data();
+	//==============================Bijint_Table_Category_Set_Data==============================
+	//==============================Bijint_Image_Sel_BTN==============================
+	//==============================Pre_Definition==============================
+	var strl_Bijint_Data_Type;
+	var ele_Archive_2014;
+	var ele_Official_2022;
+
+	//	"02";arr00.push(ele00.className);//"Archive_2014";"Official_2022";
+	//	"03";arr00.push(ele01.className);//"Single";"ALL_In_Time";"Single_In_ALL_Time";"Actual_In_ALL_In_Time";"Actual_In_Single_In_ALL_Time";
+
+	strl_Bijint_Data_Type=["Archive_2014","Official_2022"];
+
+	var ele_Bijint_Category_Top;
+	var ele_Bijint_Category_Left;
+	var ele_Bijint_Image_Sel_BTN;
+	//==============================Pre_Definition==============================
+	//==============================elel_Bijint_Table_XXX==============================
+	for (Bijint_Table_ID=0;Bijint_Table_ID<elel_Bijint_Table.length;Bijint_Table_ID++)
+	{
+		if ( strl_Bijint_Table[Bijint_Table_ID]==ele01.className )			{break;}
+	}
+	for (Bijint_Data_Type_ID=0;Bijint_Data_Type_ID<strl_Bijint_Data_Type.length;Bijint_Data_Type_ID++)
+	{
+		if ( strl_Bijint_Data_Type[Bijint_Data_Type_ID]==ele00.className )	{break;}
+	}
+	//	ele_Archive_2014								=getElementsByClassName(ele_Bijint_Table_Single,"Archive_2014")[0];
+	//	ele_Official_2022								=getElementsByClassName(ele_Bijint_Table_Single,"Official_2022")[0];
+	str00='ele_Archive_2014		=getElementsByClassName(ele_Bijint_Table_' + strl_Bijint_Table[Bijint_Table_ID] + ',"' + 
+																				strl_Bijint_Data_Type[Bijint_Data_Type_ID] + '")[0];';
+	str01='ele_Official_2022	=getElementsByClassName(ele_Bijint_Table_' + strl_Bijint_Table[Bijint_Table_ID] + ',"' + 
+																				strl_Bijint_Data_Type[Bijint_Data_Type_ID] + '")[0];';
+	eval(str00);eval(str01);
+
+	str00="num00=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Location.Top" + ";";
+	str01="num01=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Location.Left" + ";";
+	eval(str00);eval(str01);
+	if ( num00==1 || num01==0 )//"Top";
+	{
+		str02='ele_Bijint_Category_Top					=getElementsByClassName(ele_' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ',"Bijint_Category_Top")[0];';
+		eval(str02);
+		num02=parseInt(ele_Bijint_Category_Top.getAttribute("id_sel"),10);
+		ele_Bijint_Image_Sel_BTN				=getElementsByClassName(ele_Bijint_Category_Top,"Bijint_Image_Sel_BTN");
+	}
+	else if ( num00==0 && num01==1 )//"Left";
+	{
+		str02='ele_Bijint_Category_Left					=getElementsByClassName(ele_' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ',"Bijint_Category_Left")[0];';
+		eval(str02);
+		num02=parseInt(ele_Bijint_Category_Left.getAttribute("id_sel"),10);
+		ele_Bijint_Image_Sel_BTN				=getElementsByClassName(ele_Bijint_Category_Left,"Bijint_Image_Sel_BTN");
+	}
+	else		{}
+	if ( num02>=ele_Bijint_Image_Sel_BTN.length )		{num03=ele_Bijint_Image_Sel_BTN.length - 1;}
+	else												{num03=num02;}
+	ele_Bijint_Image_Sel_BTN[num03].click();
+
+	//	console.log("strl_Bijint_Table[Bijint_Table_ID] : " + strl_Bijint_Table[Bijint_Table_ID] + ";\t" + 
+	//				"Bijint_Table_ID : " + Bijint_Table_ID + ";\t" + 
+	//				"strl_Bijint_Data_Type[Bijint_Data_Type_ID] : " + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ";\t" + 
+	//				"Bijint_Data_Type_ID : " + Bijint_Data_Type_ID + ";\t" + 
+	//				"num00 : " + num00 + ";\t" + 
+	//				"num01 : " + num01 + ";\t" + 
+	//				"num02 : " + num02 + ";\t" + 
+	//				"num03 : " + num03 + ";\t" + 
+	//				"");
+	//==============================elel_Bijint_Table_XXX==============================
+	//==============================Bijint_Image_Sel_BTN==============================
+}
+/*
+<tr><td colspan="2"><table class="Bijint_Category_Set_CLS" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+	<tr>
+		<td><span class="Bijint_Title">美人時計_Archive_2014+</span></td>
+		<td><input type="button" class="Bijint_Data_Location_CLS" value="Offline" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Top" value="Top" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Left" value="Left" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ALL" value="ALL" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="Small_Size"value="Small_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+		<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ORI_Size" value="ORI_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+	</tr>
+</tbody></table></td></tr>
+*/
+//========================================Bijint_Category_Set_CLS========================================
+//========================================Bijint_Table_Action========================================
+function Bijint_Image_Select(ele,evt,n)
+{
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+
+	var ele_disabled;
+
+	if ( n==0 )//鼠標移入。
+	{
+		if ( evt_target.tagName=="TEXTAREA" || 
+				( evt_target.tagName=="INPUT" && 
+				( evt_target.type=="text" || 
+				evt_target.className=="IE_Proxy_ID" || evt_target.className=="IE_Proxy_Name" || evt_target.className=="IE_Proxy_Addr" || 
+				evt_target.className=="IE_Proxy_Name_Selected" ) ) )
+		{
+			if ( evt_target.disabled==true )	{ele_disabled=true;evt_target.disabled=false;}
+			evt_target.select();//選中全文。
+			evt_target.focus();//設置焦點。
+			if ( ele_disabled==true )			{evt_target.disabled=true;}
+		}
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//按下了按纽。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.type=="button" && evt_target.className=="Bijint_Image_Sel_BTN" )
+		{
+			//==========DIVISION==========
+			ele00=evt_target;
+			while ( !( ele00.className=="Bijint_Category_Top" || ele00.className=="Bijint_Category_Left" ) )
+			{
+				ele00=ele00.parentNode;
+			}
+			elel00=ele00.getElementsByTagName("input");
+			//for (i=0;i<elel00.length;i++)		{elel00[i].style.backgroundColor="";}
+
+			i=parseInt(ele00.getAttribute("id_sel"),10);
+			if ( i<elel00.length )		{elel00[i].style.backgroundColor="";}
+			else						{}
+
+			evt_target.style.backgroundColor="#1EB0E9";
+			ele00.setAttribute("id_sel",evt_target.getAttribute("id"));
+			//==========DIVISION==========
+			//P:\LD\30\10\PIC_LIB\美人時計\Archive_2014+\Small_Size\www.bijint.com\assets\toppict\akita\t1\0000.jpg
+			//P:\LD\30\10\PIC_LIB\美人時計\Archive_2014+\ORI_Size\www.bijint.com\assets\pict\akita\pc\0132.jpg
+			//P:\LD\30\10\PIC_LIB\美人時計\Official_2022-01-25\ORI_Size\www.bijint.com\assets\pict\aomori\pc\0000.jpg
+			//P:\LD\30\10\PIC_LIB\美人時計\Official_2022-01-25\Small_Size\www.bijint.com\assets\toppict\aomori\t1\0000.jpg
+			ele00=ele00.parentNode;
+			while ( !( ele00.tagName.toUpperCase()=="TABLE" && ( ele00.className=="Archive_2014" || ele00.className=="Official_2022" ) ) )
+			{
+				ele00=ele00.parentNode;
+			}
+			ele01=getElementsByClassName(ele00,"Bijint_Image")[0];
+			ele02=getElementsByClassName(ele01,"Small_Size")[0];
+			ele03=getElementsByClassName(ele01,"ORI_Size")[0];
+
+			ele04=ele00.parentNode;
+			while ( !( ele04.tagName.toUpperCase()=="TABLE" && 
+					( ele04.className=="Single" || ele04.className=="ALL_In_Time" || ele04.className=="Single_In_ALL_Time" || 
+						ele04.className=="Actual_In_ALL_In_Time" || ele04.className=="Actual_In_Single_In_ALL_Time" ) ) )
+			{
+				ele04=ele04.parentNode;
+			}
+
+			if ( ele00.className=="Archive_2014" )			{str00="Archive_2014+";}
+			else if ( ele00.className=="Official_2022" )	{str00="Official_2022-01-25";}
+			else											{}
+
+			//0:"Offline";1:"Online";
+			//Bijint_Category_Set.Table_Type.Single.Archive_2014.Network.Status;
+			//Bijint_Category_Set.Table_Type.Single.Official_2022.Network.Status;
+			str04="num04=" + "Bijint_Category_Set.Table_Type." + ele04.className + "." + ele00.className + ".Network.Status" + ";"
+			eval(str04);
+
+			if ( ele04.className=="Single" )
+			{
+				//evt_target.getAttribute("cat");//"akita";
+				cls00=new Date();
+				str01=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+				str01+=".jpg";//"0132.jpg";
+
+				if ( num04==0 )//0:"Offline";
+				{
+					ele02.src=IMG_Folder_Path + str00 + "\\Small_Size\\www.bijint.com\\assets\\toppict\\"	 + evt_target.getAttribute("cat") + "\\t1\\" + str01;
+					ele03.src=IMG_Folder_Path + str00 + "\\ORI_Size\\www.bijint.com\\assets\\pict\\"		 + evt_target.getAttribute("cat") + "\\pc\\" + str01;
+				}
+				else if ( num04==1 )//1:"Online";
+				{
+					ele02.src="https://www.bijint.com/assets/toppict/"	 + evt_target.getAttribute("cat") + "/t1/" + str01;
+					ele03.src="https://www.bijint.com/assets/pict/"		 + evt_target.getAttribute("cat") + "/pc/" + str01;
+				}
+				else		{}
+				//console.log(ele02.src + "\n" + ele03.src);
+
+				//	<tr><td colspan="2"><table class="Bijint_Personal_Data" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+				//		<tr>
+				//			<td><span class="Bijint_Personal_Data_Text">名前：性別：年齢：住所：</span></td>
+				//		</tr>
+				//	</tbody></table></td></tr>
+				ele05=getElementsByClassName(ele00,"Bijint_Personal_Data")[0];
+				ele06=getElementsByClassName(ele00,"Bijint_Personal_Data_Text")[0];
+				//Bijint.Archive_2014.DAT._JSON.ARR;
+				//Bijint.Official_2022.DAT._JSON.ARR;
+				eval("str06=" + "Bijint." + ele00.className + ".DAT._JSON.STR" + ";");
+				eval("arr06=" + "Bijint." + ele00.className + ".DAT._JSON.ARR" + ";");
+				//Bijint.Archive_2014.DIR._JSON.STR
+				//Bijint.Official_2022.DIR._JSON.STR
+				eval("str07=" + "Bijint." + ele00.className + ".DIR._JSON.STR" + ";");
+				eval("arr07=" + "Bijint." + ele00.className + ".DIR._JSON.ARR" + ";");
+				//str07=str07.replace(new RegExp("^([\\s\\S]*)(#####[^#]+" + str01.replace(/\.jpg$/gm,"") + "\.json)([\\s\\S]*)$","gm"),"$1");
+				arr08=str07.match(new RegExp("^(#####[^#]+" + evt_target.getAttribute("cat") + "[^#]+" + str01.replace(/\.jpg$/gm,"") + "\.json)$","gm"));
+				if ( arr08==null || arr08==undefined || arr08==[] || arr08.length==0 )
+				{
+					ele06.innerHTML="";
+				}
+				else
+				{
+					str07=arr08[0];
+					num07=parseInt(str07.split("\t")[1],10);
+					cls06=JSON.parse(arr06[num07]);
+
+					//	{
+					//		"success":true,"code":"M00S00","message":"",
+					//		"result":
+					//		{
+					//			"content_info":{"mouseover":false,"link":""},
+					//			"profile_info":
+					//			[
+					//				{"title":"name /","note":"ゆり","url":"","type":1},
+					//				{"title":"birthday /","note":"1994/8/27","url":"","type":2},
+					//				{"title":"home /","note":"神奈川","url":"","type":3},
+					//				{"title":"occupation /","note":"大学生","url":"","type":6},
+					//				{"title":"profile","note":"BIJIN PROFILE","url":"http://prof.bijint.com/MTgyODkbf12","type":7},
+					//				{"title":"height /","note":"164","url":"","type":7}
+					//			],
+					//			"ad_info":[],
+					//			"model_images":
+					//			[
+					//				{"image_path":"http://img.bijin-tokei.co.jp/Qmlf4DNagyfn/profile/TPluJREgmgRNYDgP/original.jpg"},
+					//				{"image_path":"http://img.bijin-tokei.co.jp/ZLTxI3yUJChP/profile/Z65NkLKVst3sR0we/original.jpg"},
+					//				{"image_path":"http://img.bijin-tokei.co.jp/WbJzwkAgDAD9/profile/nmKFtRQAhgcncjyt/original.jpg"},
+					//				{"image_path":"http://img.bijin-tokei.co.jp/BqCBbv9TzIOj/profile/k68jce7wZRsslwUd/original.jpg"}
+					//			]
+					//		}
+					//	}
+
+					str08="";
+					for (i=0;i<cls06.result.profile_info.length;i++)
+					{
+						str08+=cls06.result.profile_info[i].title.replace(/ \/$/gm,"") + "：";
+						str08+=cls06.result.profile_info[i].note + "。";
+						if ( cls06.result.profile_info[i].url!="" && cls06.result.profile_info[i].url!=undefined && cls06.result.profile_info[i].url!=null )
+						{
+							str08+="<a href=\"" + cls06.result.profile_info[i].url.toString() + "\" target=_blank>" + 
+									cls06.result.profile_info[i].url.toString().replace(/^.+\/([^\/]+)$/gm,"$1") + "</a>" + ";";
+						}
+						str08+=cls06.result.profile_info[i].type	 + ";";
+						str08+="<br>";
+					}
+					ele06.innerHTML=str08;
+
+					//console.log(evt_target.getAttribute("cat") + "\t" + str01);
+					//console.log(str07);
+					//console.log(arr06[num07]);
+					//console.log(cls06);
+					//console.log(JSON.stringify(cls06));
+				}
+			}
+			else if ( ele04.className=="ALL_In_Time" )
+			{
+			}
+			else if ( ele04.className=="Single_In_ALL_Time" )
+			{
+				elel02=getElementsByClassName(ele01,"Small_Size");
+				elel03=getElementsByClassName(ele01,"ORI_Size");
+
+				//evt_target.getAttribute("cat");//"akita";
+				if ( num04==0 )//0:"Offline";
+				{
+					for (i=0;i<24;i++)
+					{
+						for (j=0;j<60;j++)
+						{
+							str01=("0".repeat(2) + i.toString()).slice(-2) + ("0".repeat(2) + j.toString()).slice(-2);
+							str01+=".jpg";//"0132.jpg";
+							elel02[i*60+j].src=
+							IMG_Folder_Path + str00 + "\\Small_Size\\www.bijint.com\\assets\\toppict\\"	 + evt_target.getAttribute("cat") + "\\t1\\" + str01;
+							elel03[i*60+j].src=
+							IMG_Folder_Path + str00 + "\\ORI_Size\\www.bijint.com\\assets\\pict\\"		 + evt_target.getAttribute("cat") + "\\pc\\" + str01;
+						}
+					}
+				}
+				else if ( num04==1 )//1:"Online";
+				{
+					for (i=0;i<24;i++)
+					{
+						for (j=0;j<60;j++)
+						{
+							str01=("0".repeat(2) + i.toString()).slice(-2) + ("0".repeat(2) + j.toString()).slice(-2);
+							str01+=".jpg";//"0132.jpg";
+							elel02[i*60+j].src="https://www.bijint.com/assets/toppict/"	 + evt_target.getAttribute("cat") + "/t1/" + str01;
+							elel03[i*60+j].src="https://www.bijint.com/assets/pict/"	 + evt_target.getAttribute("cat") + "/pc/" + str01;
+						}
+					}
+				}
+				else		{}
+				//console.log(ele02.src + "\n" + ele03.src);
+			}
+			else if ( ele04.className=="Actual_In_ALL_In_Time" && Bijint_Actual_Data_Inuse==1 )
+			{
+			}
+			else if ( ele04.className=="Actual_In_Single_In_ALL_Time" && Bijint_Actual_Data_Inuse==1 )
+			{
+				//ele00.className;//"Archive_2014";"Official_2022";
+				ele_Bijint_Image						=getElementsByClassName(ele00,"Bijint_Image")[0];
+
+				var arr02_str,arr03_str;
+				str00="";
+				str00+="arr02		=Bijint." + ele00.className + ".DIR.JPG.Small_Size.ARR;" + "\n";
+				str00+="arr03		=Bijint." + ele00.className + ".DIR.JPG.ORI_Size.ARR;" + "\n";
+				str00+="arr02_str	=Bijint." + ele00.className + ".DIR.JPG.Small_Size.STR;" + "\n";
+				str00+="arr03_str	=Bijint." + ele00.className + ".DIR.JPG.ORI_Size.STR;" + "\n";
+				eval(str00);
+
+				arr04=arr02_str.match(new RegExp("^(.+\\\\" + evt_target.getAttribute("cat") + "\\\\.+)$","gm"));
+				arr05=arr03_str.match(new RegExp("^(.+\\\\" + evt_target.getAttribute("cat") + "\\\\.+)$","gm"));
+				try
+				{
+					console.log('evt_target.getAttribute("cat") : ' + evt_target.getAttribute("cat"));
+					console.log("arr02 : " + arr02.length + ";\t" + "arr04 : " + arr04.length);
+					console.log("arr03 : " + arr03.length + ";\t" + "arr05 : " + arr05.length);
+				}
+				catch (err)
+				{
+					console.log(err.message);
+				}
+
+				//evt_target.getAttribute("cat");//"akita";
+				num01=60;
+				num02=Math.ceil(arr04.length / num01);
+				str00=('<img class="Small_Size" src="">'.repeat(num01) + "<br>").repeat(num02).slice(0,-"<br>".length);
+				num03=Math.ceil(arr05.length / num01);
+				str01=('<img class="ORI_Size" src="">'.repeat(num01) + "<br>").repeat(num03).slice(0,-"<br>".length);
+				//ele_Bijint_Image						=getElementsByClassName(ele_Archive_2014,"Bijint_Image")[0];
+				ele_Bijint_Image.getElementsByTagName("tr")[0].getElementsByTagName("td")[0].innerHTML=str00;
+				ele_Bijint_Image.getElementsByTagName("tr")[1].getElementsByTagName("td")[0].innerHTML=str01;
+
+				elel02=getElementsByClassName(ele01,"Small_Size");
+				elel03=getElementsByClassName(ele01,"ORI_Size");
+
+				if ( ele00.className=="Archive_2014" )			{str00="Archive_2014+";}
+				else if ( ele00.className=="Official_2022" )	{str00="Official_2022-01-25";}
+				else											{}
+
+				if ( num04==0 )//0:"Offline";
+				{
+					for (i=0;i<arr04.length;i++)		{elel02[i].src	=arr04[i];}
+					for (i=0;i<arr05.length;i++)		{elel03[i].src	=arr05[i];}
+				}
+				else if ( num04==1 )//1:"Online";
+				{
+					for (i=0;i<arr04.length;i++)		{elel02[i].src	=arr04[i].replace(/^.+(www\.bijint\.com)/gm,"https://$1").replace(/\\/gm,"\/");}
+					for (i=0;i<arr05.length;i++)		{elel03[i].src	=arr05[i].replace(/^.+(www\.bijint\.com)/gm,"https://$1").replace(/\\/gm,"\/");}
+				}
+				else		{}
+				//console.log(ele02.src + "\n" + ele03.src);
+			}
+			else			{}
+			//==========DIVISION==========
+		}
+	}
+	else
+	{
+	}
+}
+//========================================Bijint_Table_Action========================================
+//========================================Bijint_Table_SH========================================
+function Bijint_Table_SH_Outer_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	//==========DIVISION==========
+	var ele_Bijint_Table									;
+	var ele_Top_Ctrl_Outer_Bar								;
+	var elel_Bijint_Table_SH_Outer							;
+
+	var ele_Bijint_Table_SH_Outer							;
+	var ele_Bijint_Table_XXX								;
+	//==========DIVISION==========
+	ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Top_Ctrl_Outer_Bar				=getElementsByClassName(ele_Bijint_Table,"Top_Ctrl_Outer_Bar")[0];
+	elel_Bijint_Table_SH_Outer			=getElementsByClassName(ele_Top_Ctrl_Outer_Bar,"Bijint_Table_SH_Outer_CLS");
+	//==========DIVISION==========
+	ele_Bijint_Table_SH_Outer=elel_Bijint_Table_SH_Outer[0];//"Mode_One";
+	ele_Bijint_Table_SH_Outer.setAttribute("state",0);
+	ele_Bijint_Table_SH_Outer.style.backgroundColor="red";
+	ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,ele_Bijint_Table_SH_Outer.value)[0];
+	ele_Bijint_Table_XXX.style.display="none";
+	//==========DIVISION==========
+	ele_Bijint_Table_SH_Outer=elel_Bijint_Table_SH_Outer[1];//"Single";
+	ele_Bijint_Table_SH_Outer.setAttribute("state",1);
+	ele_Bijint_Table_SH_Outer.style.backgroundColor="#1EB0E9";
+	ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,ele_Bijint_Table_SH_Outer.value)[0];
+	ele_Bijint_Table_XXX.style.display="";
+	//==========DIVISION==========
+	ele_Bijint_Table_SH_Outer=elel_Bijint_Table_SH_Outer[2];//"ALL_In_Time";
+	ele_Bijint_Table_SH_Outer.setAttribute("state",0);
+	ele_Bijint_Table_SH_Outer.style.backgroundColor="red";
+	ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,ele_Bijint_Table_SH_Outer.value)[0];
+	ele_Bijint_Table_XXX.style.display="none";
+	//==========DIVISION==========
+	ele_Bijint_Table_SH_Outer=elel_Bijint_Table_SH_Outer[3];//"Single_In_ALL_Time";
+	ele_Bijint_Table_SH_Outer.setAttribute("state",0);
+	ele_Bijint_Table_SH_Outer.style.backgroundColor="red";
+	ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,ele_Bijint_Table_SH_Outer.value)[0];
+	ele_Bijint_Table_XXX.style.display="none";
+	//==========DIVISION==========
+	ele_Bijint_Table_SH_Outer=elel_Bijint_Table_SH_Outer[4];//"Actual_In_ALL_In_Time";
+	ele_Bijint_Table_SH_Outer.setAttribute("state",0);
+	ele_Bijint_Table_SH_Outer.style.backgroundColor="red";
+	ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,ele_Bijint_Table_SH_Outer.value)[0];
+	ele_Bijint_Table_XXX.style.display="none";
+	//==========DIVISION==========
+	ele_Bijint_Table_SH_Outer=elel_Bijint_Table_SH_Outer[5];
+	ele_Bijint_Table_SH_Outer.setAttribute("state",0);
+	ele_Bijint_Table_SH_Outer.style.backgroundColor="red";//"Actual_In_Single_In_ALL_Time";
+	ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,ele_Bijint_Table_SH_Outer.value)[0];
+	ele_Bijint_Table_XXX.style.display="none";
+	//==========DIVISION==========
+}
+
+function Bijint_Table_SH_Outer(ele,evt,n)
+{
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var i,j,k,m,n;
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//按下了按纽。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.type=="button" && evt_target.className=="Bijint_Table_SH_Outer_CLS" )
+		{
+			var ele_Bijint_Table								;
+			var ele_Bijint_Table_XXX							;
+
+			ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+			ele_Bijint_Table_XXX				=getElementsByClassName(ele_Bijint_Table,evt_target.value)[0];
+			var state=parseInt(evt_target.getAttribute("state"),10);
+			state=(state + 1)%2;
+			evt_target.setAttribute("state",state);
+			if ( state==0 )
+			{
+				ele_Bijint_Table_XXX.style.display="none";
+				evt_target.style.backgroundColor="red";
+			}
+			else if ( state==1 )
+			{
+				ele_Bijint_Table_XXX.style.display="";
+				evt_target.style.backgroundColor="#1EB0E9";
+			}
+			else		{}
+		}
+		else		{}
+	}
+	else
+	{
+	}
+}
+
+function Bijint_Table_SH_Inner_00_Year_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	//==========DIVISION==========
+	var ele_Bijint_Table								;
+	var ele_Top_Ctrl_Inner_Bar							;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	var elel_Bijint_Table								;
+	var elel_Bijint_Table_SH_Inner_00_Year				;
+	var ele_Bijint_Table_SH_Inner_00_Year				;
+	var ele_Bijint_Table_Data_Type_XXX					;
+	var Bijint_Table_ID									;
+	//==========DIVISION==========
+	ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Top_Ctrl_Inner_Bar							=getElementsByClassName(ele_Bijint_Table,"Top_Ctrl_Inner_Bar")[0];
+	//	elel_Bijint_Table_SH_Inner_00_Year				=getElementsByClassName(ele_Bijint_Table,"Bijint_Table_SH_Inner_00_Year_CLS");
+	//	if ( ele.value=="←" )							{str00="Archive_2014";}
+	//	else if ( ele.value=="→" )						{str00="Official_2022";}
+	//	else											{}
+
+	ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+	//	ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+	ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+	ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+	ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+	ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+	ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+	elel_Bijint_Table=
+	[
+		//	ele_Bijint_Table_Mode_One						,
+		//	ele_Bijint_Table_Mode_Multi						,
+		ele_Bijint_Table_Single							,
+		ele_Bijint_Table_ALL_In_Time					,
+		ele_Bijint_Table_Single_In_ALL_Time				,
+		ele_Bijint_Table_Actual_In_ALL_In_Time			,
+		ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+	];
+
+	for (Bijint_Table_ID=0;Bijint_Table_ID<elel_Bijint_Table.length;Bijint_Table_ID++)
+	{
+		//==========DIVISION==========
+		if ( Bijint_Table_ID_Inuse[Bijint_Table_ID]==0 )		{continue;}
+		//if ( Bijint_Table_ID!=0 || Bijint_Table_ID_Inuse[Bijint_Table_ID - 1]==0 )		{continue;}
+		console.log("Bijint_Table_ID : " + Bijint_Table_ID);
+		//==========DIVISION==========
+		elel_Bijint_Table_SH_Inner_00_Year				=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Bijint_Table_SH_Inner_00_Year_CLS");
+		//==========DIVISION==========
+		ele_Bijint_Table_SH_Inner_00_Year=elel_Bijint_Table_SH_Inner_00_Year[0];//"←";
+		ele_Bijint_Table_SH_Inner_00_Year.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_00_Year.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_Data_Type_XXX			=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Archive_2014")[0];
+		ele_Bijint_Table_Data_Type_XXX.style.display="";
+		//==========DIVISION==========
+		ele_Bijint_Table_SH_Inner_00_Year=elel_Bijint_Table_SH_Inner_00_Year[1];//"→";
+		ele_Bijint_Table_SH_Inner_00_Year.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_00_Year.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_Data_Type_XXX			=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Official_2022")[0];
+		ele_Bijint_Table_Data_Type_XXX.style.display="";
+		//==========DIVISION==========
+	}
+}
+
+function Bijint_Table_SH_Inner_00_Year(ele,evt,n)
+{
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//按下了按纽。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.type=="button" && evt_target.className=="Bijint_Table_SH_Inner_00_Year_CLS" )
+		{
+			var ele_Bijint_Table								;
+			var ele_Bijint_Table_Data_Type_XXX					;
+
+			ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+			ele00=ele;
+			while ( ele00.getAttribute("table_type")!="Bijint_Table_XXX" )
+			{
+				ele00=ele00.parentNode;
+			}
+			if ( evt_target.value=="←" )		{str00="Archive_2014";}
+			else if ( evt_target.value=="→" )	{str00="Official_2022";}
+			else								{}
+			ele_Bijint_Table_Data_Type_XXX		=getElementsByClassName(ele00,str00)[0];
+
+			var state=parseInt(evt_target.getAttribute("state"),10);
+			state=(state + 1)%2;
+			evt_target.setAttribute("state",state);
+			if ( state==0 )
+			{
+				ele_Bijint_Table_Data_Type_XXX.style.display="none";
+				evt_target.style.backgroundColor="red";
+			}
+			else if ( state==1 )
+			{
+				ele_Bijint_Table_Data_Type_XXX.style.display="";
+				evt_target.style.backgroundColor="#1EB0E9";
+			}
+			else		{}
+		}
+		else		{}
+	}
+	else
+	{
+	}
+}
+
+function Bijint_Table_SH_Inner_01_Personal_Data_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	//==========DIVISION==========
+	var ele_Bijint_Table								;
+	var ele_Top_Ctrl_Inner_Bar							;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	var elel_Bijint_Table								;
+	var elel_Bijint_Table_SH_Inner_01_Personal_Data		;
+	var ele_Bijint_Table_SH_Inner_01_Personal_Data		;
+	var ele_Bijint_Table_Data_Type_XXX					;
+	var ele_Bijint_Personal_Data						;
+	var Bijint_Table_ID									;
+	//==========DIVISION==========
+	ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Top_Ctrl_Inner_Bar							=getElementsByClassName(ele_Bijint_Table,"Top_Ctrl_Inner_Bar")[0];
+	//	elel_Bijint_Table_SH_Inner_01_Personal_Data		=getElementsByClassName(ele_Bijint_Table,"Bijint_Table_SH_Inner_01_Personal_Data_CLS");
+	//	if ( ele.value=="←" )							{str00="Archive_2014";}
+	//	else if ( ele.value=="→" )						{str00="Official_2022";}
+	//	else											{}
+
+	ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+	//	ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+	ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+	ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+	ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+	ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+	ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+	elel_Bijint_Table=
+	[
+		//	ele_Bijint_Table_Mode_One						,
+		//	ele_Bijint_Table_Mode_Multi						,
+		ele_Bijint_Table_Single							,
+		ele_Bijint_Table_ALL_In_Time					,
+		ele_Bijint_Table_Single_In_ALL_Time				,
+		ele_Bijint_Table_Actual_In_ALL_In_Time			,
+		ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+	];
+
+	for (Bijint_Table_ID=0;Bijint_Table_ID<elel_Bijint_Table.length;Bijint_Table_ID++)
+	{
+		//==========DIVISION==========
+		if ( Bijint_Table_ID_Inuse[Bijint_Table_ID]==0 )		{continue;}
+		//==========DIVISION==========
+		elel_Bijint_Table_SH_Inner_01_Personal_Data		=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Bijint_Table_SH_Inner_01_Personal_Data_CLS");
+		//==========DIVISION==========
+		ele_Bijint_Table_SH_Inner_01_Personal_Data=elel_Bijint_Table_SH_Inner_01_Personal_Data[0];//"◎";
+		ele_Bijint_Table_SH_Inner_01_Personal_Data.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_01_Personal_Data.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_Data_Type_XXX			=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Archive_2014")[0];
+		ele_Bijint_Personal_Data				=getElementsByClassName(ele_Bijint_Table_Data_Type_XXX,"Bijint_Personal_Data")[0];
+		ele_Bijint_Personal_Data.getElementsByTagName("tr")[0].style.display="";
+		//==========DIVISION==========
+		ele_Bijint_Table_SH_Inner_01_Personal_Data=elel_Bijint_Table_SH_Inner_01_Personal_Data[1];//"◎";
+		ele_Bijint_Table_SH_Inner_01_Personal_Data.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_01_Personal_Data.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_Data_Type_XXX			=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Official_2022")[0];
+		ele_Bijint_Personal_Data				=getElementsByClassName(ele_Bijint_Table_Data_Type_XXX,"Bijint_Personal_Data")[0];
+		ele_Bijint_Personal_Data.getElementsByTagName("tr")[0].style.display="";
+		//==========DIVISION==========
+	}
+}
+
+function Bijint_Table_SH_Inner_01_Personal_Data(ele,evt,n)
+{
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//按下了按纽。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.type=="button" && evt_target.className=="Bijint_Table_SH_Inner_01_Personal_Data_CLS" )
+		{
+			var ele_Bijint_Table								;
+			var ele_Bijint_Personal_Data						;
+
+			ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+			ele00=ele;
+			while ( !( ele00.className=="Archive_2014" || ele00.className=="Official_2022" ) )
+			{
+				ele00=ele00.parentNode;
+			}
+			ele_Bijint_Personal_Data		=getElementsByClassName(ele00,"Bijint_Personal_Data")[0];
+
+			var state=parseInt(evt_target.getAttribute("state"),10);
+			state=(state + 1)%2;
+			evt_target.setAttribute("state",state);
+			if ( state==0 )
+			{
+				ele_Bijint_Personal_Data.getElementsByTagName("tr")[0].style.display="none";
+				evt_target.style.backgroundColor="red";
+			}
+			else if ( state==1 )
+			{
+				ele_Bijint_Personal_Data.getElementsByTagName("tr")[0].style.display="";
+				evt_target.style.backgroundColor="#1EB0E9";
+			}
+			else		{}
+		}
+		else		{}
+	}
+	else
+	{
+	}
+}
+
+function Bijint_Table_SH_Inner_02_Size_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	//==========DIVISION==========
+	var ele_Bijint_Table								;
+	var ele_Top_Ctrl_Inner_Bar							;
+	var ele_Bijint_Table_Mode_One						;
+	var ele_Bijint_Table_Mode_Multi						;
+	var ele_Bijint_Table_Single							;
+	var ele_Bijint_Table_ALL_In_Time					;
+	var ele_Bijint_Table_Single_In_ALL_Time				;
+	var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+	var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+	var elel_Bijint_Table								;
+	var elel_Bijint_Table_SH_Inner_02_Size				;
+	var ele_Bijint_Table_SH_Inner_02_Size				;
+	var ele_Bijint_Table_Data_Type_XXX					;
+	var ele_Bijint_Image								;
+	var Bijint_Table_ID									;
+	//==========DIVISION==========
+	ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Top_Ctrl_Inner_Bar							=getElementsByClassName(ele_Bijint_Table,"Top_Ctrl_Inner_Bar")[0];
+	//	elel_Bijint_Table_SH_Inner_02_Size				=getElementsByClassName(ele_Bijint_Table,"Bijint_Table_SH_Inner_02_Size_CLS");
+	//	if ( ele.value=="←" )							{str00="Archive_2014";}
+	//	else if ( ele.value=="→" )						{str00="Official_2022";}
+	//	else											{}
+
+	ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+	//	ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+	ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+	ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+	ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+	ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+	ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+	elel_Bijint_Table=
+	[
+		//	ele_Bijint_Table_Mode_One						,
+		//	ele_Bijint_Table_Mode_Multi						,
+		ele_Bijint_Table_Single							,
+		ele_Bijint_Table_ALL_In_Time					,
+		ele_Bijint_Table_Single_In_ALL_Time				,
+		ele_Bijint_Table_Actual_In_ALL_In_Time			,
+		ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+	];
+
+	for (Bijint_Table_ID=0;Bijint_Table_ID<elel_Bijint_Table.length;Bijint_Table_ID++)
+	{
+		//==========DIVISION==========
+		if ( Bijint_Table_ID_Inuse[Bijint_Table_ID]==0 )		{continue;}
+		//==========DIVISION==========
+		elel_Bijint_Table_SH_Inner_02_Size				=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Bijint_Table_SH_Inner_02_Size_CLS");
+		//==========DIVISION==========
+		ele_Bijint_Table_SH_Inner_02_Size=elel_Bijint_Table_SH_Inner_02_Size[0];//"↑";
+		ele_Bijint_Table_SH_Inner_02_Size.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_02_Size.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_SH_Inner_02_Size=elel_Bijint_Table_SH_Inner_02_Size[1];//"↓";
+		ele_Bijint_Table_SH_Inner_02_Size.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_02_Size.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_Data_Type_XXX			=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Archive_2014")[0];
+		ele_Bijint_Image						=getElementsByClassName(ele_Bijint_Table_Data_Type_XXX,"Bijint_Image")[0];
+		ele_Bijint_Image.getElementsByTagName("tr")[0].style.display="";
+		ele_Bijint_Image.getElementsByTagName("tr")[1].style.display="";
+		//==========DIVISION==========
+		ele_Bijint_Table_SH_Inner_02_Size=elel_Bijint_Table_SH_Inner_02_Size[2];//"↑";
+		ele_Bijint_Table_SH_Inner_02_Size.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_02_Size.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_SH_Inner_02_Size=elel_Bijint_Table_SH_Inner_02_Size[3];//"↓";
+		ele_Bijint_Table_SH_Inner_02_Size.setAttribute("state",1);
+		ele_Bijint_Table_SH_Inner_02_Size.style.backgroundColor="#1EB0E9";
+		ele_Bijint_Table_Data_Type_XXX			=getElementsByClassName(elel_Bijint_Table[Bijint_Table_ID],"Official_2022")[0];
+		ele_Bijint_Image						=getElementsByClassName(ele_Bijint_Table_Data_Type_XXX,"Bijint_Image")[0];
+		ele_Bijint_Image.getElementsByTagName("tr")[0].style.display="";
+		ele_Bijint_Image.getElementsByTagName("tr")[1].style.display="";
+		//==========DIVISION==========
+	}
+}
+
+function Bijint_Table_SH_Inner_02_Size(ele,evt,n)
+{
+	eval(Parameter_Base_STR_ijk_XX(10));
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//按下了按纽。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.type=="button" && evt_target.className=="Bijint_Table_SH_Inner_02_Size_CLS" )
+		{
+			var ele_Bijint_Table								;
+			var ele_Bijint_Image								;
+
+			ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+			ele00=ele;
+			while ( !( ele00.className=="Archive_2014" || ele00.className=="Official_2022" ) )
+			{
+				ele00=ele00.parentNode;
+			}
+			if ( evt_target.value=="↑" )		{tr_id=0;}
+			else if ( evt_target.value=="↓" )	{tr_id=1;}
+			else								{}
+			ele_Bijint_Image		=getElementsByClassName(ele00,"Bijint_Image")[0];
+
+			var state=parseInt(evt_target.getAttribute("state"),10);
+			state=(state + 1)%2;
+			evt_target.setAttribute("state",state);
+			if ( state==0 )
+			{
+				ele_Bijint_Image.getElementsByTagName("tr")[tr_id].style.display="none";
+				evt_target.style.backgroundColor="red";
+			}
+			else if ( state==1 )
+			{
+				ele_Bijint_Image.getElementsByTagName("tr")[tr_id].style.display="";
+				evt_target.style.backgroundColor="#1EB0E9";
+			}
+			else		{}
+		}
+		else		{}
+	}
+	else
+	{
+	}
+}
+//========================================Bijint_Table_SH========================================
+//========================================Bijint_Table_ST_setTimeout========================================
+var Bijint_Table_ST_State;//0:Wait_For_Bijint_ST;1:In_Bijint_STing;2:Bijint_STing_Over;3:All_Bijint_ST_Over;
+var Bijint_Time_Now_STR;
+
+function Bijint_Table_ST_INI()
+{
+	//==========DIVISION==========
+	eval(Parameter_Base_STR_ijk_XX(10));
+	//==========DIVISION==========
+	var ele_Bijint_Table								;
+	var ele_Top_Ctrl_ST_Bar								;
+	var elel_Bijint_Table_ST							;
+	var ele_Bijint_Table_ST								;
+	//==========DIVISION==========
+	ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+	ele_Top_Ctrl_ST_Bar					=getElementsByClassName(ele_Bijint_Table,"Top_Ctrl_ST_Bar")[0];
+	elel_Bijint_Table_ST				=getElementsByClassName(ele_Top_Ctrl_ST_Bar,"Bijint_Table_ST_CLS");
+	//==========DIVISION==========
+	ele_Bijint_Table_ST=elel_Bijint_Table_ST[0];//"setTimeout";
+	ele_Bijint_Table_ST.setAttribute("state",1);
+	ele_Bijint_Table_ST.style.backgroundColor="#1EB0E9";
+
+	Bijint_Table_ST_State=1;//0:Disabled;1:Enabled;
+	Bijint_Time_Now_STR="";
+	Bijint_Table_ST_Core();
+	//==========DIVISION==========
+}
+
+function Bijint_Table_ST(ele,evt,n)
+{
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var i,j,k,m,n;
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//按下了按纽。
+	{
+		if ( evt_target.tagName=="INPUT" && evt_target.type=="button" && evt_target.className=="Bijint_Table_ST_CLS" )
+		{
+			var ele_Bijint_Table								;
+			var ele_Top_Ctrl_ST_Bar								;
+			var elel_Bijint_Table_ST							;
+			var ele_Bijint_Table_ST								;
+
+			ele_Bijint_Table					=getElementsByClassName(document,"Bijint_Table")[0];
+			ele_Top_Ctrl_ST_Bar					=getElementsByClassName(ele_Bijint_Table,"Top_Ctrl_ST_Bar")[0];
+			elel_Bijint_Table_ST				=getElementsByClassName(ele_Top_Ctrl_ST_Bar,"Bijint_Table_ST_CLS");
+			ele_Bijint_Table_ST=elel_Bijint_Table_ST[0];//"setTimeout";
+
+			var state=parseInt(evt_target.getAttribute("state"),10);
+			state=(state + 1)%2;
+			evt_target.setAttribute("state",state);
+			Bijint_Table_ST_State=state;
+			if ( state==0 )
+			{
+				evt_target.style.backgroundColor="red";
+			}
+			else if ( state==1 )
+			{
+				evt_target.style.backgroundColor="#1EB0E9";
+				Bijint_Table_ST_Core();
+			}
+			else		{}
+		}
+		else		{}
+	}
+	else
+	{
+	}
+}
+
+function Bijint_Table_ST_Core()
+{
+	var STO=1;//0:Do_Not_Run_setTimeout;1:Run_setTimeout;2:Run_Function_Now;
+
+	//var fun_ct_cache;
+	//fun_ct_cache=arguments.callee;
+
+	if ( Bijint_Table_ST_State==0 )//0:Disabled;
+	{
+		STO=0;
+	}
+	else if ( Bijint_Table_ST_State==1 )//1:Enabled;
+	{
+		//==========DIVISION==========
+		eval(Parameter_Base_STR_ijk_XX(5));
+		//==========DIVISION==========
+		var ele_Bijint_Table								;
+		var ele_Top_Ctrl_Inner_Bar							;
+		var ele_Bijint_Table_Mode_One						;
+		var ele_Bijint_Table_Mode_Multi						;
+		var ele_Bijint_Table_Single							;
+		var ele_Bijint_Table_ALL_In_Time					;
+		var ele_Bijint_Table_Single_In_ALL_Time				;
+		var ele_Bijint_Table_Actual_In_ALL_In_Time			;
+		var ele_Bijint_Table_Actual_In_Single_In_ALL_Time	;
+
+		var elel_Bijint_Table								;
+		var strl_Bijint_Table								;
+		var clsl_Bijint_Category_Set						;
+		var strl_Bijint_Category_Set						;
+		var strl_Bijint_Data_Type							;
+
+		var ele_Archive_2014								;
+		var ele_Official_2022								;
+		var Bijint_Table_ID									;
+		var Bijint_Data_Type_ID								;
+
+		var	ele_Bijint_Image_Sel_BTN						;
+		var elel_Bijint_Data_Cat_Type_CLS					;
+		var ele_Bijint_Category_Set_CLS						;
+		//==========DIVISION==========
+		cls00=new Date();
+		str00=("0".repeat(2) + cls00.getHours().toString()).slice(-2) + ("0".repeat(2) + cls00.getMinutes().toString()).slice(-2);
+		//==========DIVISION==========
+		if ( Bijint_Time_Now_STR==str00 )		{}
+		else
+		{
+			//==========DIVISION==========
+			Bijint_Time_Now_STR=str00;
+			//==========DIVISION==========
+			//==============================Pre_Definition==============================
+			ele_Bijint_Table								=getElementsByClassName(document,"Bijint_Table")[0];
+			ele_Bijint_Table_Mode_One						=getElementsByClassName(ele_Bijint_Table,"Mode_One")[0];
+			ele_Bijint_Table_Mode_Multi						=getElementsByClassName(ele_Bijint_Table,"Mode_Multi")[0];
+			ele_Bijint_Table_Single							=getElementsByClassName(ele_Bijint_Table,"Single")[0];
+			ele_Bijint_Table_ALL_In_Time					=getElementsByClassName(ele_Bijint_Table,"ALL_In_Time")[0];
+			ele_Bijint_Table_Single_In_ALL_Time				=getElementsByClassName(ele_Bijint_Table,"Single_In_ALL_Time")[0];
+			ele_Bijint_Table_Actual_In_ALL_In_Time			=getElementsByClassName(ele_Bijint_Table,"Actual_In_ALL_In_Time")[0];
+			ele_Bijint_Table_Actual_In_Single_In_ALL_Time	=getElementsByClassName(ele_Bijint_Table,"Actual_In_Single_In_ALL_Time")[0];
+			elel_Bijint_Table=
+			[
+				//	ele_Bijint_Table_Mode_One						,
+				//	ele_Bijint_Table_Mode_Multi						,
+				ele_Bijint_Table_Single							,
+				ele_Bijint_Table_ALL_In_Time					,
+				ele_Bijint_Table_Single_In_ALL_Time				,
+				ele_Bijint_Table_Actual_In_ALL_In_Time			,
+				ele_Bijint_Table_Actual_In_Single_In_ALL_Time
+			];
+			strl_Bijint_Table=["Single","ALL_In_Time","Single_In_ALL_Time","Actual_In_ALL_In_Time","Actual_In_Single_In_ALL_Time"];
+			clsl_Bijint_Category_Set=
+			[
+				Bijint_Category_Set.Table_Type.Single						,
+				Bijint_Category_Set.Table_Type.ALL_In_Time					,
+				Bijint_Category_Set.Table_Type.Single_In_ALL_Time			,
+				Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time		,
+				Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time
+			];
+			strl_Bijint_Category_Set=
+			[
+				"Bijint_Category_Set.Table_Type.Single"							,
+				"Bijint_Category_Set.Table_Type.ALL_In_Time"					,
+				"Bijint_Category_Set.Table_Type.Single_In_ALL_Time"				,
+				"Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time"			,
+				"Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time"
+			];
+			strl_Bijint_Data_Type=["Archive_2014","Official_2022"];
+			//==============================Pre_Definition==============================
+			//==============================elel_Bijint_Table_XXX==============================
+			ele_Archive_2014								=getElementsByClassName(ele_Bijint_Table_Single,"Archive_2014")[0];
+			ele_Official_2022								=getElementsByClassName(ele_Bijint_Table_Single,"Official_2022")[0];
+			for (Bijint_Table_ID=0;Bijint_Table_ID<elel_Bijint_Table.length;Bijint_Table_ID++)
+			{
+				if ( Bijint_Table_ID_Inuse[Bijint_Table_ID]==0 )		{continue;}
+				if ( Bijint_Table_ID==0 )
+				{
+					for (Bijint_Data_Type_ID=0;Bijint_Data_Type_ID<strl_Bijint_Data_Type.length;Bijint_Data_Type_ID++)
+					{
+						str00="num00=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Location.Top" + ";";
+						str01="num01=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Location.Left" + ";";
+						eval(str00);eval(str01);
+						if ( num00==1 || num01==0 )//"Top";
+						{
+							str02='ele_Bijint_Category_Top					=getElementsByClassName(ele_' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ',"Bijint_Category_Top")[0];';
+							eval(str02);
+							num02=parseInt(ele_Bijint_Category_Top.getAttribute("id_sel"),10);
+							ele_Bijint_Image_Sel_BTN				=getElementsByClassName(ele_Bijint_Category_Top,"Bijint_Image_Sel_BTN");
+						}
+						else if ( num00==0 && num01==1 )//"Left";
+						{
+							str02='ele_Bijint_Category_Left					=getElementsByClassName(ele_' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ',"Bijint_Category_Left")[0];';
+							eval(str02);
+							num02=parseInt(ele_Bijint_Category_Left.getAttribute("id_sel"),10);
+							ele_Bijint_Image_Sel_BTN				=getElementsByClassName(ele_Bijint_Category_Left,"Bijint_Image_Sel_BTN");
+						}
+						else		{}
+						if ( num02>=ele_Bijint_Image_Sel_BTN.length )		{num03=ele_Bijint_Image_Sel_BTN.length - 1;}
+						else												{num03=num02;}
+						ele_Bijint_Image_Sel_BTN[num03].click();
+					}
+				}
+				else if ( Bijint_Table_ID==1 || ( Bijint_Table_ID==3 && Bijint_Actual_Data_Inuse==1 ) )
+				{
+					for (Bijint_Data_Type_ID=0;Bijint_Data_Type_ID<strl_Bijint_Data_Type.length;Bijint_Data_Type_ID++)
+					{
+						//	Bijint_Category_Set.Table_Type.Single
+						//	Bijint_Category_Set.Table_Type.ALL_In_Time
+						//	Bijint_Category_Set.Table_Type.Single_In_ALL_Time
+						//	Bijint_Category_Set.Table_Type.Actual_In_ALL_In_Time
+						//	Bijint_Category_Set.Table_Type.Actual_In_Single_In_ALL_Time
+						//
+						//	Bijint_Category_Set.Table_Type.Single.Archive_2014.Type.ALL
+						//	Bijint_Category_Set.Table_Type.Single.Archive_2014.Type.Small_Size
+						//	Bijint_Category_Set.Table_Type.Single.Archive_2014.Type.ORI_Size
+						//	Bijint_Category_Set.Table_Type.Single.Official_2022.Type.ALL
+						//	Bijint_Category_Set.Table_Type.Single.Official_2022.Type.Small_Size
+						//	Bijint_Category_Set.Table_Type.Single.Official_2022.Type.ORI_Size
+
+						//console.log("Bijint_Table_ID : " + Bijint_Table_ID);
+						str00="num00=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Type.ALL" + ";";
+						str01="num01=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Type.Small_Size" + ";";
+						str02="num02=Bijint_Category_Set.Table_Type." + strl_Bijint_Table[Bijint_Table_ID] + "." + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ".Type.ORI_Size" + ";";
+						eval(str00);eval(str01);eval(str02);
+
+						if ( num00==1 )		{num03=0;}
+						if ( num01==1 )		{num03=1;}
+						if ( num02==1 )		{num03=2;}
+
+						//	ele_Archive_2014								=getElementsByClassName(ele_Bijint_Table_ALL_In_Time,"Archive_2014")[0];
+						//	ele_Bijint_Category_Set_CLS						=getElementsByClassName(ele_Archive_2014,"Bijint_Category_Set_CLS")[0];
+						str00='ele_' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + '=getElementsByClassName(ele_Bijint_Table_' + strl_Bijint_Table[Bijint_Table_ID] + ',"' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + '")[0];';
+						str01='ele_Bijint_Category_Set_CLS=getElementsByClassName(ele_' + strl_Bijint_Data_Type[Bijint_Data_Type_ID] + ',"Bijint_Category_Set_CLS")[0];';
+						eval(str00);eval(str01);
+
+						//	console.log(str00);console.log(str01);
+						//	Bijint_Table_ID : 1
+						//	ele_Archive_2014=getElementsByClassName(ele_Bijint_Table_ALL_In_Time,"Archive_2014")[0];
+						//	ele_Bijint_Category_Set_CLS=getElementsByClassName(ele_Archive_2014,"Bijint_Category_Set_CLS")[0];
+						//	Bijint_Table_ID : 1
+						//	ele_Official_2022=getElementsByClassName(ele_Bijint_Table_ALL_In_Time,"Official_2022")[0];
+						//	ele_Bijint_Category_Set_CLS=getElementsByClassName(ele_Official_2022,"Bijint_Category_Set_CLS")[0];
+						//	Bijint_Table_ID : 3
+						//	ele_Archive_2014=getElementsByClassName(ele_Bijint_Table_Actual_In_ALL_In_Time,"Archive_2014")[0];
+						//	ele_Bijint_Category_Set_CLS=getElementsByClassName(ele_Archive_2014,"Bijint_Category_Set_CLS")[0];
+						//	Bijint_Table_ID : 3
+						//	ele_Official_2022=getElementsByClassName(ele_Bijint_Table_Actual_In_ALL_In_Time,"Official_2022")[0];
+						//	ele_Bijint_Category_Set_CLS=getElementsByClassName(ele_Official_2022,"Bijint_Category_Set_CLS")[0];
+
+						elel_Bijint_Data_Cat_Type_CLS					=getElementsByClassName(ele_Bijint_Category_Set_CLS,"Bijint_Data_Cat_Type_CLS");
+						elel_Bijint_Data_Cat_Type_CLS[num03].click();
+					}
+				}
+				else if ( Bijint_Table_ID==2 || Bijint_Table_ID==4 )
+				{
+				}
+				else		{}
+
+				//====================elel_Bijint_Table====================
+				//Bijint_Table_Category_Set_Data(fun_name,elel_Bijint_Table,strl_Bijint_Table,clsl_Bijint_Category_Set,strl_Bijint_Category_Set,Bijint_Table_ID,"Official_2022");
+				//====================elel_Bijint_Table====================
+			}
+			//==============================elel_Bijint_Table_XXX==============================
+		}
+		//==========DIVISION==========
+	}
+	else		{}
+
+	//0:Do_Not_Run_setTimeout;1:Run_setTimeout;2:Run_Function_Now;
+	if ( STO==0 )		{}
+	else if ( STO==1 )	{setTimeout(Bijint_Table_ST_Core,TTI_IN_USE*1);}
+	else if ( STO==2 )	{Bijint_Table_ST_Core();}
+	else				{}
+}
+//========================================Bijint_Table_ST_setTimeout========================================
+//==================================================Bijint==================================================
+//============================================================控件動作變化============================================================
+function TEXT_ATTRIBUTION(ele,evt,n)
+{
+	if ( Browser_Type=="MSIE" && parseInt(Browser_Ver,10)>=7 && parseInt(Browser_Ver,10)<10 )
+	{
+		return;
+	}
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var i,j,k,m,n;
+	var ele_disabled;
+	if ( n==0 )//鼠標移入。
+	{
+		if ( evt_target.tagName=="TEXTAREA" || 
+				( evt_target.tagName=="INPUT" && 
+				( evt_target.type=="text" || evt_target.type=="button" || 
+				evt_target.className=="IE_Proxy_ID" || evt_target.className=="IE_Proxy_Name" || evt_target.className=="IE_Proxy_Addr" || 
+				evt_target.className=="IE_Proxy_Name_Selected" ) ) )
+		{
+			if ( evt_target.disabled==true )	{ele_disabled=true;evt_target.disabled=false;}
+			evt_target.select();//選中全文。
+			evt_target.focus();//設置焦點。
+			if ( ele_disabled==true )			{evt_target.disabled=true;}
+		}
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else
+	{
+	}
+}
+//============================================================控件動作變化============================================================
+//============================================================鍵盤鼠標事件============================================================
+//============================================================鍵盤鼠標事件============================================================
+</script>
+
+<table class="Bijint_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onmouseover=TEXT_ATTRIBUTION(this,event,0) onmouseout=TEXT_ATTRIBUTION(this,event,1) onchange=TEXT_ATTRIBUTION(this,event,2)><tbody>
+<tr><td>
+	<table borderColor=#000000 cellSpacing=0 cellPadding=0 border=0 style="border-collapse:collapse;"><tbody>
+	<tr>
+		<td><table class="Top_Ctrl_ST_Bar" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Table_ST(this,event,3)><tbody><tr>
+			<td><input type="button" class="Bijint_Table_ST_CLS" state=0 value="ST" title="setTimeout"				></td>
+		</tr></tbody></table></td>
+		<td><table class="Top_Ctrl_Outer_Bar" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Table_SH_Outer(this,event,3)><tbody><tr>
+			<td><input type="button" class="Bijint_Table_SH_Outer_CLS" state=0 value="Mode_One"						></td>
+			<td><input type="button" class="Bijint_Table_SH_Outer_CLS" state=0 value="Single"						></td>
+			<td><input type="button" class="Bijint_Table_SH_Outer_CLS" state=0 value="ALL_In_Time"					></td>
+			<td><input type="button" class="Bijint_Table_SH_Outer_CLS" state=0 value="Single_In_ALL_Time"			></td>
+			<td><input type="button" class="Bijint_Table_SH_Outer_CLS" state=0 value="Actual_In_ALL_In_Time"		></td>
+			<td><input type="button" class="Bijint_Table_SH_Outer_CLS" state=0 value="Actual_In_Single_In_ALL_Time"	></td>
+		</tr></tbody></table></td>
+	</tr>
+	</tbody></table>
+</td></tr>
+<tr><td>
+	<table class="Mode_One" table_type="Bijint_Table_XXX" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Image_Select(this,event,3)><tbody>
+	<tr><td colspan="2">
+	<table class="Top_Ctrl_Inner_Bar" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Table_SH_Inner_00_Year(this,event,3)><tbody>
+	<tr>
+		<td><span class="Bijint_Type_Title">Mode_One</span></td>
+		<td><input type="button" class="Bijint_Table_SH_Inner_00_Year_CLS" state=1 value="←"></td>
+		<td><input type="button" class="Bijint_Table_SH_Inner_00_Year_CLS" state=1 value="→"></td>
+	</tr>
+	</tbody></table>
+	</td></tr>
+	<tr>
+	<td>
+		<table class="Archive_2014" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+		<tr><td colspan="2"><table class="Bijint_Category_Set_CLS" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+			<tr>
+				<td><span class="Bijint_Title">美人時計_Archive_2014+</span></td>
+				<td><input type="button" class="Bijint_Table_SH_Inner_01_Personal_Data_CLS" state=1 value="◎" onclick=Bijint_Table_SH_Inner_01_Personal_Data(this,event,3)></td>
+				<td><input type="button" class="Bijint_Table_SH_Inner_02_Size_CLS" state=1 value="↑" onclick=Bijint_Table_SH_Inner_02_Size(this,event,3)></td>
+				<td><input type="button" class="Bijint_Table_SH_Inner_02_Size_CLS" state=1 value="↓" onclick=Bijint_Table_SH_Inner_02_Size(this,event,3)></td>
+				<td><input type="button" class="Bijint_Data_Location_CLS" value="Offline" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Top" value="Top" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Left" value="Left" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ALL" value="ALL" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="Small_Size" value="Small_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ORI_Size" value="ORI_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+			</tr>
+		</tbody></table></td></tr>
+		<tr><td colspan="2"><table class="Bijint_Personal_Data" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			<tr>
+				<td><span class="Bijint_Personal_Data_Text">名前：性別：年齢：住所：</span></td>
+			</tr>
+		</tbody></table></td></tr>
+		<tr><td colspan="2"><table class="Bijint_Category_Top" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+			<tr>
+				<td><input type="button" class="Bijint_Image_Sel_BTN" id="0" cat="akita" value="秋田"></td>
+				<td><input type="button" class="Bijint_Image_Sel_BTN" id="1" cat="aomori" value="青森"></td>
+			</tr>
+		</tbody></table></td></tr>
+		<tr>
+		<td><table class="Bijint_Category_Left" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+			<tr><td><input type="button" class="Bijint_Image_Sel_BTN" id="0" cat="akita" value="秋田"></td></tr>
+			<tr><td><input type="button" class="Bijint_Image_Sel_BTN" id="1" cat="aomori" value="青森"></td></tr>
+		</tbody></table></td>
+		<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			<tr><td><img class="Small_Size" src=""></td></tr>
+			<tr><td><img class="ORI_Size" src=""></td></tr>
+		</tbody></table></td>
+		</tr>
+		</tbody></table>
+	</td>
+	<td>
+		<table class="Official_2022" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+		<tr><td colspan="2"><table class="Bijint_Category_Set_CLS" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+			<tr>
+				<td><span class="Bijint_Title">美人時計_Official_2022-01-25</span></td>
+				<td><input type="button" class="Bijint_Table_SH_Inner_01_Personal_Data_CLS" state=1 value="◎" onclick=Bijint_Table_SH_Inner_01_Personal_Data(this,event,3)></td>
+				<td><input type="button" class="Bijint_Table_SH_Inner_02_Size_CLS" state=1 value="↑" onclick=Bijint_Table_SH_Inner_02_Size(this,event,3)></td>
+				<td><input type="button" class="Bijint_Table_SH_Inner_02_Size_CLS" state=1 value="↓" onclick=Bijint_Table_SH_Inner_02_Size(this,event,3)></td>
+				<td><input type="button" class="Bijint_Data_Location_CLS" value="Offline" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Top" value="Top" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Location_CLS" cat_loc="Left" value="Left" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ALL" value="ALL" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="Small_Size" value="Small_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+				<td><input type="button" class="Bijint_Data_Cat_Type_CLS" cat_type="ORI_Size" value="ORI_Size" onclick=Bijint_Data_Cat_Location_Type_Sel(this)></td>
+			</tr>
+		</tbody></table></td></tr>
+		<tr><td colspan="2"><table class="Bijint_Personal_Data" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			<tr>
+				<td><span class="Bijint_Personal_Data_Text">名前：性別：年齢：住所：</span></td>
+			</tr>
+		</tbody></table></td></tr>
+		<tr><td colspan="2"><table class="Bijint_Category_Top" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+			<tr>
+				<td><input type="button" class="Bijint_Image_Sel_BTN" id="0" cat="akita" value="秋田"></td>
+				<td><input type="button" class="Bijint_Image_Sel_BTN" id="1" cat="aomori" value="青森"></td>
+			</tr>
+		</tbody></table></td></tr>
+		<tr>
+		<td><table class="Bijint_Category_Left" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" id_sel="0"><tbody>
+			<tr><td><input type="button" class="Bijint_Image_Sel_BTN" id="0" cat="akita" value="秋田"></td></tr>
+			<tr><td><input type="button" class="Bijint_Image_Sel_BTN" id="1" cat="aomori" value="青森"></td></tr>
+		</tbody></table></td>
+		<td><table class="Bijint_Image" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;"><tbody>
+			<tr><td><img class="Small_Size" src=""></td></tr>
+			<tr><td><img class="ORI_Size" src=""></td></tr>
+		</tbody></table></td>
+		</tr>
+		</tbody></table>
+	</td>
+	</tr>
+	</tbody></table>
+</td></tr>
+<tr><td>
+	<table class="Single" table_type="Bijint_Table_XXX" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Image_Select(this,event,3)><tbody>
+	<tr><td></td></tr>
+	</tbody></table>
+</td></tr>
+<tr><td>
+	<table class="ALL_In_Time" table_type="Bijint_Table_XXX" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Image_Select(this,event,3)><tbody>
+	<tr><td></td></tr>
+	</tbody></table>
+</td></tr>
+<tr><td>
+	<table class="Single_In_ALL_Time" table_type="Bijint_Table_XXX" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Image_Select(this,event,3)><tbody>
+	<tr><td></td></tr>
+	</tbody></table>
+</td></tr>
+<tr><td>
+	<table class="Actual_In_ALL_In_Time" table_type="Bijint_Table_XXX" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Image_Select(this,event,3)><tbody>
+	<tr><td></td></tr>
+	</tbody></table>
+</td></tr>
+<tr><td>
+	<table class="Actual_In_Single_In_ALL_Time" table_type="Bijint_Table_XXX" borderColor=#000000 cellSpacing=0 cellPadding=0 border=1 style="border-collapse:collapse;border-style:solid;border-width:1px;border-color:black;" onclick=Bijint_Image_Select(this,event,3)><tbody>
+	<tr><td></td></tr>
+	</tbody></table>
+</td></tr>
+</tbody></table>
+
+<script type="text/javascript">
+var Initiation_Flag=0;
+
+console.log(TIME_NOW("-"));
+
+function Initiation()
+{
+	//console.log(arguments.callee.name);
+	//console___log("function now is : Initiation()");
+
+	if ( Initiation_Flag==1 )
+	{
+		document.getElementsByTagName("body")[0].setAttribute("onmouseover","");
+		return;
+	}
+	var i,j,ele00,INI_Flag;
+
+	INI_Flag=0;
+	//==========DIVISION==========
+	Bijint_Table_INI();
+	Bijint_Category_Set.Table_Type_INI();
+	Bijint_Table_SH_Outer_INI();
+	Bijint_Table_SH_Inner_00_Year_INI();
+	Bijint_Table_SH_Inner_01_Personal_Data_INI();
+	Bijint_Table_SH_Inner_02_Size_INI();
+	Bijint_Table_ST_INI();
+	//==========DIVISION==========
+	TTI_IN_USE=1000;
+
+	Initiation_Flag=1;
+	//==========DIVISION==========
+}
+Initiation();
+
+console.log(TIME_NOW("-"));
+</script>
+</body>
+</html>
