@@ -1,0 +1,957 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--========================================ORI_JS_File========================================-->
+<script type="text/javascript" class="ORI_JS_File">
+String.prototype.repeat = function( num )
+{
+    return new Array( num + 1 ).join( this );
+}
+
+function createArray(length)
+{
+	var arr=new Array(length||0),i=length;
+	if ( arguments.length>1 )
+	{
+		var args=Array.prototype.slice.call(arguments,1);
+		while(i--)
+		{
+			arr[length-1-i]=createArray.apply(this,args);
+		}
+	}
+	return arr;
+}
+
+function ReadTextFile(oFile)
+{
+	if (window.XMLHttpRequest)//code for IE7+, Firefox, Chrome, Opera, Safari
+	{
+		xmlhttp=new XMLHttpRequest();
+	}
+	else// code for IE6, IE5
+	{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.open("GET",oFile,false);
+	xmlhttp.send();
+	var TextDoc=xmlhttp.responseText; 
+	return TextDoc;
+}
+</script>
+<!--========================================ORI_JS_File========================================-->
+<title>pakutaso_IMG_Viewer_Portable</title>
+<style type="text/css" class="Browser_SD">
+*
+{
+	font-size:			13px;
+}
+</style>
+
+<style type="text/css">
+*
+{
+	margin:				0px;
+	padding:			0px;
+	/*background-color:	#CCE8CF;*/
+}
+
+div.img_info
+{
+	width:				960px;
+}
+
+div.PIC_LIB_Viewer_Portable
+{
+	width:				1960px;
+	overflow:			scroll;
+}
+
+body
+{
+	overflow:			auto;
+}
+
+body::-webkit-scrollbar
+{
+	display:			none;/* Chrome Safari */
+}
+</style>
+
+<style type="text/css" class="CSS_SD" state=0>
+div.img_info{display:block;}
+</style>
+</head>
+
+<body bgcolor=#CCE8CF>
+<script type="text/javascript">
+//================================================Parameter_STR_INI========================================
+function Parameter_Base_STR_ijk_05()
+{
+	var str00;
+	str00="";
+	str00+="var i,j,k,m,n,p,q,r,s,t;" + "\n";
+	str00+="var num00,num01,num02,num03,num04;" + "\n";
+	str00+="var ele00,ele01,ele02,ele03,ele04;" + "\n";
+	str00+="var elel00,elel01,elel02,elel03,elel04;" + "\n";
+	str00+="var str00,str01,str02,str03,str04;" + "\n";
+	str00+="var arr00,arr01,arr02,arr03,arr04;" + "\n";
+	str00+="var cls00,cls01,cls02,cls03,cls04;" + "\n";
+	return str00;
+}
+
+function Parameter_Base_STR_ijk_10()
+{
+	var str00;
+	str00="";
+	str00+="var i,j,k,m,n,p,q,r,s,t;" + "\n";
+	str00+="var num00,num01,num02,num03,num04,num05,num06,num07,num08,num09;" + "\n";
+	str00+="var ele00,ele01,ele02,ele03,ele04,ele05,ele06,ele07,ele08,ele09;" + "\n";
+	str00+="var elel00,elel01,elel02,elel03,elel04,elel05,elel06,elel07,elel08,elel09;" + "\n";
+	str00+="var str00,str01,str02,str03,str04,str05,str06,str07,str08,str09;" + "\n";
+	str00+="var arr00,arr01,arr02,arr03,arr04,arr05,arr06,arr07,arr08,arr09;" + "\n";
+	str00+="var cls00,cls01,cls02,cls03,cls04,cls05,cls06,cls07,cls08,cls09;" + "\n";
+	return str00;
+}
+
+function Parameter_Base_STR_ijk_20()
+{
+	var str00;
+	str00="";
+	str00+="var i,j,k,m,n,p,q,r,s,t;" + "\n";
+	str00+="var num00,num01,num02,num03,num04,num05,num06,num07,num08,num09,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19;" + "\n";
+	str00+="var ele00,ele01,ele02,ele03,ele04,ele05,ele06,ele07,ele08,ele09,ele10,ele11,ele12,ele13,ele14,ele15,ele16,ele17,ele18,ele19;" + "\n";
+	str00+="var elel00,elel01,elel02,elel03,elel04,elel05,elel06,elel07,elel08,elel09," + 
+			"elel10,elel11,elel12,elel13,elel14,elel15,elel16,elel17,elel18,elel19;" + "\n";
+	str00+="var str00,str01,str02,str03,str04,str05,str06,str07,str08,str09,str10,str11,str12,str13,str14,str15,str16,str17,str18,str19;" + "\n";
+	str00+="var arr00,arr01,arr02,arr03,arr04,arr05,arr06,arr07,arr08,arr09,arr10,arr11,arr12,arr13,arr14,arr15,arr16,arr17,arr18,arr19;" + "\n";
+	str00+="var cls00,cls01,cls02,cls03,cls04,cls05,cls06,cls07,cls08,cls09,cls10,cls11,cls12,cls13,cls14,cls15,cls16,cls17,cls18,cls19;" + "\n";
+	return str00;
+}
+
+function Parameter_Base_STR_ijk_XX(p_num)
+{
+	var i,j,str00,arr00;
+	str00="";
+	str00+="var i,j,k,m,n,p,q,r,s,t;" + "\n";
+	arr00=["num","ele","elel","str","arr","cls","formData","file"];
+	//arr00=["num","ele","elel","str","arr","torf","flag"];
+
+	for (i=0;i<arr00.length;i++)
+	{
+		str00+="var ";
+		for (j=0;j<p_num;j++)
+		{
+			str00+=arr00[i] + ("00" + j.toString()).slice(-2);
+			if ( j<(p_num - 1) )			{str00+=",";}
+			else if ( j==(p_num - 1) )		{str00+=";" + "\n";}
+			else							{}
+		}
+	}
+
+	return str00;
+}
+//alert(Parameter_Base_STR_ijk_XX(5));
+//if ( Parameter_Base_STR_ijk_XX(20)==Parameter_Base_STR_ijk_20() )		{alert("OK!");}
+//================================================Parameter_STR_INI========================================
+//================================================TAG_INI========================================
+function TAG_INI()
+{
+	//eval(Parameter_Base_STR_ijk_XX(5));
+
+	TAG_Onshow_Repair();
+}
+
+function TAG_Onshow_Repair()
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+	//eval(ELE_ELEL_STR_INI());
+
+	elel00=document.getElementsByTagName("td");
+	arr00=[elel00];
+
+	for (i=0;i<arr00.length;i++)
+	{
+		for (j=0;j<arr00[i].length;j++)
+		{
+			arr00[i][j].innerHTML=arr00[i][j].innerHTML.replace(/\n/gm,"").replace(/	*\</gm,"\<");
+		}
+	}
+	//alert(elel00.length);
+}
+
+function TAG_State_INI()
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+	//eval(ELE_ELEL_STR_INI());
+}
+//================================================TAG_INI========================================
+//================================================MAIN_FUN========================================
+var PIC_View_Mode_Val;
+function PIC_View_Mode_INI()
+{
+	var ele,ele02;
+	ele02=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl")[0].getElementsByTagName("tbody")[0];
+	ele=ele02.getElementsByClassName("PIC_View_Mode")[0];
+
+	ele.style.backgroundColor="red";
+	ele.value="Offline";
+	PIC_View_Mode_Val=ele.value;
+}
+
+function View_Mode(ele)
+{
+	var ele01;
+	ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_WH_Size_Select_CLS")[0].getElementsByClassName("pakutaso_logo")[0];
+
+	if ( ele.value=="Offline" )
+	{
+		ele.style.backgroundColor="#1EB0E9";
+		ele.value="Online";
+		ele01.src="https://www.pakutaso.com/shared/img/site/logo.svg";
+	}
+	else if ( ele.value=="Online" )
+	{
+		ele.style.backgroundColor="red";
+		ele.value="Offline";
+		ele01.src="../logo.svg";
+	}
+	else		{}
+	PIC_View_Mode_Val=ele.value;
+
+	ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl_SD_Table")[0].getElementsByTagName("tbody")[0];
+	ele01.getElementsByClassName("Load_pakutaso_IMG_Data_CLS")[0].click();
+}
+//================================================MAIN_FUN========================================
+</script>
+
+<script type="text/javascript">
+var pakutaso_IMG_STR;
+var pakutaso_IMG_ARR;
+
+function Show_PIC_INI()
+{
+	eval(Parameter_Base_STR_ijk_XX(20));
+
+	var PIC_Inner_Type_Num;
+	var ele;
+	ele=document.getElementsByClassName("PIC_Inner_Type")[0];
+	PIC_Inner_Type_Num=ele.options.length;
+
+	pakutaso_IMG_STR=createArray(PIC_Inner_Type_Num);
+	pakutaso_IMG_ARR=createArray(PIC_Inner_Type_Num);
+
+	var img_website_page_id;
+	img_website_page_id=document.getElementsByClassName("Website_Page_ID")[0].value;
+
+	//for (num10=0;num10<PIC_Inner_Type_Num;num10++)
+	for (num10=ele.options.selectedIndex;num10<PIC_Inner_Type_Num && num10<(ele.options.selectedIndex + 1);num10++)
+	{
+		ele.options.selectedIndex=num10;
+
+		if ( ele.options[ele.options.selectedIndex].innerHTML=="pakutaso_IMG_Data" )
+		{
+			str00=ReadTextFile("pakutaso_IMG_Data_Reduce_2022-01-19.txt");
+		}
+		else if ( ele.options[ele.options.selectedIndex].innerHTML=="pakutaso_IMG_Data_Tags_ReOrdered" )
+		{
+			str00=ReadTextFile("pakutaso_IMG_Data_Tags_ReOrdered_2022-01-19_" + ("00" + img_website_page_id).slice(-2) + ".txt");
+		}
+		else if ( ele.options[ele.options.selectedIndex].innerHTML=="pakutaso_Author_Info" )
+		{
+			str00=ReadTextFile("pakutaso_Author_Info_2022-01-19.txt");
+		}
+		else
+		{
+		}
+
+		arr00=("#####BEGIN#####" + str00.replace(/\r\n/gm,"\n") + "#####END#####")
+			.replace(/#####BEGIN#####\n*/gm,"").replace(/\n*#####END#####/gm,"").split("\n");
+
+		pakutaso_IMG_STR[ele.options.selectedIndex]=arr00.join("\n");
+		pakutaso_IMG_ARR[ele.options.selectedIndex]=arr00;
+	}
+	//ele.options.selectedIndex=0;
+	//========================================PIC_Onshow_Setting========================================
+	ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl_SD_Table")[0].getElementsByTagName("tbody")[0];
+	ele02=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl")[0].getElementsByTagName("tbody")[0];
+	ele03=ele02.getElementsByClassName("PIC_Onshow_Num_CLS")[0];
+	ele04=ele02.getElementsByClassName("PIC_Page_ID_CLS")[0];
+
+	var PIC_Num,PIC_Num_Begin,PIC_Num_End,PIC_Onshow_Num,PIC_Page_ID,pic_num_100x_max,id_max;
+	var PIC_ARR_Num_Begin,PIC_ARR_Num_End;
+
+	if ( ele.options[ele.options.selectedIndex].innerHTML=="pakutaso_IMG_Data" )						{ele03.value=1;}
+	else if ( ele.options[ele.options.selectedIndex].innerHTML=="pakutaso_IMG_Data_Tags_ReOrdered" )	{ele03.value=1;}
+	else if ( ele.options[ele.options.selectedIndex].innerHTML=="pakutaso_Author_Info" )				{ele03.value=2;}
+	else																								{ele03.value=1;}
+
+	//==============================PIC_Inner_Type==============================
+	//for (i=0;i<ele.options.length;i++)
+	for (i=ele.options.selectedIndex;i<ele.options.length && i<(ele.options.selectedIndex + 1);i++)
+	{
+		arr00=pakutaso_IMG_ARR[i];
+		PIC_Num=arr00.length;
+		ele.options[i].setAttribute("PIC_Num",PIC_Num);
+		ele.options[i].title="PIC_Num : " + PIC_Num.toString() + " .";
+	}
+	ele.title="PIC_Inner_Type , " + ele.options[ele.options.selectedIndex].title;
+	//==============================PIC_Inner_Type==============================
+	//==============================PIC_ALL_Num==============================
+	arr00=pakutaso_IMG_ARR[ele.options.selectedIndex];
+	document.getElementsByClassName("PIC_ALL_Num")[0].innerHTML=arr00.length;
+	//==============================PIC_ALL_Num==============================
+	//==============================PIC_Onshow_Num_+_PIC_Page_ID==============================
+	PIC_Num=arr00.length;
+	PIC_Onshow_Num=parseInt(ele03.value,10);
+	if ( PIC_Onshow_Num<1 )			{PIC_Onshow_Num=1;}
+	if ( PIC_Onshow_Num>10 )		{PIC_Onshow_Num=10;}
+	PIC_Page_ID=parseInt(ele04.value,10);
+
+	pic_num_100x_max=Math.ceil(PIC_Num/100) - 1;
+	pic_num_100x_max=( pic_num_100x_max>10 ? 10 : pic_num_100x_max );
+	ele02.getElementsByClassName("PIC_Onshow_Num_CLS")[0].title="PIC_Onshow_Num : 1 - " + pic_num_100x_max.toString();
+
+	id_max=Math.ceil(PIC_Num/(100*PIC_Onshow_Num)) - 1;
+	ele02.getElementsByClassName("PIC_Page_ID_CLS")[0].setAttribute("id_max",id_max);
+	ele02.getElementsByClassName("PIC_Page_ID_CLS")[0].title="PIC_Page_ID : 0 - " + id_max.toString();
+	//==============================PIC_Onshow_Num_+_PIC_Page_ID==============================
+	//========================================PIC_Onshow_Setting========================================
+}
+
+function Show_PIC(ele)
+{
+	eval(Parameter_Base_STR_ijk_XX(20));
+
+	var img_website_name		=	"";
+	var img_pic_lib_id			=	"";
+	var img_disk_id				=	"";
+	var img_location			=	"..\\..";//"P:\\LD\\30\\10\\PIC_LIB";
+	var img_type				=	"";
+	var img_area				=	"";
+	var img_language			=	"";
+	var img_category			=	"";
+	var img_website_page_id		=	"";
+
+	if ( location.href.replace(/^.+\/([^\/]+)$/gm,"$1")=="pakutaso_IMG_Viewer_Portable_P0.html" )
+	{
+		img_location			=	"..\\..";
+	}
+	else if ( location.href.replace(/^.+\/([^\/]+)$/gm,"$1")=="pakutaso_IMG_Viewer_Portable_P1.html" )
+	{
+		img_location			=	"P:\\LD\\30\\10\\PIC_LIB";
+	}
+	else
+	{
+		img_location			=	"P:\\LD\\30\\10\\PIC_LIB";
+	}
+	//========================================PIC_Onshow_Setting========================================
+	ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl_SD_Table")[0].getElementsByTagName("tbody")[0];
+	ele02=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl")[0].getElementsByTagName("tbody")[0];
+	ele03=ele02.getElementsByClassName("PIC_Onshow_Num_CLS")[0];
+	ele04=ele02.getElementsByClassName("PIC_Page_ID_CLS")[0];
+
+	if ( ele.className=="Load_pakutaso_IMG_Data_CLS" || ele.className=="Website_Page_ID" || 
+			ele.className=="PIC_Onshow_Num_100X_CLS" || ele.className=="PIC_Onshow_Num_CLS" || 
+			ele.className=="PIC_Page_ID_Set_CLS" || ele.className=="PIC_Page_ID_CLS" )
+	{
+		ele=document.getElementsByClassName("PIC_Inner_Type")[0];
+	}
+
+	var PIC_Num,PIC_Num_Begin,PIC_Num_End,PIC_Onshow_Num,PIC_Page_ID,pic_num_100x_max,id_max;
+	var PIC_ARR_Num_Begin,PIC_ARR_Num_End;
+
+	//==============================PIC_Inner_Type==============================
+	//for (i=0;i<ele.options.length;i++)
+	for (i=ele.options.selectedIndex;i<ele.options.length && i<(ele.options.selectedIndex + 1);i++)
+	{
+		arr00=pakutaso_IMG_ARR[i];
+		PIC_Num=arr00.length;
+		ele.options[i].setAttribute("PIC_Num",PIC_Num);
+		ele.options[i].title="PIC_Num : " + PIC_Num.toString() + " .";
+	}
+	ele.title="PIC_Inner_Type , " + ele.options[ele.options.selectedIndex].title;
+	//==============================PIC_Inner_Type==============================
+	//==============================PIC_ALL_Num==============================
+	arr00=pakutaso_IMG_ARR[ele.options.selectedIndex];
+	document.getElementsByClassName("PIC_ALL_Num")[0].innerHTML=arr00.length;
+	//==============================PIC_ALL_Num==============================
+	//==============================PIC_Onshow_Num_+_PIC_Page_ID==============================
+	PIC_Num=arr00.length;
+	PIC_Onshow_Num=parseInt(ele03.value,10);
+	if ( PIC_Onshow_Num<1 )			{PIC_Onshow_Num=1;}
+	if ( PIC_Onshow_Num>10 )		{PIC_Onshow_Num=10;}
+	PIC_Page_ID=parseInt(ele04.value,10);
+
+	pic_num_100x_max=Math.ceil(PIC_Num/100) - 1;
+	pic_num_100x_max=( pic_num_100x_max>10 ? 10 : pic_num_100x_max );
+	ele02.getElementsByClassName("PIC_Onshow_Num_CLS")[0].title="PIC_Onshow_Num : 1 - " + pic_num_100x_max.toString();
+
+	id_max=Math.ceil(PIC_Num/(100*PIC_Onshow_Num)) - 1;
+	ele02.getElementsByClassName("PIC_Page_ID_CLS")[0].setAttribute("id_max",id_max);
+	ele02.getElementsByClassName("PIC_Page_ID_CLS")[0].title="PIC_Page_ID : 0 - " + id_max.toString();
+	//==============================PIC_Onshow_Num_+_PIC_Page_ID==============================
+	//========================================PIC_Onshow_Setting========================================
+
+	PIC_Num_Begin=100*PIC_Onshow_Num*PIC_Page_ID;
+	PIC_Num_End=PIC_Num_Begin + 100*PIC_Onshow_Num;
+
+	var img_id;
+	str01="";
+	for (i=PIC_Num_Begin;i<PIC_Num_End && i<arr00.length;i++)
+	{
+		if ( arr00[i]=="" )		{continue;}
+		img_id="img_" + ("0000" + i.toString()).slice(-4);
+
+		img_website_name=ele.options[ele.options.selectedIndex].innerHTML;
+		if ( img_website_name=="pakutaso_IMG_Data" )
+		{
+			//	"#####IMG_ID_000001"	"https://www.pakutaso.com/photo/1.html"	""	""
+			//	"#####IMG_ID_000002"	"https://www.pakutaso.com/photo/2.html"	"https://www.pakutaso.com/20110447109post-1.html"	"#####IMG_Title_つくしいっぱいの写真素材"	"#####IMG_Tags_List_つくし@|@ふるさと@|@春@|@植物@|@自然@|@草原"	"#####IMG_ID_000002"	"#####IMG_Date_2011-04-19"	"#####IMG_Color_green"	"#####IMG_Size_5184PX_X_3456PX"	"#####IMG_DLURL_https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V1.jpg******https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V4.jpg******https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V.jpg******https://www.pakutaso.com/shared/img/thumb/pp_tsukushi.jpg"	"#####IMG_Author_Name_すしぱく"	"#####IMG_Author_IMG_URL_https://pakutaso.cdn.rabify.me/shared/img/page/450.jpg"	"#####IMG_Author_Page_URL_https://www.pakutaso.com/web_susi-paku.html"
+			//00//
+			//01//"#####IMG_ID_000002"
+			//02//"https://www.pakutaso.com/photo/2.html"
+			//03//"https://www.pakutaso.com/20110447109post-1.html"
+			//04//"#####IMG_Title_つくしいっぱいの写真素材"
+			//05//"#####IMG_Tags_List_つくし@|@ふるさと@|@春@|@植物@|@自然@|@草原"
+			//06//"#####IMG_ID_000002"
+			//07//"#####IMG_Date_2011-04-19"
+			//08//"#####IMG_Color_green"
+			//09//"#####IMG_Size_5184PX_X_3456PX"
+			//10//"#####IMG_DLURL_https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V1.jpg******https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V4.jpg******https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V.jpg******https://www.pakutaso.com/shared/img/thumb/pp_tsukushi.jpg"
+			//11//"#####IMG_Author_Name_すしぱく"
+			//12//"#####IMG_Author_IMG_URL_https://pakutaso.cdn.rabify.me/shared/img/page/450.jpg"
+			//13//"#####IMG_Author_Page_URL_https://www.pakutaso.com/web_susi-paku.html"
+			arr01=arr00[i].split("\t");
+			img_url=arr01[10].replace(/^"#####IMG_DLURL_.+[\*]{6}([^\*]+)"$/gm,"$1");
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V1.jpg
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V4.jpg
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V.jpg
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi.jpg
+			img_url=img_url.replace(new RegExp("^(.+\/)([^\/\.]+)(_TP_V[0-4])(\.[^\/\.]+)$","gm"),"$1$2$3")
+							.replace(new RegExp("^(.+\/)([^\/\.]+)(\.[^\/\.]+)$","gm"),"$1$2" + pakutaso_PIC_END_STR + "$3");
+			img_name=img_url.replace(/^(.+\/)([^\/]+)$/gm,"$2");
+			img_directory=img_location + "\\pakutaso\\www.pakutaso.com\\";
+			if ( img_name.replace(/^[A-Za-z]/gm,"")!=img_name )			{img_directory+=img_name.replace(/^([A-Za-z]).+$/gm,"$1") + "\\";}
+			else														{img_directory+="0-9+Special_Char\\";}
+			//IMG_Author_PIC_URL :
+			str05=arr01[12].replace(/^"#####IMG_Author_IMG_URL_(.+)"$/gm,"$1");
+		}
+		else if ( img_website_name=="pakutaso_IMG_Data_Tags_ReOrdered" )
+		{
+			//	"IMG_TAG_飲み物"	"#####IMG_ID_023614"	"https://www.pakutaso.com/photo/23614.html"	"https://www.pakutaso.com/20180347061post-15414.html"	"#####IMG_Title_青汁ガッツをキメる中年男性の写真素材"	"#####IMG_Tags_List_お父さん@|@ガッツポーズ@|@ドリンク@|@中年@|@健康@|@気合@|@男性@|@野菜ジュース@|@青汁@|@飲み物"	"#####IMG_ID_023614"	"#####IMG_Date_2018-03-02"	"#####IMG_Color_rgb(206, 206, 206)"	"#####IMG_Size_6720PX_X_4480PX"	"#####IMG_DLURL_https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372_TP_V1.jpg******https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372_TP_V4.jpg******https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372_TP_V.jpg******https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372.jpg"	"#####IMG_Author_Name_すしぱく"	"#####IMG_Author_IMG_URL_https://pakutaso.cdn.rabify.me/shared/img/page/450.jpg"	"#####IMG_Author_Page_URL_https://www.pakutaso.com/web_susi-paku.html"
+			//00//
+			//01//"IMG_TAG_飲み物"
+			//02//"#####IMG_ID_023614"
+			//03//"https://www.pakutaso.com/photo/23614.html"
+			//04//"https://www.pakutaso.com/20180347061post-15414.html"
+			//05//"#####IMG_Title_青汁ガッツをキメる中年男性の写真素材"
+			//06//"#####IMG_Tags_List_お父さん@|@ガッツポーズ@|@ドリンク@|@中年@|@健康@|@気合@|@男性@|@野菜ジュース@|@青汁@|@飲み物"
+			//07//"#####IMG_ID_023614"
+			//08//"#####IMG_Date_2018-03-02"
+			//09//"#####IMG_Color_rgb(206, 206, 206)"
+			//10//"#####IMG_Size_6720PX_X_4480PX"
+			//11//"#####IMG_DLURL_https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372_TP_V1.jpg******https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372_TP_V4.jpg******https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372_TP_V.jpg******https://www.pakutaso.com/shared/img/thumb/yotakaIMGL5372.jpg"
+			//12//"#####IMG_Author_Name_すしぱく"
+			//13//"#####IMG_Author_IMG_URL_https://pakutaso.cdn.rabify.me/shared/img/page/450.jpg"
+			//14//"#####IMG_Author_Page_URL_https://www.pakutaso.com/web_susi-paku.html"
+			arr01=arr00[i].split("\t");
+			img_url=arr01[11].replace(/^"#####IMG_DLURL_.+[\*]{6}([^\*]+)"$/gm,"$1");
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V1.jpg
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V4.jpg
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V.jpg
+			//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi.jpg
+			img_url=img_url.replace(new RegExp("^(.+\/)([^\/\.]+)(_TP_V[0-4])(\.[^\/\.]+)$","gm"),"$1$2$3")
+							.replace(new RegExp("^(.+\/)([^\/\.]+)(\.[^\/\.]+)$","gm"),"$1$2" + pakutaso_PIC_END_STR + "$3");
+			img_name=img_url.replace(/^(.+\/)([^\/]+)$/gm,"$2");
+			img_directory=img_location + "\\pakutaso\\www.pakutaso.com\\";
+			if ( img_name.replace(/^[A-Za-z]/gm,"")!=img_name )			{img_directory+=img_name.replace(/^([A-Za-z]).+$/gm,"$1") + "\\";}
+			else														{img_directory+="0-9+Special_Char\\";}
+			//IMG_Author_PIC_URL :
+			str05=arr01[13].replace(/^"#####IMG_Author_IMG_URL_(.+)"$/gm,"$1");
+		}
+		else if ( img_website_name=="pakutaso_Author_Info" )
+		{
+			//	"#####IMG_Author_Name_河村友歌"	"#####IMG_Author_IMG_URL_https://pakutaso.cdn.rabify.me/shared/img/page/kawamurayuka.jpg"	"#####IMG_Author_Page_URL_https://www.pakutaso.com/kawamurayuka.html"	"#####IMG_Author_Profile_%0A%3Cp%3E%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6%EF%BC%81%E6%B2%B3%E6%9D%91%E5%8F%8B%E6%AD%8C%EF%BC%88%E3%81%8B%E3%82%8F%E3%82%80%E3%82%89%E3%82%86%E3%81%8B%EF%BC%89%E3%81%A7%E3%81%99%EF%BC%81%E7%8F%BE%E5%BD%B9%E5%A4%A7%E5%AD%A6%E7%94%9F%E3%81%A7%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%99(%5E%5E)%E2%99%AA%E3%81%84%E3%81%A4%E3%81%BE%E3%81%A7%E3%82%82%E5%88%9D%E5%BF%83%E3%82%92%E5%BF%98%E3%82%8C%E3%81%9A%E3%80%81%E6%96%B0%E3%81%97%E3%81%84%E6%8C%91%E6%88%A6%E3%82%92%E3%81%9F%E3%81%8F%E3%81%95%E3%82%93%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%99%E2%99%AA%E7%9A%86%E6%A7%98%E3%81%8B%E3%82%89%E3%81%AE%E3%81%8A%E4%BB%95%E4%BA%8B%E3%80%81%E3%81%8A%E5%BE%85%E3%81%A1%E3%81%97%E3%81%A6%E3%81%8A%E3%82%8A%E3%81%BE%E3%81%99%EF%BC%88%EF%BC%BE%EF%BC%AF%EF%BC%BE%E2%98%86%3Cbr%3E%0A%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AFxmasyk0519%40gmail.com%3C%2Fp%3E%0A"	"#####IMG_Author_Social_List_https://twitter.com/xmas_yk******https://www.facebook.com/xmasyk?sk=wall?sk=wall"
+			//00//
+			//01//"#####IMG_Author_Name_河村友歌"
+			//02//"#####IMG_Author_IMG_URL_https://pakutaso.cdn.rabify.me/shared/img/page/kawamurayuka.jpg"
+			//03//"#####IMG_Author_Page_URL_https://www.pakutaso.com/kawamurayuka.html"
+			//04//"#####IMG_Author_Profile_%0A%3Cp%3E%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6%EF%BC%81%E6%B2%B3%E6%9D%91%E5%8F%8B%E6%AD%8C%EF%BC%88%E3%81%8B%E3%82%8F%E3%82%80%E3%82%89%E3%82%86%E3%81%8B%EF%BC%89%E3%81%A7%E3%81%99%EF%BC%81%E7%8F%BE%E5%BD%B9%E5%A4%A7%E5%AD%A6%E7%94%9F%E3%81%A7%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%99(%5E%5E)%E2%99%AA%E3%81%84%E3%81%A4%E3%81%BE%E3%81%A7%E3%82%82%E5%88%9D%E5%BF%83%E3%82%92%E5%BF%98%E3%82%8C%E3%81%9A%E3%80%81%E6%96%B0%E3%81%97%E3%81%84%E6%8C%91%E6%88%A6%E3%82%92%E3%81%9F%E3%81%8F%E3%81%95%E3%82%93%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%99%E2%99%AA%E7%9A%86%E6%A7%98%E3%81%8B%E3%82%89%E3%81%AE%E3%81%8A%E4%BB%95%E4%BA%8B%E3%80%81%E3%81%8A%E5%BE%85%E3%81%A1%E3%81%97%E3%81%A6%E3%81%8A%E3%82%8A%E3%81%BE%E3%81%99%EF%BC%88%EF%BC%BE%EF%BC%AF%EF%BC%BE%E2%98%86%3Cbr%3E%0A%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AFxmasyk0519%40gmail.com%3C%2Fp%3E%0A"
+			//05//"#####IMG_Author_Social_List_https://twitter.com/xmas_yk******https://www.facebook.com/xmasyk?sk=wall?sk=wall"
+			arr01=arr00[i].split("\t");
+			arr01[4]=decodeURIComponent(arr01[4].replace(/^"#####IMG_Author_Profile_(.+)"$/gm,"$1"));
+			img_url=arr01[2].replace(/^"#####IMG_Author_IMG_URL_(.+)"$/gm,"$1");
+			img_name=img_url.replace(/^(.+\/)([^\/]+)$/gm,"$2");
+			img_directory=img_location + "\\pakutaso\\pakutaso_Author\\";
+			//IMG_Author_PIC_URL :
+			str05="";
+		}
+		else		{return;}
+
+		if ( PIC_View_Mode_Val=="Offline" )
+		{
+			str02="";
+			//if ( img_name.replace(/^[A-Za-z]/gm,"")!=img_name )			{str02=img_name.replace(/^([A-Za-z]).+$/gm,"$1") + "/";}
+			//else															{str02="0-9+Special_Char/";}
+			str03=("file:///" + img_directory.replace(/^P:\\LD\\30\\10\\PIC_LIB/gm,img_location) + str02 + img_name).replace(/\\/gm,"\/");
+			if ( location.href.replace(/^(ftp|https*)\:\/\/.+$/gm,"")=="" )
+			{str03=str03.replace(/^(file\:\/\/\/)([A-Za-z])(\:)(\/.+)$/gm,location.href.replace(/^(.+\/)([^\/]+)$/gm,"$1") + "$2$4");}
+			//IMG_Author_PIC_URL :
+			if ( str05!="" )
+			{
+				str05=("file:///" + img_location + "\\pakutaso\\pakutaso_Author\\" + 
+						str05.replace(/^(.+\/)([^\/]+)$/gm,"$2")).replace(/\\/gm,"\/");
+				if ( location.href.replace(/^(ftp|https*)\:\/\/.+$/gm,"")=="" )
+				{str05=str05.replace(/^(file\:\/\/\/)([A-Za-z])(\:)(\/.+)$/gm,location.href.replace(/^(.+\/)([^\/]+)$/gm,"$1") + "$2$4");}
+			}
+		}
+		else if ( PIC_View_Mode_Val=="Online" )
+		{
+			str03=img_url;
+			//str05=str05;
+		}
+		else		{}
+		//==============================IMG_PATH==============================
+		//==============================!!!ADDED(Not_In_[PIC_LIB_Viewer_Portable.html])!!!==============================
+		if ( location.href.replace(/^.+\/([^\/]+)$/gm,"$1")=="pakutaso_IMG_Viewer_Portable_P0.html" )
+		{
+			str03=str03.replace(/^file\:\/\/\//gm,"");
+			str05=str05.replace(/^file\:\/\/\//gm,"");
+		}
+		else if ( location.href.replace(/^.+\/([^\/]+)$/gm,"$1")=="pakutaso_IMG_Viewer_Portable_P1.html" )
+		{
+		}
+		else		{}
+		//==============================!!!ADDED(Not_In_[PIC_LIB_Viewer_Portable.html])!!!==============================
+
+		str04=str03;
+		str03='<a href="#' + img_id + '" class="' + img_id + '">' + str03 + '</a>';
+		//arr01.splice(0,1);
+
+		str01+='<div class="img_info">' + str03 + '<br>\n' + arr01.join("<br>\n") + '';
+		if ( str05!="" )		{str01+='<br>\n' + '<img src="' + str05 + '">';}
+		str01+='</div>\n';
+		str03=str04;
+		str01+='<img class="img_image" id="' + img_id + 
+				'" src="' + str03 + '" ' + 
+				'onclick=img_align_center(this)><br>\n';
+	}
+	ele00=document.getElementsByClassName("PIC_LIB_Viewer_Portable")[0];
+	ele00.innerHTML=str01;
+}
+
+function Show_PIC_TOP()
+{
+	eval(Parameter_Base_STR_ijk_XX(20));
+
+	var img_url;
+	if ( PIC_View_Mode_Val=="Offline" )			{img_url='../2022blog.jpg';}
+	else if ( PIC_View_Mode_Val=="Online" )		{img_url='https://pakutaso.cdn.rabify.me/shared/blog/2022blog.jpg';}
+	else										{img_url='../2022blog.jpg';}
+
+	str01="";
+	str01+='<div class="img_info"><a href="#img_0000" class="img_0000">' + img_url + '</a></div>' + '\n';
+	str01+='<img class="img_image" id="img_0000" src="' + img_url + '" onclick="img_align_center(this)">';
+
+	ele00=document.getElementsByClassName("PIC_LIB_Viewer_Portable")[0];
+	ele00.innerHTML=str01;
+}
+
+function Load_pakutaso_IMG_Data(ele)
+{
+	if ( pakutaso_PIC_END_STR=="TOP" )
+	{
+		Show_PIC_TOP();
+	}
+	else
+	{
+		Show_PIC_INI();
+		Show_PIC(ele);
+	}
+}
+//========================================PIC_List_00========================================
+function img_align_center(ele)
+{
+	document.getElementsByClassName(ele.id)[0].click();
+}
+
+function Show_Hide_IMG_Text()
+{
+	var state=document.getElementsByClassName("CSS_SD")[0].getAttribute("state");
+	state=parseInt(state,10);
+	state=(state + 1)%2;
+	document.getElementsByClassName("CSS_SD")[0].setAttribute("state",state);
+	if ( state==0 )
+	{
+		document.getElementsByClassName("CSS_SD")[0].innerHTML="\n" + "div.img_info{display:block;}" + "\n";
+	}
+	else if ( state==1 )
+	{
+		document.getElementsByClassName("CSS_SD")[0].innerHTML="\n" + "div.img_info{display:none;}" + "\n";
+	}
+	else
+	{
+	}
+}
+
+function IMG_Set_Size(ele)
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	elel00=document.getElementsByClassName("PIC_LIB_Viewer_Portable")[0].getElementsByClassName("img_image");
+
+	if ( ele.className=="IMG_Set_ORI_Size" )
+	{
+		for (i=0;i<elel00.length;i++)
+		{
+			elel00[i].removeAttribute("width");
+			elel00[i].removeAttribute("height");
+		}
+	}
+	else if ( ele.className=="IMG_Set_Width_1920PX" )
+	{
+		for (i=0;i<elel00.length;i++)
+		{
+			elel00[i].removeAttribute("width");
+			elel00[i].removeAttribute("height");
+			if ( elel00[i].width>screen.width )			{elel00[i].setAttribute("width",screen.width + "px");}
+		}
+	}
+	else if ( ele.className=="IMG_Set_Height_1080PX" )
+	{
+		for (i=0;i<elel00.length;i++)
+		{
+			elel00[i].removeAttribute("width");
+			elel00[i].removeAttribute("height");
+			if ( elel00[i].height>screen.height )		{elel00[i].setAttribute("height",screen.height + "px");}
+		}
+	}
+	else if ( ele.className=="IMG_Set_Width_1920PX_Height_1080PX" )
+	{
+		for (i=0;i<elel00.length;i++)
+		{
+			elel00[i].removeAttribute("width");
+			elel00[i].removeAttribute("height");
+
+			if ( (elel00[i].width/elel00[i].height)>=
+					(screen.width/screen.height) )
+			{
+				if ( elel00[i].width>screen.width )			{elel00[i].setAttribute("width",screen.width + "px");}
+			}
+			else
+			{
+				if ( elel00[i].height>screen.height )		{elel00[i].setAttribute("height",screen.height + "px");}
+			}
+		}
+	}
+	else		{}
+}
+//========================================PIC_List_00========================================
+//========================================PIC_WH_Size_Select========================================
+var pakutaso_PIC_END_STR;
+
+function PIC_WH_Size_Select_INI()
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	elel00=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_WH_Size_Select_CLS")[0].getElementsByClassName("PIC_WH_Size");
+	for (i=0;i<elel00.length;i++)		{elel00[i].style.backgroundColor="red";}
+	elel00[0].style.backgroundColor="#1EB0E9";
+
+	pakutaso_PIC_END_STR="TOP";
+}
+
+function PIC_WH_Size_Select(ele)
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	elel00=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_WH_Size_Select_CLS")[0].getElementsByClassName("PIC_WH_Size");
+	for (i=0;i<elel00.length;i++)		{elel00[i].style.backgroundColor="red";}
+	ele.style.backgroundColor="#1EB0E9";
+	//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V1.jpg
+	//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V4.jpg
+	//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi_TP_V.jpg
+	//https://www.pakutaso.com/shared/img/thumb/pp_tsukushi.jpg
+	arr00=["TOP","","_TP_V","_TP_V1","_TP_V2","_TP_V3","_TP_V4"];
+
+	if ( ele.value=="TOP" )			{i=0;}
+	else if ( ele.value=="ORI" )	{i=1;}
+	else if ( ele.value=="V0" )		{i=2;}
+	else if ( ele.value=="V1" )		{i=3;}
+	else if ( ele.value=="V2" )		{i=4;}
+	else if ( ele.value=="V3" )		{i=5;}
+	else if ( ele.value=="V4" )		{i=6;}
+	else							{}
+	pakutaso_PIC_END_STR=arr00[i];
+
+	ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl_SD_Table")[0].getElementsByTagName("tbody")[0];
+	ele01.getElementsByClassName("Load_pakutaso_IMG_Data_CLS")[0].click();
+}
+//========================================PIC_WH_Size_Select========================================
+//============================================================控件動作變化============================================================
+function TEXT_ATTRIBUTION(ele,evt,n)
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	//console.log("function now is : TEXT_ATTRIBUTION(ele,evt,n)");
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	var ele_disabled;
+
+	if ( n==0 )//鼠標移入。
+	{
+		/*
+		if ( evt_target.tagName=="TEXTAREA" || 
+				( evt_target.tagName=="INPUT" && 
+				( evt_target.type=="text" || 
+				evt_target.className=="IE_Proxy_ID" || evt_target.className=="IE_Proxy_Name" || evt_target.className=="IE_Proxy_Addr" || 
+				evt_target.className=="IE_Proxy_Name_Selected" ) ) )
+		*/
+		if ( evt_target.tagName=="TEXTAREA" || evt_target.tagName=="INPUT" || evt_target.tagName=="SELECT" || evt_target.tagName=="A" )
+		{
+			try
+			{
+				if ( evt_target.disabled==true )	{ele_disabled=true;evt_target.disabled=false;}
+				evt_target.focus();//設置焦點。
+				evt_target.select();//選中全文。
+				if ( ele_disabled==true )			{evt_target.disabled=true;}
+			}
+			catch (err)
+			{
+				console.log(err.message);
+			}
+		}
+		else		{}
+	}
+	else if ( n==1 )//鼠標移出。
+	{
+		//ele.blur();//失去焦點。
+	}
+	else if ( n==2 )//更改了文本框的內容。
+	{
+	}
+	else if ( n==3 )//點擊了按鈕。
+	{
+		if ( evt_target.tagName=="IMG" && evt_target.className=="pic_small_size" )
+		{
+			ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl_SD_Table")[0].getElementsByTagName("tbody")[0];
+			ele02=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl")[0].getElementsByTagName("tbody")[0];
+			ele03=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_List")[0].getElementsByTagName("tbody")[0];
+			ele04=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Show")[0].getElementsByTagName("tbody")[0];
+			ele05=ele04.getElementsByTagName("a")[0];
+
+			var size_type;
+			size_type=parseInt(ele05.getElementsByTagName("img")[0].getAttribute("size_type"),10);
+
+			ele05.innerHTML=evt_target.outerHTML;
+			ele05.href=evt_target.src;
+			ele05.getElementsByTagName("img")[0].className="pic_ori_size";
+			//ele05.getElementsByTagName("img")[0].setAttribute("size_type",0);
+			ele06=ele04.getElementsByClassName("pic_info")[0];
+			ele06.innerHTML=evt_target.title;
+
+			PIC_Click_Type=(PIC_Click_Type + 1)%2;
+			Click_Type_Exchange(ele02.getElementsByClassName("PIC_Click_Type_Exchange")[0]);
+
+			size_type=(size_type + 1)%2;
+			ele05.getElementsByTagName("img")[0].setAttribute("size_type",size_type);
+			Size_Exchange();
+		}
+		else
+		{}
+	}
+	else
+	{
+	}
+}
+//============================================================控件動作變化============================================================
+//============================================================鍵盤鼠標事件============================================================
+function PIC_LIB_Hotkey_Mouse(ele,evt,post_method)
+{
+	eval(Parameter_Base_STR_ijk_XX(5));
+
+	ele01=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl_SD_Table")[0].getElementsByTagName("tbody")[0];
+	ele02=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Ctrl")[0].getElementsByTagName("tbody")[0];
+	//ele03=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_List")[0].getElementsByTagName("tbody")[0];
+	//ele04=document.getElementsByClassName("PIC_Table")[0].getElementsByClassName("PIC_Show")[0].getElementsByTagName("tbody")[0];
+
+	//console.log("function now is : TEXT_ATTRIBUTION(ele,evt,n)");
+
+	//IE7 : evt.srcElement ;Other : evt.target;
+	var evt_target = evt.target ? evt.target : evt.srcElement;
+	//alert(evt_target.tagName);
+	
+	var referenceNode;
+	if ( post_method==0 && evt && evt.type=="keydown" && evt.which==13 )//enter:13;
+	{
+		if ( evt_target.className=="Website_Page_ID" && ele.className=="PIC_Table" )
+		{
+			ele01.getElementsByClassName("Load_pakutaso_IMG_Data_CLS")[0].click();
+			//evt_target.parentNode.getElementsByClassName("Load_pakutaso_IMG_Data_CLS")[0].click();
+		}
+		else if ( evt_target.className=="PIC_Onshow_Num_CLS" && ele.className=="PIC_Table" )
+		{
+			//ele02.getElementsByClassName("PIC_Onshow_Num_100X_CLS")[0].click();
+			evt_target.parentNode.getElementsByClassName("PIC_Onshow_Num_100X_CLS")[0].click();
+		}
+		else if ( evt_target.className=="PIC_Page_ID_CLS" && ele.className=="PIC_Table" )
+		{
+			//ele02.getElementsByClassName("PIC_Page_ID_Set_CLS")[0].click();
+			evt_target.parentNode.getElementsByClassName("PIC_Page_ID_Set_CLS")[0].click();
+		}
+		else
+		{
+		}
+	}
+	else if ( post_method==0 && evt && evt.type=="keydown" && 
+				( evt.which == 33 || evt.which == 34 || evt.which == 38 || evt.which == 40 || evt.which == 36 || evt.which == 35 ) )
+	{
+		/*
+		up arrow	38
+		down arrow	40
+		page up		33
+		page down	34
+		home	36
+		end		35
+		*/
+		var i,j,str;
+		var NUM_10,NUM_X,NUM_MIN,NUM_MAX;
+		//var number_system=NUM_SYS_MAX;
+		if ( evt_target.className=="Website_Page_ID" && ele.className=="PIC_Table" || 
+				evt_target.className=="PIC_Onshow_Num_CLS" && ele.className=="PIC_Table" || 
+				evt_target.className=="PIC_Page_ID_CLS" && ele.className=="PIC_Table" )
+		{
+			var id_max=parseInt(evt_target.getAttribute("id_max"),10);
+			if ( evt_target.className=="Website_Page_ID" )			{NUM_MIN=0;NUM_MAX=id_max;}
+			else if ( evt_target.className=="PIC_Onshow_Num_CLS" )	{NUM_MIN=1;NUM_MAX=10;}
+			else if ( evt_target.className=="PIC_Page_ID_CLS" )		{NUM_MIN=0;NUM_MAX=id_max;}
+			else													{NUM_MIN=0;NUM_MAX=9;}
+
+			//evt_target.value=("00" + evt_target.value).slice(-2);
+			NUM_10=parseInt(evt_target.value,10);
+			if		( evt.which == 38 )	{NUM_10++;}//up arrow		38
+			else if ( evt.which == 40 )	{NUM_10--;}//down arrow		40
+			else if ( evt.which == 33 )	{NUM_10+=10;}//page up		33
+			else if ( evt.which == 34 )	{NUM_10-=10;}//page down	34
+			else if ( evt.which == 36 )	{NUM_10+=100;}//home		36
+			else if ( evt.which == 35 )	{NUM_10-=100;}//end			35
+			else{}
+			if		( NUM_10<NUM_MIN )						{NUM_10=NUM_MIN;}
+			else if ( NUM_10>NUM_MAX )						{NUM_10=NUM_MAX;}
+			else{}
+			evt_target.value=NUM_10;
+		}
+		else
+		{
+		}
+
+		//console.log(evt_target.className + "\n" + ele.className);
+	}
+	else
+	{
+	}
+}
+//============================================================鍵盤鼠標事件============================================================
+</script>
+
+<table class="PIC_Table" borderColor=#000000 cellSpacing=0 cellPadding=0 border=0 style="border-collapse:collapse;border-style:solid;border-width:0px;border-color:black;" onmouseover=TEXT_ATTRIBUTION(this,event,0) onmouseout=TEXT_ATTRIBUTION(this,event,1) onchange=TEXT_ATTRIBUTION(this,event,2) onclick=TEXT_ATTRIBUTION(this,event,3) onkeydown=PIC_LIB_Hotkey_Mouse(this,event,0)>
+<tbody>
+<tr>
+<td valign="top" style="min-width:340px;">
+	<table cellSpacing=0 cellPadding=0 border=0><tbody>
+	<tr><td valign="top" style="width:340px;">
+		<table class="PIC_Ctrl_SD_Table" cellSpacing=0 cellPadding=0 border=1><tbody>
+		<tr>
+		<td><input type="button" value="Show_Hide_IMG_Text" onclick=Show_Hide_IMG_Text()></td>
+		<td><input type="button" class="Load_pakutaso_IMG_Data_CLS" value="Load_pakutaso_IMG_Data" onclick=Load_pakutaso_IMG_Data(this)></td>
+		<td><input type="text" class="Website_Page_ID" id_max="10" value="0" title="0-10"></td>
+		<td>
+			<select class="PIC_Inner_Type" title="PIC_Inner_Type , PIC_Num : 10974 ." onchange=Load_pakutaso_IMG_Data(this)>
+				<option>pakutaso_IMG_Data</option>
+				<option>pakutaso_IMG_Data_Tags_ReOrdered</option>
+				<option>pakutaso_Author_Info</option>
+			</select>
+		</td>
+		<td><span class="PIC_ALL_Num" title="PIC_ALL_Num">PIC_ALL_Num</span></td>
+		</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td valign="top" style="width:340px;">
+		<table class="PIC_WH_Size_Select_CLS" cellSpacing=0 cellPadding=0 border=1><tbody>
+		<tr>
+		<td><input type="button" class="PIC_WH_Size" value="TOP" onclick=PIC_WH_Size_Select(this)></td>
+		<td><input type="button" class="PIC_WH_Size" value="ORI" onclick=PIC_WH_Size_Select(this)></td>
+		<td><input type="button" class="PIC_WH_Size" value="V0" onclick=PIC_WH_Size_Select(this)></td>
+		<td><input type="button" class="PIC_WH_Size" value="V1" onclick=PIC_WH_Size_Select(this)></td>
+		<td><input type="button" class="PIC_WH_Size" value="V2" onclick=PIC_WH_Size_Select(this)></td>
+		<td><input type="button" class="PIC_WH_Size" value="V3" onclick=PIC_WH_Size_Select(this)></td>
+		<td><input type="button" class="PIC_WH_Size" value="V4" onclick=PIC_WH_Size_Select(this)></td>
+		<td><a href="https://www.pakutaso.com/" target=_blank><img class="pakutaso_logo" src="../logo.svg" height="40" width="200"></a></td>
+		</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td valign="top" style="width:340px;">
+		<table class="PIC_Ctrl" cellSpacing=0 cellPadding=0 border=1><tbody>
+		<tr>
+		<td><input type="button" class="PIC_View_Mode" value="Offline" onclick=View_Mode(this)></td>
+		<td>
+			<input type="button" class="PIC_Onshow_Num_100X_CLS" title="PIC_Onshow_Num_100X" value="100X" onclick=Show_PIC(this)>
+			<input type="text" class="PIC_Onshow_Num_CLS" title="PIC_Onshow_Num" value="10" style="width:30px;">
+			<input type="button" class="PIC_Page_ID_Set_CLS" title="PIC_Page_ID_Set" value="ID" onclick=Show_PIC(this)>
+			<input type="text" class="PIC_Page_ID_CLS" title="PIC_Page_ID" id_max="" value="0" style="width:40px;">
+		</td>
+		</tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td>
+		<input type="button" value="Show_Hide_IMG_Text" state=0 onclick=Show_Hide_IMG_Text(this)>
+		<input type="button" class="IMG_Set_ORI_Size" value="IMG_Set_ORI_Size" onclick=IMG_Set_Size(this)><br>
+		<input type="button" class="IMG_Set_Width_1920PX" value="IMG_Set_Width_1920PX" onclick=IMG_Set_Size(this)>
+		<input type="button" class="IMG_Set_Height_1080PX" value="IMG_Set_Height_1080PX" onclick=IMG_Set_Size(this)><br>
+		<input type="button" class="IMG_Set_Width_1920PX_Height_1080PX" value="IMG_Set_Width_1920PX_Height_1080PX" onclick=IMG_Set_Size(this)>
+	</td></tr>
+	</tbody></table>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<div class="PIC_LIB_Viewer_Portable" style="display:block;">
+</div>
+
+<script type="text/javascript">
+//eval(ELE_ELEL_STR_INI());
+var Initiation_Flag=0;
+
+function Initiation()
+{
+	//console.log("function now is : Initiation()");
+
+	if ( Initiation_Flag==1 )
+	{
+		document.getElementsByTagName("body")[0].setAttribute("onmouseover","");
+		return;
+	}
+	var i,j,INI_Flag;
+
+	INI_Flag=0;
+	TAG_INI();
+	PIC_View_Mode_INI();
+	Show_PIC_INI();
+	PIC_WH_Size_Select_INI();
+	Show_PIC_TOP();
+
+	Initiation_Flag=1;
+}
+Initiation();
+
+</script>
+
+
+</body>
+</html>

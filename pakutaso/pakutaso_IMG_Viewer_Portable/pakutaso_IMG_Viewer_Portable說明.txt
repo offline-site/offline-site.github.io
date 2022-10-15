@@ -1,0 +1,4 @@
+"pakutaso_IMG_Viewer_Portable.html"
+"pakutaso_IMG_Viewer_Portable_P0.html"
+"pakutaso_IMG_Viewer_Portable_P1.html"
+三个文件一模一样，只是文件名称不一样。
